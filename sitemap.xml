@@ -10,21 +10,14 @@
   </url>
   
   <url>
-    <loc>https://gb.ytte.top/2022/03/19/fjkdisao/</loc>
+    <loc>https://gb.ytte.top/tags/https/</loc>
     <lastmod>2022-03-19T20:18:16+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://gb.ytte.top/tags/java/</loc>
-    <lastmod>2022-03-19T20:18:16+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gb.ytte.top/categories/java/</loc>
+    <loc>https://gb.ytte.top/2022/03/19/https/</loc>
     <lastmod>2022-03-19T20:18:16+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -52,7 +45,21 @@
   </url>
   
   <url>
+    <loc>https://gb.ytte.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2022-03-19T20:18:16+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://gb.ytte.top/2022/03/14/consumersupplierpredicate%E5%92%8Cfunction/</loc>
+    <lastmod>2022-03-14T09:35:19+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gb.ytte.top/categories/java/</loc>
     <lastmod>2022-03-14T09:35:19+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -215,12 +222,6 @@
   
   <url>
     <loc>https://gb.ytte.top/tags/%E5%9F%9F%E5%90%8D/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://gb.ytte.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
