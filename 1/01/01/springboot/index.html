@@ -162,10 +162,6 @@
                class="tag-list-count">1</span></a>
             
             
-            <a href="https://gb.ytte.top/tags/java/" class="tag-list-link" rel="1">java<span
-               class="tag-list-count">1</span></a>
-            
-            
             <a href="https://gb.ytte.top/tags/jvm/" class="tag-list-link" rel="1">jvm<span
                class="tag-list-count">1</span></a>
             
@@ -234,7 +230,7 @@ function tagCloud(where, min, max) {
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">7</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/mysql/" class="category-list-link">mysql</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/zookeeper/" class="category-list-link">zookeeper</a><span class="category-list-count">1</span></li>
@@ -249,16 +245,6 @@ function tagCloud(where, min, max) {
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://gb.ytte.top/2022/03/19/456th/" class="title">456th</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-19 20:55:16 &#43;0800 CST" itemprop="datePublished">2022-03-19</time>
-                    </p>
-                </div>
-            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -293,6 +279,16 @@ function tagCloud(where, min, max) {
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://gb.ytte.top/2022/03/14/consumersupplierpredicate%E5%92%8Cfunction/" class="title">Consumer、Supplier、Predicate和Function</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-03-14 09:35:19 &#43;0000 UTC" itemprop="datePublished">2022-03-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/03/14/zookeeper/" class="title">ZooKeeper</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-03-14 09:35:19 &#43;0000 UTC" itemprop="datePublished">2022-03-14</time>
@@ -356,80 +352,80 @@ function tagCloud(where, min, max) {
 <p>@MatrixVariable（矩阵变量）、</p>
 <p>@CookieValue、</p>
 <p>@RequestBody</p>
-<pre><code class="language-java">@RestController
-public class ParameterTestController {
-
-
-    //  car/2/owner/zhangsan
-    @GetMapping(&quot;/car/{id}/owner/{username}&quot;)
-    public Map&lt;String,Object&gt; getCar(@PathVariable(&quot;id&quot;) Integer id,
-                                     @PathVariable(&quot;username&quot;) String name,
-                                     @PathVariable Map&lt;String,String&gt; pv,
-                                     @RequestHeader(&quot;User-Agent&quot;) String userAgent,
-                                     @RequestHeader Map&lt;String,String&gt; header,
-                                     @RequestParam(&quot;age&quot;) Integer age,
-                                     @RequestParam(&quot;inters&quot;) List&lt;String&gt; inters,
-                                     @RequestParam Map&lt;String,String&gt; params,
-                                     @CookieValue(&quot;_ga&quot;) String _ga,
-                                     @CookieValue(&quot;_ga&quot;) Cookie cookie){
-
-
-        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-
-//        map.put(&quot;id&quot;,id);
-//        map.put(&quot;name&quot;,name);
-//        map.put(&quot;pv&quot;,pv);
-//        map.put(&quot;userAgent&quot;,userAgent);
-//        map.put(&quot;headers&quot;,header);
-        map.put(&quot;age&quot;,age);
-        map.put(&quot;inters&quot;,inters);
-        map.put(&quot;params&quot;,params);
-        map.put(&quot;_ga&quot;,_ga);
-        System.out.println(cookie.getName()+&quot;===&gt;&quot;+cookie.getValue());
-        return map;
-    }
-
-
-    @PostMapping(&quot;/save&quot;)
-    public Map postMethod(@RequestBody String content){
-        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-        map.put(&quot;content&quot;,content);
-        return map;
-    }
-
-
-    //1、语法： 请求路径：/cars/sell;low=34;brand=byd,audi,yd
-    //2、SpringBoot默认是禁用了矩阵变量的功能
-    //      手动开启：原理。对于路径的处理。UrlPathHelper进行解析。
-    //              removeSemicolonContent（移除分号内容）支持矩阵变量的
-    //3、矩阵变量必须有url路径变量才能被解析
-    @GetMapping(&quot;/cars/{path}&quot;)
-    public Map carsSell(@MatrixVariable(&quot;low&quot;) Integer low,
-                        @MatrixVariable(&quot;brand&quot;) List&lt;String&gt; brand,
-                        @PathVariable(&quot;path&quot;) String path){
-        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-
-        map.put(&quot;low&quot;,low);
-        map.put(&quot;brand&quot;,brand);
-        map.put(&quot;path&quot;,path);
-        return map;
-    }
-
-    // /boss/1;age=20/2;age=10
-
-    @GetMapping(&quot;/boss/{bossId}/{empId}&quot;)
-    public Map boss(@MatrixVariable(value = &quot;age&quot;,pathVar = &quot;bossId&quot;) Integer bossAge,
-                    @MatrixVariable(value = &quot;age&quot;,pathVar = &quot;empId&quot;) Integer empAge){
-        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-
-        map.put(&quot;bossAge&quot;,bossAge);
-        map.put(&quot;empAge&quot;,empAge);
-        return map;
-
-    }
-
-}
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParameterTestController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//  car/2/owner/zhangsan
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/car/{id}/owner/{username}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCar</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> Integer id<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">)</span> String name<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@PathVariable</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>String<span style="color:#f92672">&gt;</span> pv<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@RequestHeader</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User-Agent&#34;</span><span style="color:#f92672">)</span> String userAgent<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@RequestHeader</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>String<span style="color:#f92672">&gt;</span> header<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@RequestParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">)</span> Integer age<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@RequestParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;inters&#34;</span><span style="color:#f92672">)</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> inters<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@RequestParam</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>String<span style="color:#f92672">&gt;</span> params<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@CookieValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;_ga&#34;</span><span style="color:#f92672">)</span> String _ga<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#a6e22e">@CookieValue</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;_ga&#34;</span><span style="color:#f92672">)</span> Cookie cookie<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//        map.put(&#34;id&#34;,id);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        map.put(&#34;name&#34;,name);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        map.put(&#34;pv&#34;,pv);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        map.put(&#34;userAgent&#34;,userAgent);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        map.put(&#34;headers&#34;,header);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span>age<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;inters&#34;</span><span style="color:#f92672">,</span>inters<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;params&#34;</span><span style="color:#f92672">,</span>params<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;_ga&#34;</span><span style="color:#f92672">,</span>_ga<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>cookie<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34;===&gt;&#34;</span><span style="color:#f92672">+</span>cookie<span style="color:#f92672">.</span><span style="color:#a6e22e">getValue</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> map<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/save&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Map <span style="color:#a6e22e">postMethod</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> String content<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;content&#34;</span><span style="color:#f92672">,</span>content<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> map<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//1、语法： 请求路径：/cars/sell;low=34;brand=byd,audi,yd
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//2、SpringBoot默认是禁用了矩阵变量的功能
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//      手动开启：原理。对于路径的处理。UrlPathHelper进行解析。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//              removeSemicolonContent（移除分号内容）支持矩阵变量的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//3、矩阵变量必须有url路径变量才能被解析
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/cars/{path}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Map <span style="color:#a6e22e">carsSell</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@MatrixVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;low&#34;</span><span style="color:#f92672">)</span> Integer low<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">@MatrixVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;brand&#34;</span><span style="color:#f92672">)</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> brand<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;path&#34;</span><span style="color:#f92672">)</span> String path<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;low&#34;</span><span style="color:#f92672">,</span>low<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;brand&#34;</span><span style="color:#f92672">,</span>brand<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;path&#34;</span><span style="color:#f92672">,</span>path<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> map<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// /boss/1;age=20/2;age=10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/boss/{bossId}/{empId}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Map <span style="color:#a6e22e">boss</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@MatrixVariable</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span>pathVar <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bossId&#34;</span><span style="color:#f92672">)</span> Integer bossAge<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">@MatrixVariable</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span>pathVar <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;empId&#34;</span><span style="color:#f92672">)</span> Integer empAge<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;bossAge&#34;</span><span style="color:#f92672">,</span>bossAge<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;empAge&#34;</span><span style="color:#f92672">,</span>empAge<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> map<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
     </div>
     <div class="article-footer">
 <blockquote class="mt-2x">

@@ -162,10 +162,6 @@
                class="tag-list-count">1</span></a>
             
             
-            <a href="https://gb.ytte.top/tags/java/" class="tag-list-link" rel="1">java<span
-               class="tag-list-count">1</span></a>
-            
-            
             <a href="https://gb.ytte.top/tags/jvm/" class="tag-list-link" rel="1">jvm<span
                class="tag-list-count">1</span></a>
             
@@ -234,7 +230,7 @@ function tagCloud(where, min, max) {
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">7</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/mysql/" class="category-list-link">mysql</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/zookeeper/" class="category-list-link">zookeeper</a><span class="category-list-count">1</span></li>
@@ -249,16 +245,6 @@ function tagCloud(where, min, max) {
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://gb.ytte.top/2022/03/19/456th/" class="title">456th</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-19 20:55:16 &#43;0800 CST" itemprop="datePublished">2022-03-19</time>
-                    </p>
-                </div>
-            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -293,6 +279,16 @@ function tagCloud(where, min, max) {
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://gb.ytte.top/2022/03/14/consumersupplierpredicate%E5%92%8Cfunction/" class="title">Consumer、Supplier、Predicate和Function</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-03-14 09:35:19 &#43;0000 UTC" itemprop="datePublished">2022-03-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/03/14/zookeeper/" class="title">ZooKeeper</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-03-14 09:35:19 &#43;0000 UTC" itemprop="datePublished">2022-03-14</time>
@@ -354,19 +350,17 @@ function tagCloud(where, min, max) {
 <h3 id="2-频繁作为-where-查询条件的字段">2). 频繁作为 WHERE 查询条件的字段</h3>
 <p>某个字段在SELECT语句的 WHERE 条件中经常被使用到，那么就需要给这个字段创建索引了。尤其是在数据量大的情况下，创建普通索引就可以大幅提升数据查询的效率。</p>
 <p>比如查询 <code>student_id =144324</code>的时候</p>
-<pre><code class="language-sql">SELECT course_id ,class_id, `name`,create_time,student_id
-FROM student_info 
-WHERE student_id =144324
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> course_id ,class_id, <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span>,create_time,student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> student_info 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> student_id <span style="color:#f92672">=</span><span style="color:#ae81ff">144324</span>
+</span></span></code></pre></div><ul>
 <li>
 <p>在student_id不加索引的情况下，<strong>100w</strong>条数据，耗时为<strong>350ms</strong>左右，即在百毫秒级</p>
-<pre><code class="language-sql">ALTER TABLE student_info 
-ADD INDEX idx_sid(student_id)
-
-SHOW INDEX FROM student_info  #查看是否添加成功
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_sid(student_id)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">FROM</span> student_info  <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查看是否添加成功</span>
+</span></span></code></pre></div></li>
 <li>
 <p>在添加索引的情况下，耗时为<strong>22ms</strong>，降了一个数量级，这是很客观的。</p>
 </li>
@@ -376,14 +370,13 @@ SHOW INDEX FROM student_info  #查看是否添加成功
 <p>索引就是让数据按照某种顺序进行存储或检索，因此当我们使用<code>GROUP BY</code>对数据进行分组查询，或者使用<code>ORDER BY</code>对数据进行排序的时候，就需要对分组或者排序的字段进行索引，从而减少排序的时间。如果待排序的列有多个，那么可以在这些列上建立组合索引。</p>
 <h4 id="1-group-by">1. GROUP BY</h4>
 <p>eg：在100w条数据中，按照<code>student_id</code>对学生选修课程进行分组，显示不同的<code>student_id</code>和课程数量，显示100个。</p>
-<pre><code class="language-sql">SELECT student_id ,COUNT(*) AS num
-FROM student_info
-GROUP BY student_id LIMIT 100
-
-DROP INDEX idx_sid ON student_info
-SHOW INDEX FROM student_info
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id ,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> num
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> student_id <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span> idx_sid <span style="color:#66d9ef">ON</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">FROM</span> student_info
+</span></span></code></pre></div><ul>
 <li>在不加索引的情况下，耗时850毫秒。</li>
 <li>在加索引的情况下（这里使用的是2）当中的<code>idx_sid</code>索引），耗时21毫秒。</li>
 </ul>
@@ -398,55 +391,50 @@ SHOW INDEX FROM student_info
 <p>​		①. <code>student_id</code>和<code>create_time</code>分别建立索引</p>
 <p>​		②. <code>student_id</code>和<code>create_time</code>建立联合索引，且student_id在前</p>
 <p>​		③. <code>student_id</code>和<code>create_time</code>建立联合索引，且create_time在前</p>
-<pre><code class="language-sql">SELECT student_id,COUNT(*)	AS	num	
-FROM	student_info
-GROUP BY	student_id
-ORDER BY	create_time desc
-LIMIT 100
-</code></pre>
-<p>不加除主键索引以外的其他索引的情况下，耗时约==0.8~1s==</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)	<span style="color:#66d9ef">AS</span>	num	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>	student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>	student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>	create_time <span style="color:#66d9ef">desc</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>
+</span></span></code></pre></div><p>不加除主键索引以外的其他索引的情况下，耗时约==0.8~1s==</p>
 <ul>
 <li>两种版本：</li>
 </ul>
 <p>​		①. MySQL 5.7.5及以上功能依赖检测功能</p>
 <p>​		②. MySQL 5.7.5以下无依赖检测功能</p>
 <p>执行上方代码后MySQL 5.7.5及以上会报错</p>
-<pre><code class="language-sql">sql_mode=only_full_group_by #出现问题
-</code></pre>
-<p>MySQL 5.7.5及以上由于<code>sql_mode=only_full_group_by</code>是默认开启依赖检测功能，所以<code>HAVING</code>条件或<code>ORDER BY</code>列表的查询引用在<code>GROUP BY</code>子句中。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>sql_mode<span style="color:#f92672">=</span>only_full_group_by <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">出现问题</span>
+</span></span></code></pre></div><p>MySQL 5.7.5及以上由于<code>sql_mode=only_full_group_by</code>是默认开启依赖检测功能，所以<code>HAVING</code>条件或<code>ORDER BY</code>列表的查询引用在<code>GROUP BY</code>子句中。
 <strong>简单来说就是：输出的结果是叫target list，就是select后面跟着的字段，还有一个地方group by column，就是group by后面跟着的字段。由于开启ONLY_FULL_GROUP_BY的设置，如果一个字段没有在target list和group by字段中同时出现，或者是聚合函数的值的话，那么这条sql查询是被mysql认为非法的，会报错误。</strong></p>
 <p>但是如果同时GROUP BY student_id，create_time 这两个字段，就失去了本例的作用。所以需要MySQL 5.7.5及以上的需要关闭依赖检测功能</p>
 <p>具体解析链接====》<a href="https://shimo.im/docs/VMAPVynD0nU1vbqg">文档——石墨</a></p>
-<pre><code class="language-sql">select @@global.sql_mode #查看sql_mode详细
-
-set @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'; #去掉ONLY_FULL_GROUP_BY，重新设置值，对于新建的数据库有效 8.0中还要去掉NO_AUTO_CREATE_USER
-
-set global sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';  #对于已存在的数据库，则需要在对应的数据下执行
-</code></pre>
-<p>继续测试</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">@@</span><span style="color:#66d9ef">global</span>.sql_mode <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查看</span>sql_mode详细
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#f92672">@@</span><span style="color:#66d9ef">global</span>.sql_mode <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#39;</span>; <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">去掉</span>ONLY_FULL_GROUP_BY<span style="color:#960050;background-color:#1e0010">，重新设置值，对于新建的数据库有效</span> <span style="color:#ae81ff">8</span>.<span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">中还要去掉</span>NO_AUTO_CREATE_USER
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#66d9ef">global</span> sql_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&#39;</span>;  <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">对于已存在的数据库，则需要在对应的数据下执行</span>
+</span></span></code></pre></div><p>继续测试</p>
 <ol>
 <li>
 <p>添加单列<code>student_id</code>索引和<code>create_time</code>索引</p>
 <p>​	5.7中：</p>
 <p>耗时6s左右，添加索引就是将这些时间提前消耗掉，让客户查询的时候减少查询时间。</p>
-<pre><code class="language-sql">ALTER TABLE student_info
-ADD INDEX idx_sid(student_id);
-
-ALTER TABLE student_info
-ADD INDEX idx_cre_time(create_time DESC);
-</code></pre>
-<p><strong>这里 EXPLAIN 后会发现只使用了student_id 的索引idx_sid（单列索引的情况，只使用语句执行过程第一个索引）所以这里只使用了索引idx_sid，而idx_cre_time压根没用到。</strong></p>
-<pre><code class="language-sql">SHOW INDEX FROM student_info
-
-EXPLAIN 
-
-SELECT student_id,COUNT(*)	AS	num	
-FROM	student_info
-GROUP BY	student_id
-ORDER BY	create_time DESC
-LIMIT 100;
-</code></pre>
-<p>各自单列索引的情况下，耗时大约1.5s（上面不加索引的情况下耗时1s）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_sid(student_id);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_cre_time(create_time <span style="color:#66d9ef">DESC</span>);
+</span></span></code></pre></div><p><strong>这里 EXPLAIN 后会发现只使用了student_id 的索引idx_sid（单列索引的情况，只使用语句执行过程第一个索引）所以这里只使用了索引idx_sid，而idx_cre_time压根没用到。</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">FROM</span> student_info
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">EXPLAIN</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)	<span style="color:#66d9ef">AS</span>	num	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>	student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>	student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>	create_time <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><p>各自单列索引的情况下，耗时大约1.5s（上面不加索引的情况下耗时1s）</p>
 <p>​	8.0中</p>
 <p>==todo 不明原因，未得到解决，上述方式在5.7中大约需要1.5s左右，而在8.0中需要几分钟的时间。==</p>
 </li>
@@ -455,40 +443,38 @@ LIMIT 100;
 <p>先删除除主键外其他的单列索引</p>
 <p><strong>idx_sid_cre_time(student_id,create_time)，student_id在前</strong></p>
 <p>​	5.7：</p>
-<pre><code class="language-sql">ALTER TABLE student_info
-ADD INDEX idx_sid_cre_time(student_id,create_time);
-
-SHOW INDEX FROM student_info;
-
-EXPLAIN 
-
-SELECT student_id,COUNT(*)	AS	num	
-FROM	student_info
-GROUP BY	student_id
-ORDER BY	create_time DESC
-LIMIT 100;
-</code></pre>
-<p><img src="https://blogimg.ytte.top//img-jixiang/20220306131117.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_sid_cre_time(student_id,create_time);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">FROM</span> student_info;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">EXPLAIN</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)	<span style="color:#66d9ef">AS</span>	num	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>	student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>	student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>	create_time <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><p><img src="https://blogimg.ytte.top//img-jixiang/20220306131117.png" alt=""></p>
 <p>耗时约==300ms==左右（未加索引1s左右，单列索引1.5s左右）</p>
 <p>8.0：</p>
-<pre><code class="language-sql">DROP INDEX  idx_sid ON student_info ;
-DROP INDEX  idx_cre_time ON student_info;
-DROP INDEX  idx_sid_cre_time ON student_info;
-
-ALTER TABLE student_info
-ADD INDEX idx_sid_cre_time(student_id,create_time DESC);
-
-SHOW INDEX FROM student_info;
-
-EXPLAIN 
-
-SELECT student_id,COUNT(*)	AS	num	
-FROM	student_info
-GROUP BY	student_id
-ORDER BY	create_time DESC
-LIMIT 100;
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_sid <span style="color:#66d9ef">ON</span> student_info ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_cre_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_sid_cre_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_sid_cre_time(student_id,create_time <span style="color:#66d9ef">DESC</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">INDEX</span> <span style="color:#66d9ef">FROM</span> student_info;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">EXPLAIN</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)	<span style="color:#66d9ef">AS</span>	num	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>	student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>	student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>	create_time <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><ul>
 <li>
 <p>索引不加<code>DESC</code>时，耗时约==800ms==左右（不加索引1s左右，单列索引几分钟）</p>
 </li>
@@ -503,36 +489,34 @@ LIMIT 100;
 <p>在语句执行中，先进行group by 所以此时如果存在<code>idx_sid(student_id)</code>的话，会优先使用group by student_id的student_id索引（idx_sid），这样就变成了使用单列索引，联合索引idx_sid_cre_time就不起作用了。</p>
 <p>如果不存在idx_sid，只有联合索引idx_cre_sid_time：</p>
 <p>​    5.7：</p>
-<pre><code class="language-sql">DROP INDEX  idx_sid ON student_info ;
-DROP INDEX  idx_cre_time ON student_info;
-DROP INDEX  idx_sid_cre_time ON student_info;
-
-ALTER TABLE student_info
-ADD INDEX idx_cre_sid_time(create_time,student_id);
-
-SELECT student_id,COUNT(*)	AS	num	
-FROM	student_info
-GROUP BY	student_id
-ORDER BY	create_time DESC
-LIMIT 100;
-</code></pre>
-<p>耗时约==800ms左右== （未加索引1s左右，单列索引1.5s左右，idx_sid_cre_time索引耗时约300ms）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_sid <span style="color:#66d9ef">ON</span> student_info ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_cre_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_sid_cre_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_cre_sid_time(create_time,student_id);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)	<span style="color:#66d9ef">AS</span>	num	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>	student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>	student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>	create_time <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><p>耗时约==800ms左右== （未加索引1s左右，单列索引1.5s左右，idx_sid_cre_time索引耗时约300ms）</p>
 <p>​    8.0 ：</p>
-<pre><code class="language-sql">DROP INDEX  idx_sid ON student_info ;
-DROP INDEX  idx_cre_time ON student_info;
-DROP INDEX  idx_sid_cre_time ON student_info;
-DROP INDEX  idx_cre_sid_time ON student_info;
-
-ALTER TABLE student_info
-ADD INDEX idx_cre_sid_time(create_time DESC,student_id);
-
-SELECT student_id,COUNT(*)	AS	num	
-FROM	student_info
-GROUP BY	student_id
-ORDER BY	create_time DESC
-LIMIT 100;
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_sid <span style="color:#66d9ef">ON</span> student_info ;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_cre_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_sid_cre_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span>  idx_cre_sid_time <span style="color:#66d9ef">ON</span> student_info;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> idx_cre_sid_time(create_time <span style="color:#66d9ef">DESC</span>,student_id);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student_id,<span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)	<span style="color:#66d9ef">AS</span>	num	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>	student_info
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>	student_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>	create_time <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">100</span>;
+</span></span></code></pre></div><ul>
 <li>
 <p>索引不加<code>DESC</code>时，耗时约==1s==左右（不加索引1s左右，单列索引几分钟，idx_sid_cre_time索引800ms左右）</p>
 </li>
@@ -549,52 +533,45 @@ LIMIT 100;
 <p>有时候我们需要对某个字段进行去重，使用 DISTINCT，那么对这个字段创建索引，也会提升查询效率。</p>
 <p>比如，我们想要查询课程表中不同的 student_id 都有哪些，如果我们没有对 student_id 创建索引，执行</p>
 <p>SQL 语句：</p>
-<pre><code class="language-sql">SELECT DISTINCT(student_id) FROM `student_info`;
-</code></pre>
-<p>运行结果（600637 条记录，运行时间 0.683s ）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>(student_id) <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>student_info<span style="color:#f92672">`</span>;
+</span></span></code></pre></div><p>运行结果（600637 条记录，运行时间 0.683s ）：</p>
 <p>如果我们对 student_id 创建索引，再执行 SQL 语句：</p>
-<pre><code class="language-sql">SELECT DISTINCT(student_id) FROM `student_info`;
-</code></pre>
-<p>运行结果（600637 条记录，运行时间 0.010s ）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>(student_id) <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>student_info<span style="color:#f92672">`</span>;
+</span></span></code></pre></div><p>运行结果（600637 条记录，运行时间 0.010s ）：</p>
 <p>SQL 查询效率有了提升，同时显示出来的 student_id 还是按照 递增的顺序 进行展示的。这是因为索引会对数据按照某种顺序进行排序，所以在去重的时候也会快很多。</p>
 <h3 id="6-多表-join-连接操作时创建索引注意事项">6). 多表 JOIN 连接操作时，创建索引注意事项</h3>
 <p>首先， ==连接表的数量尽量不要超过 3 张==，因为每增加一张表就相当于增加了一次嵌套的循环，数量级增长会非常快，严重影响查询的效率。</p>
 <p>其次， 对 WHERE 条件创建索引 ，因为 WHERE 才是对数据条件的过滤。如果在数据量非常大的情况下，没有 WHERE 条件过滤是非常可怕的。</p>
 <p>最后，==类似字符串和int比较时，会存在隐式转换，即使用了函数，一旦使用了函数就会让索引失效。 对用于连接的字段创建索引 ，并且该字段在多张表中的 类型必须一致 。==比如 course_id 在 student_info 表和 course 表中都为 int(11) 类型，而不能一个为 int 另一个为 varchar 类型。</p>
 <p>举个例子，如果我们只对 student_id 创建索引，执行 SQL 语句：</p>
-<pre><code class="language-sql">SELECT course_id, name, student_info.student_id, course_name 
-FROM student_info JOIN course 
-ON student_info.course_id = course.course_id 
-WHERE name = '462eed7ac6e791292a79';
-</code></pre>
-<p>运行结果（1 条数据，运行时间 0.189s ）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> course_id, name, student_info.student_id, course_name 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> student_info <span style="color:#66d9ef">JOIN</span> course 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> student_info.course_id <span style="color:#f92672">=</span> course.course_id 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;462eed7ac6e791292a79&#39;</span>;
+</span></span></code></pre></div><p>运行结果（1 条数据，运行时间 0.189s ）：</p>
 <p>这里我们对 name 创建索引，再执行上面的 SQL 语句，运行时间为 0.002s 。</p>
 <h3 id="7-使用列的类型小的创建索引">7). 使用列的类型小的创建索引</h3>
 <p><img src="https://blogimg.ytte.top//img-jixiang/20220306160740.png" alt=""></p>
 <h3 id="8-使用字符串前缀创建索引">8). 使用字符串前缀创建索引</h3>
 <p><img src="https://blogimg.ytte.top//img-jixiang/20220306161326.png" alt=""></p>
 <p>创建一张商户表，因为地址字段比较长，在地址字段上建立前缀索引</p>
-<pre><code class="language-sql">create table shop(address varchar(120) not null); 
-
-alter table shop add index(address(12)); 
-</code></pre>
-<p>问题是，截取多少呢？截取得多了，达不到节省索引存储空间的目的；截取得少了，重复内容太多，字</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> shop(address varchar(<span style="color:#ae81ff">120</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> shop <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">index</span>(address(<span style="color:#ae81ff">12</span>)); 
+</span></span></code></pre></div><p>问题是，截取多少呢？截取得多了，达不到节省索引存储空间的目的；截取得少了，重复内容太多，字</p>
 <p>段的散列度(选择性)会降低。<strong>怎么计算不同的长度的选择性呢？</strong></p>
 <p>先看一下字段在全部数据中的选择度：</p>
-<pre><code class="language-sql">select count(distinct address) / count(*) from shop;
-</code></pre>
-<p>通过不同长度去计算，与全表的选择性对比：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> address) <span style="color:#f92672">/</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> shop;
+</span></span></code></pre></div><p>通过不同长度去计算，与全表的选择性对比：</p>
 <p>公式：</p>
-<pre><code class="language-sql">count(distinct left(列名, 索引长度))/count(*)
-</code></pre>
-<p>例如：</p>
-<pre><code class="language-sql">select count(distinct left(address,10)) / count(*) as sub10, -- 截取前10个字符的选择度 
-count(distinct left(address,15)) / count(*) as sub11, -- 截取前15个字符的选择度 
-count(distinct left(address,20)) / count(*) as sub12, -- 截取前20个字符的选择度 
-count(distinct left(address,25)) / count(*) as sub13 -- 截取前25个字符的选择度
-from shop;
-</code></pre>
-<p><strong>引申另一个问题：索引列前缀对排序的影响</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> <span style="color:#66d9ef">left</span>(<span style="color:#960050;background-color:#1e0010">列名</span>, <span style="color:#960050;background-color:#1e0010">索引长度</span>))<span style="color:#f92672">/</span><span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>)
+</span></span></code></pre></div><p>例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> <span style="color:#66d9ef">left</span>(address,<span style="color:#ae81ff">10</span>)) <span style="color:#f92672">/</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">as</span> sub10, <span style="color:#75715e">-- 截取前10个字符的选择度 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> <span style="color:#66d9ef">left</span>(address,<span style="color:#ae81ff">15</span>)) <span style="color:#f92672">/</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">as</span> sub11, <span style="color:#75715e">-- 截取前15个字符的选择度 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> <span style="color:#66d9ef">left</span>(address,<span style="color:#ae81ff">20</span>)) <span style="color:#f92672">/</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">as</span> sub12, <span style="color:#75715e">-- 截取前20个字符的选择度 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> <span style="color:#66d9ef">left</span>(address,<span style="color:#ae81ff">25</span>)) <span style="color:#f92672">/</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">as</span> sub13 <span style="color:#75715e">-- 截取前25个字符的选择度
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">from</span> shop;
+</span></span></code></pre></div><p><strong>引申另一个问题：索引列前缀对排序的影响</strong></p>
 <p><strong>拓展：Alibaba《Java开发手册》</strong></p>
 <p>==在 varchar 字段上建立索引时，必须指定索引长度，根据实际文本区分度决定索引长度。==</p>
 <p>说明：索引的长度与区分度是一对矛盾体，一般对字符串类型数据，长度为 20 的索引，区分度会 高达 90% 以上 ，可以使用</p>

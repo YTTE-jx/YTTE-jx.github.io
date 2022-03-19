@@ -39,7 +39,7 @@
 <meta itemprop="name" content="Thread">
 <meta itemprop="description" content="">
 
-<meta itemprop="wordCount" content="12935">
+<meta itemprop="wordCount" content="12896">
 <meta itemprop="keywords" content="Thread," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Thread"/>
 <meta name="twitter:description" content=""/>
@@ -162,10 +162,6 @@
                class="tag-list-count">1</span></a>
             
             
-            <a href="https://gb.ytte.top/tags/java/" class="tag-list-link" rel="1">java<span
-               class="tag-list-count">1</span></a>
-            
-            
             <a href="https://gb.ytte.top/tags/jvm/" class="tag-list-link" rel="1">jvm<span
                class="tag-list-count">1</span></a>
             
@@ -234,7 +230,7 @@ function tagCloud(where, min, max) {
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">7</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/mysql/" class="category-list-link">mysql</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://gb.ytte.top/categories/zookeeper/" class="category-list-link">zookeeper</a><span class="category-list-count">1</span></li>
@@ -249,16 +245,6 @@ function tagCloud(where, min, max) {
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://gb.ytte.top/2022/03/19/456th/" class="title">456th</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2022-03-19 20:55:16 &#43;0800 CST" itemprop="datePublished">2022-03-19</time>
-                    </p>
-                </div>
-            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -293,6 +279,16 @@ function tagCloud(where, min, max) {
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://gb.ytte.top/2022/03/14/consumersupplierpredicate%E5%92%8Cfunction/" class="title">Consumer、Supplier、Predicate和Function</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-03-14 09:35:19 &#43;0000 UTC" itemprop="datePublished">2022-03-14</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/03/14/zookeeper/" class="title">ZooKeeper</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-03-14 09:35:19 &#43;0000 UTC" itemprop="datePublished">2022-03-14</time>
@@ -338,93 +334,89 @@ function tagCloud(where, min, max) {
     <a class="article-tag-link" href="/tags/thread/"> Thread </a>
   </span>
 
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 12935 words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 12896 words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 26 minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <h1 id="线程的实现方式及其优缺点">线程的实现方式及其优缺点</h1>
 <h2 id="继承thread类">继承Thread类</h2>
-<pre><code class="language-java">public class TestCode1 extends Thread
-{
-	private int i;
-	public void run()
-	{
-		for(;i&lt;100;i++)
-		{
-			System.out.println(getName()+&quot; &quot;+i);
-		}
-	}
-	public static void main(String[] args) 
-	{
-		for(int i=0;i&lt;100;i++)
-		{
-			System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);
-			if(i==20){
-				new TestCode1().start();
-				new TestCode1().start();
-			}
-		}
-	}
-}
-</code></pre>
-<h2 id="实现runnable接口">实现Runnable接口</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestCode1</span> <span style="color:#66d9ef">extends</span> Thread
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span><span style="color:#f92672">(;</span>i<span style="color:#f92672">&lt;</span>100<span style="color:#f92672">;</span>i<span style="color:#f92672">++)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>getName<span style="color:#f92672">()+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>100<span style="color:#f92672">;</span>i<span style="color:#f92672">++)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>i<span style="color:#f92672">==</span>20<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> TestCode1<span style="color:#f92672">().</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> TestCode1<span style="color:#f92672">().</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="实现runnable接口">实现Runnable接口</h2>
 <ul>
 <li>实现Runnable接口，重写run方法，实例要作为Thread的target来创建对象，thread.start()（推荐这种，清洗可见）</li>
 </ul>
-<pre><code class="language-java">class MyRunnable implements Runnable{
-    @Override
-    public void run() {
-        for (int i = 0; i &lt; 20; i++) {
-            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);
-        }
-    }
-}
-public class MyThread {
-    public static void main(String[] args) {
-        //创建自定义类对象 线程任务对象
-        MyRunnable mr = new MyRunnable();
-        //创建线程对象
-        Thread t = new Thread(mr, &quot;小强&quot;);
-        t.start();
-        for (int i = 0; i &lt; 20; i++) {
-            System.out.println(&quot;旺财 &quot; + i);
-        }
-    }
-} 
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyRunnable</span> <span style="color:#66d9ef">implements</span> Runnable<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 20<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyThread</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//创建自定义类对象 线程任务对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        MyRunnable mr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyRunnable<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//创建线程对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Thread t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>mr<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;小强&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        t<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 20<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;旺财 &#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span> 
+</span></span></code></pre></div><ul>
 <li>或者在方法内直接重写</li>
 </ul>
-<pre><code class="language-java">public class MyThread {
-    public static void main(String[] args) { 
-        
-        Runnable r = new Runnable(){
-            public void run(){
-                for (int i = 0; i &lt; 20; i++) {
-                System.out.println(&quot;张宇:&quot;+i);
-                }
-            }
-        };
-        new Thread(r).start(); 
-     }
-}
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyThread</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        Runnable r <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 20<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;张宇:&#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>r<span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span> 
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li>直接lambda创建<strong>Runnable</strong>实现类</li>
 </ul>
-<pre><code class="language-java">public class MyThread {
-    public static void main(String[] args) {
-        Runnable r = () -&gt; {
-            for (int i = 0; i &lt; 20; i++) {
-                System.out.println(&quot;张宇:&quot;+i);
-            }
-        };
-        new Thread(r).start();
-    }
-}
-</code></pre>
-<h2 id="实现callable接口">实现Callable接口</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyThread</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Runnable r <span style="color:#f92672">=</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 20<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;张宇:&#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>r<span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="实现callable接口">实现Callable接口</h2>
 <ol>
 <li>
 <p>创建Callable接口的实现类，并实现Call（）方法，该方法将作为线程执行体，且该方法有返回值，再创建Callable实现类的实例。从Java8开始，可以直接使用Lambda表达式创建Callable对象。</p>
@@ -439,60 +431,59 @@ public class MyThread {
 <p>调用FutureTask对象的get（）方法来获取子线程执行结束后的返回值。</p>
 </li>
 </ol>
-<pre><code class="language-java">class MyCallable implements Callable {
-    @Override
-    public Object call() throws Exception {
-        int i = 0;
-        for (; i &lt; 100; i++) {
-            Thread.sleep(100);
-            System.out.println(Thread.currentThread().getName() + &quot;循环遍历i的值&quot; + i);
-        }
-        return null;
-    }
-}
-public class ThreadTest {
-    public static void main(String[] args) {
-        Callable myCallable = new MyCallable();
-        FutureTask task = new FutureTask(myCallable);
-        new Thread(task).start();
-        for (int i = 0; i &lt; 100; i++) {
-            try {
-                Thread.sleep(100);
-                System.out.println(Thread.currentThread().getName()+&quot;循环遍历i的值&quot; + i);
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-//lambda方式
-public class ThreadTest {
-    public static void main(String[] args) {
-        FutureTask&lt;Integer&gt; task = new FutureTask&lt;&gt;(()-&gt;{
-            int i=0;
-            for(;i&lt;100;i++){
-                System.out.println(Thread.currentThread().getName()+&quot;循环变量i的值：&quot;+i);
-            }
-            return i;
-        });
-        for(int i=0;i&lt;100;i++){
-            System.out.println(Thread.currentThread().getName()+&quot;循环变量i的值：&quot;+i);
-            if(i==20){
-                new Thread(task,&quot;有返回值的线程&quot;).start();
-            }
-            try{
-                System.out.println(&quot;子线程的返回值：&quot;+task.get());
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-</code></pre>
-<h2 id="异同点和优缺点">异同点和优缺点</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyCallable</span> <span style="color:#66d9ef">implements</span> Callable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">call</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(;</span> i <span style="color:#f92672">&lt;</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;循环遍历i的值&#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadTest</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Callable myCallable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyCallable<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        FutureTask task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FutureTask<span style="color:#f92672">(</span>myCallable<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 100<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34;循环遍历i的值&#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//lambda方式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadTest</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        FutureTask<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FutureTask<span style="color:#f92672">&lt;&gt;(()-&gt;{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span><span style="color:#f92672">(;</span>i<span style="color:#f92672">&lt;</span>100<span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34;循环变量i的值：&#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>100<span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34;循环变量i的值：&#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>i<span style="color:#f92672">==</span>20<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;有返回值的线程&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;子线程的返回值：&#34;</span><span style="color:#f92672">+</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="异同点和优缺点">异同点和优缺点</h2>
 <h3 id="异同点">异同点</h3>
 <ul>
 <li>
@@ -560,81 +551,78 @@ public class ThreadTest {
 <h2 id="futuretask来包装callable对象">FutureTask来包装Callable对象</h2>
 <p>上方（ <a href="##%E5%AE%9E%E7%8E%B0Callable%E6%8E%A5%E5%8F%A3">Local跳转方式</a>，<a href="">Shimo跳转方式</a>）的这种是子线程无返回值的情况，这种情况下，子线程与多线程可以争夺线程资源，</p>
 <p>如果为子线程添加返回值，使用 FutureTask来包装Callable对象，通过task.get()来获取返回值，主线程进行到task.get()时，如果子线程还在执行，没有返回，主线程就会子线程返回之前等待挂起。从而达到要求。</p>
-<pre><code class="language-java">public class TestCode3 {
-	public static void main(String[] args) {
-		FutureTask&lt;Integer&gt; task = new FutureTask&lt;Integer&gt;((Callable&lt;Integer&gt;)()-&gt;{
-			int i=0;
-			for(;i&lt;100;i++){
-				System.out.println(Thread.currentThread().getName()+&quot;循环变量i的值：&quot;+i);
-			}
-			return i;
-		});
-		for(int i=0;i&lt;100;i++){
-			System.out.println(Thread.currentThread().getName()+&quot;循环变量i的值：&quot;+i);
-			if(i==20){
-				new Thread(task,&quot;有返回值的线程&quot;).start();
-			}
-			try{
-				System.out.println(&quot;子线程的返回值：&quot;+task.get());
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-}
-</code></pre>
-<h2 id="join方法">join方法</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestCode3</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		FutureTask<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> task <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FutureTask<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;((</span>Callable<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;)()-&gt;{</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span><span style="color:#f92672">(;</span>i<span style="color:#f92672">&lt;</span>100<span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34;循环变量i的值：&#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>100<span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34;循环变量i的值：&#34;</span><span style="color:#f92672">+</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>i<span style="color:#f92672">==</span>20<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>task<span style="color:#f92672">,</span><span style="color:#e6db74">&#34;有返回值的线程&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;子线程的返回值：&#34;</span><span style="color:#f92672">+</span>task<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>				e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="join方法">join方法</h2>
 <p><a href="https://blog.csdn.net/u013425438/article/details/80205693?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3.pc_relevant_default&amp;utm_relevant_index=6">参考资料链接</a></p>
 <p>结论：t.join()方法只会使主线程(或者说调用t.join()的线程)进入等待池并等待t线程执行完毕后才会被唤醒。并不影响同一时刻处在运行状态的其他线程。</p>
 <p>t.join方法底层中使用wait(0)方法，即使用了该方法的线程会进入无限等待中，直到 t 执行完成才返回。进入等待的只是调用了join方法的线程，其他线程没开启的不会开启，开启了的不会等待继续执行。</p>
-<pre><code class="language-java">public class TestJoin {
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		System.out.println(Thread.currentThread().getName()+&quot; start&quot;);
-		ThreadTest t1=new ThreadTest(&quot;A&quot;);
-		ThreadTest t2=new ThreadTest(&quot;B&quot;);
-		ThreadTest t3=new ThreadTest(&quot;C&quot;);
-		System.out.println(&quot;t1start&quot;);
-		t1.start();
-		System.out.println(&quot;t1end&quot;);
-		System.out.println(&quot;t2start&quot;);
-		t2.start();
-		System.out.println(&quot;t2end&quot;);
-		t1.join();
-		System.out.println(&quot;t3start&quot;);
-		t3.start();
-		System.out.println(&quot;t3end&quot;);
-		System.out.println(Thread.currentThread().getName()+&quot; end&quot;);
-	}
-}
-</code></pre>
-<p>结果：</p>
-<pre><code class="language-java">main start
-t1start
-t1end
-t2start
-t2end
-A-1
-B-1
-A-2
-A-3
-A-4
-A-5
-B-2
-t3start
-t3end
-B-3
-main end
-B-4
-B-5
-C-1
-C-2
-C-3
-C-4
-C-5
-</code></pre>
-<p>主线程在t1.join()方法处停止，并需要等待A线程执行完毕后才会执行t3.start()，然而，并不影响B线程的执行。因此，可以得出结论，t.join()方法只会使主线程进入等待池并等待t线程执行完毕后才会被唤醒。并不影响同一时刻处在运行状态的其他线程。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestJoin</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// TODO Auto-generated method stub
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34; start&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		ThreadTest t1<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> ThreadTest<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		ThreadTest t2<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> ThreadTest<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;B&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		ThreadTest t3<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> ThreadTest<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;C&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t1start&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		t1<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t1end&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t2start&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		t2<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t2end&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		t1<span style="color:#f92672">.</span><span style="color:#a6e22e">join</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t3start&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		t3<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t3end&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">()+</span><span style="color:#e6db74">&#34; end&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>main start
+</span></span><span style="display:flex;"><span>t1start
+</span></span><span style="display:flex;"><span>t1end
+</span></span><span style="display:flex;"><span>t2start
+</span></span><span style="display:flex;"><span>t2end
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">-</span>1
+</span></span><span style="display:flex;"><span>B<span style="color:#f92672">-</span>1
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">-</span>2
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">-</span>3
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">-</span>4
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">-</span>5
+</span></span><span style="display:flex;"><span>B<span style="color:#f92672">-</span>2
+</span></span><span style="display:flex;"><span>t3start
+</span></span><span style="display:flex;"><span>t3end
+</span></span><span style="display:flex;"><span>B<span style="color:#f92672">-</span>3
+</span></span><span style="display:flex;"><span>main end
+</span></span><span style="display:flex;"><span>B<span style="color:#f92672">-</span>4
+</span></span><span style="display:flex;"><span>B<span style="color:#f92672">-</span>5
+</span></span><span style="display:flex;"><span>C<span style="color:#f92672">-</span>1
+</span></span><span style="display:flex;"><span>C<span style="color:#f92672">-</span>2
+</span></span><span style="display:flex;"><span>C<span style="color:#f92672">-</span>3
+</span></span><span style="display:flex;"><span>C<span style="color:#f92672">-</span>4
+</span></span><span style="display:flex;"><span>C<span style="color:#f92672">-</span>5
+</span></span></code></pre></div><p>主线程在t1.join()方法处停止，并需要等待A线程执行完毕后才会执行t3.start()，然而，并不影响B线程的执行。因此，可以得出结论，t.join()方法只会使主线程进入等待池并等待t线程执行完毕后才会被唤醒。并不影响同一时刻处在运行状态的其他线程。</p>
 <blockquote>
 <p>join源码中，只会调用wait方法，并没有在结束时调用notify，这是因为==线程在die的时候会自动调用自身的notifyAll方法，来释放所有的资源和锁。==</p>
 </blockquote>
@@ -686,58 +674,57 @@ C-5
 <p><img src="https://blogimg.ytte.top//img-jixiang/20220310114635.png" alt=""></p>
 <h2 id="线程池地使用">线程池地使用</h2>
 <p>线程池的真正实现类是ThreadPoolExecutor ，其构造器方法有以下4种：</p>
-<pre><code class="language-java">public ThreadPoolExecutor(int corePoolSize,
-                          int maximumPoolSize,
-                          long keepAliveTime,
-                          TimeUnit unit,
-                          BlockingQueue&lt;Runnable&gt; workQueue) {
-    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
-         Executors.defaultThreadFactory(), defaultHandler);
-}
- 
-public ThreadPoolExecutor(int corePoolSize,
-                          int maximumPoolSize,
-                          long keepAliveTime,
-                          TimeUnit unit,
-                          BlockingQueue&lt;Runnable&gt; workQueue,
-                          ThreadFactory threadFactory) {
-    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
-         threadFactory, defaultHandler);
-}
- 
-public ThreadPoolExecutor(int corePoolSize,
-                          int maximumPoolSize,
-                          long keepAliveTime,
-                          TimeUnit unit,
-                          BlockingQueue&lt;Runnable&gt; workQueue,
-                          RejectedExecutionHandler handler) {
-    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
-         Executors.defaultThreadFactory(), handler);
-}
- 
-public ThreadPoolExecutor(int corePoolSize,
-                          int maximumPoolSize,
-                          long keepAliveTime,
-                          TimeUnit unit,
-                          BlockingQueue&lt;Runnable&gt; workQueue,
-                          ThreadFactory threadFactory,
-                          RejectedExecutionHandler handler) {
-    if (corePoolSize &lt; 0 ||
-        maximumPoolSize &lt;= 0 ||
-        maximumPoolSize &lt; corePoolSize ||
-        keepAliveTime &lt; 0)
-        throw new IllegalArgumentException();
-    if (workQueue == null || threadFactory == null || handler == null)
-        throw new NullPointerException();
-    this.corePoolSize = corePoolSize;
-    this.maximumPoolSize = maximumPoolSize;
-    this.workQueue = workQueue;
-    this.keepAliveTime = unit.toNanos(keepAliveTime);
-    this.threadFactory = threadFactory;
-    this.handler = handler;
-}
-</code></pre>
-<p>参数说明：<!-- raw HTML omitted --> IPHP <!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadPoolExecutor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">int</span> maximumPoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">long</span> keepAliveTime<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          TimeUnit unit<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          BlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;</span> workQueue<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">,</span> maximumPoolSize<span style="color:#f92672">,</span> keepAliveTime<span style="color:#f92672">,</span> unit<span style="color:#f92672">,</span> workQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>         Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultThreadFactory</span><span style="color:#f92672">(),</span> defaultHandler<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadPoolExecutor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">int</span> maximumPoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">long</span> keepAliveTime<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          TimeUnit unit<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          BlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;</span> workQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          ThreadFactory threadFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">,</span> maximumPoolSize<span style="color:#f92672">,</span> keepAliveTime<span style="color:#f92672">,</span> unit<span style="color:#f92672">,</span> workQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>         threadFactory<span style="color:#f92672">,</span> defaultHandler<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadPoolExecutor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">int</span> maximumPoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">long</span> keepAliveTime<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          TimeUnit unit<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          BlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;</span> workQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          RejectedExecutionHandler handler<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">,</span> maximumPoolSize<span style="color:#f92672">,</span> keepAliveTime<span style="color:#f92672">,</span> unit<span style="color:#f92672">,</span> workQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>         Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultThreadFactory</span><span style="color:#f92672">(),</span> handler<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ThreadPoolExecutor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">int</span> maximumPoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#66d9ef">long</span> keepAliveTime<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          TimeUnit unit<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          BlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;</span> workQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          ThreadFactory threadFactory<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                          RejectedExecutionHandler handler<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>corePoolSize <span style="color:#f92672">&lt;</span> 0 <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>        maximumPoolSize <span style="color:#f92672">&lt;=</span> 0 <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>        maximumPoolSize <span style="color:#f92672">&lt;</span> corePoolSize <span style="color:#f92672">||</span>
+</span></span><span style="display:flex;"><span>        keepAliveTime <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>workQueue <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> threadFactory <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> handler <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NullPointerException<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">corePoolSize</span> <span style="color:#f92672">=</span> corePoolSize<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">maximumPoolSize</span> <span style="color:#f92672">=</span> maximumPoolSize<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">workQueue</span> <span style="color:#f92672">=</span> workQueue<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">keepAliveTime</span> <span style="color:#f92672">=</span> unit<span style="color:#f92672">.</span><span style="color:#a6e22e">toNanos</span><span style="color:#f92672">(</span>keepAliveTime<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">threadFactory</span> <span style="color:#f92672">=</span> threadFactory<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> handler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>参数说明：<!-- raw HTML omitted --> IPHP <!-- raw HTML omitted --></p>
 <ul>
 <li><code>corePoolSize</code>（必需）：核心线程数。默认情况下，核心线程会一直存活，但是当将 <strong>allowCoreThreadTimeout</strong> 设置为 true 时，核心线程也会超时回收。</li>
 <li><code>maximumPoolSize</code>（必需）：线程池所能容纳的最大线程数。当活跃线程数达到该数值后，后续的新任务将会阻塞。</li>
@@ -748,25 +735,24 @@ public ThreadPoolExecutor(int corePoolSize,
 <li><code>handler</code>（可选）：拒绝策略。当达到最大线程数时需要执行的饱和策略。</li>
 </ul>
 <p>线程池的使用流程：</p>
-<pre><code class="language-java">// 创建线程池
-ThreadPoolExecutor threadPool = new ThreadPoolExecutor(CORE_POOL_SIZE,
-                                             MAXIMUM_POOL_SIZE,
-                                             KEEP_ALIVE,
-                                             TimeUnit.SECONDS,
-                                             sPoolWorkQueue,
-                                             sThreadFactory);
-// 向线程池提交任务
-threadPool.execute(new Runnable() {
-    @Override
-    public void run() {
-        ... // 线程执行的任务
-    }
-});
-// 关闭线程池
-threadPool.shutdown(); // 设置线程池的状态为SHUTDOWN，然后中断所有没有正在执行任务的线程
-threadPool.shutdownNow(); // 设置线程池的状态为 STOP，然后尝试停止所有的正在执行或暂停任务的线程，并返回等待执行任务的列表
-</code></pre>
-<h2 id="线程池的工作原理">线程池的工作原理</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 创建线程池
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ThreadPoolExecutor threadPool <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>CORE_POOL_SIZE<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                             MAXIMUM_POOL_SIZE<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                             KEEP_ALIVE<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                             TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                             sPoolWorkQueue<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                             sThreadFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 向线程池提交任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span> <span style="color:#75715e">// 线程执行的任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 关闭线程池
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 设置线程池的状态为SHUTDOWN，然后中断所有没有正在执行任务的线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdownNow</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 设置线程池的状态为 STOP，然后尝试停止所有的正在执行或暂停任务的线程，并返回等待执行任务的列表
+</span></span></span></code></pre></div><h2 id="线程池的工作原理">线程池的工作原理</h2>
 <p><img src="https://blogimg.ytte.top//img-jixiang//20220310160511.png" alt=""></p>
 <p>简概：<!-- raw HTML omitted --> IPHP <!-- raw HTML omitted --></p>
 <ul>
@@ -827,42 +813,41 @@ threadPool.shutdownNow(); // 设置线程池的状态为 STOP，然后尝试停�
 <li>如果自己指定<code>ThreadFactory</code>，那么就可以改变线程名、线程组、优先级、是否是守护线程等。</li>
 <li>通常使用默认的<code>ThreadFactory</code>就可以了</li>
 </ol>
-<pre><code class="language-java">// 验证第一点，新的线程是由ThreadFactory创建的，默认使用Executors.defaultThreadFactory()
-public static ThreadFactory defaultThreadFactory() {
-    return new DefaultThreadFactory();
-}
-
-......
-
-static class DefaultThreadFactory implements ThreadFactory {
-        private static final AtomicInteger poolNumber = new AtomicInteger(1);
-        private final ThreadGroup group;
-        private final AtomicInteger threadNumber = new AtomicInteger(1);
-        private final String namePrefix;
-
-        DefaultThreadFactory() {
-            SecurityManager s = System.getSecurityManager();
-            group = (s != null) ? s.getThreadGroup() :
-                                  Thread.currentThread().getThreadGroup();
-            namePrefix = &quot;pool-&quot; +
-                          poolNumber.getAndIncrement() +
-                         &quot;-thread-&quot;;
-        }
-
-        public Thread newThread(Runnable r) {
-        // 验证第二点，创建出来的线程都在同一个线程组，拥有同样的NORM_PRIORITY优先级并且都不是守护线程。
-            Thread t = new Thread(group, r,
-                                  namePrefix + threadNumber.getAndIncrement(),
-                                  0);
-            if (t.isDaemon())
-                t.setDaemon(false);
-            if (t.getPriority() != Thread.NORM_PRIORITY)
-                t.setPriority(Thread.NORM_PRIORITY);
-            return t;
-        }
-    }
-</code></pre>
-<h3 id="拒绝策略handler">拒绝策略（handler）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 验证第一点，新的线程是由ThreadFactory创建的，默认使用Executors.defaultThreadFactory()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ThreadFactory <span style="color:#a6e22e">defaultThreadFactory</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> DefaultThreadFactory<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">......</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DefaultThreadFactory</span> <span style="color:#66d9ef">implements</span> ThreadFactory <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> AtomicInteger poolNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AtomicInteger<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ThreadGroup group<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> AtomicInteger threadNumber <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AtomicInteger<span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String namePrefix<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        DefaultThreadFactory<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            SecurityManager s <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">getSecurityManager</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            group <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">?</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">getThreadGroup</span><span style="color:#f92672">()</span> <span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                                  Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getThreadGroup</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            namePrefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pool-&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                          poolNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">getAndIncrement</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                         <span style="color:#e6db74">&#34;-thread-&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> Thread <span style="color:#a6e22e">newThread</span><span style="color:#f92672">(</span>Runnable r<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 验证第二点，创建出来的线程都在同一个线程组，拥有同样的NORM_PRIORITY优先级并且都不是守护线程。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            Thread t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span>group<span style="color:#f92672">,</span> r<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  namePrefix <span style="color:#f92672">+</span> threadNumber<span style="color:#f92672">.</span><span style="color:#a6e22e">getAndIncrement</span><span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>                                  0<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>t<span style="color:#f92672">.</span><span style="color:#a6e22e">isDaemon</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>                t<span style="color:#f92672">.</span><span style="color:#a6e22e">setDaemon</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>t<span style="color:#f92672">.</span><span style="color:#a6e22e">getPriority</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">NORM_PRIORITY</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                t<span style="color:#f92672">.</span><span style="color:#a6e22e">setPriority</span><span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">NORM_PRIORITY</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> t<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="拒绝策略handler">拒绝策略（handler）</h3>
 <p>当线程池的线程数达到最大线程数时，需要执行拒绝策略。拒绝策略需要实现 RejectedExecutionHandler 接口，并实现 rejectedExecution(Runnable r, ThreadPoolExecutor executor) 方法。不过 Executors 框架已经为我们实现了 4 种拒绝策略：</p>
 <ul>
 <li><strong>AbortPolicy（默认）</strong>：丢弃任务并抛出 RejectedExecutionException 异常。</li>
@@ -879,237 +864,226 @@ static class DefaultThreadFactory implements ThreadFactory {
 <li>单线程化线程池（SingleThreadExecutor）</li>
 </ul>
 <h3 id="定长线程池fixedthreadpool">定长线程池（FixedThreadPool）</h3>
-<pre><code class="language-java">public static ExecutorService newFixedThreadPool(int nThreads) {
-    return new ThreadPoolExecutor(nThreads, nThreads,
-                                  0L, TimeUnit.MILLISECONDS,
-                                  new LinkedBlockingQueue&lt;Runnable&gt;());
-}
-public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
-    return new ThreadPoolExecutor(nThreads, nThreads,
-                                  0L, TimeUnit.MILLISECONDS,
-                                  new LinkedBlockingQueue&lt;Runnable&gt;(),
-                                  threadFactory);
-}
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService <span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> nThreads<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>nThreads<span style="color:#f92672">,</span> nThreads<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  0L<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  <span style="color:#66d9ef">new</span> LinkedBlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService <span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> nThreads<span style="color:#f92672">,</span> ThreadFactory threadFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>nThreads<span style="color:#f92672">,</span> nThreads<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  0L<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  <span style="color:#66d9ef">new</span> LinkedBlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;(),</span>
+</span></span><span style="display:flex;"><span>                                  threadFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li><strong>特点</strong>：只有核心线程，<strong>线程数量固定</strong>，执行完立即回收，任务队列为链表结构的有界队列。</li>
 <li><strong>应用场景</strong>：控制线程最大并发数。</li>
 </ul>
 <p>使用：</p>
-<pre><code class="language-java">// 1. 创建定长线程池对象 &amp; 设置线程池线程数量固定为3
-ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
-// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
-Runnable task =new Runnable(){
-  public void run() {
-     System.out.println(&quot;执行任务啦&quot;);
-  }
-};
-// 3. 向线程池提交任务
-fixedThreadPool.execute(task);
-</code></pre>
-<h3 id="定时线程池scheduledthreadpool-">定时线程池（ScheduledThreadPool ）</h3>
-<pre><code class="language-java">
-private static final long DEFAULT_KEEPALIVE_MILLIS = 10L;
- 
-public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
-    return new ScheduledThreadPoolExecutor(corePoolSize);
-}
-public ScheduledThreadPoolExecutor(int corePoolSize) {
-    super(corePoolSize, Integer.MAX_VALUE,
-          DEFAULT_KEEPALIVE_MILLIS, MILLISECONDS,
-          new DelayedWorkQueue());
-}
- 
-public static ScheduledExecutorService newScheduledThreadPool(
-        int corePoolSize, ThreadFactory threadFactory) {
-    return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
-}
-public ScheduledThreadPoolExecutor(int corePoolSize,
-                                   ThreadFactory threadFactory) {
-    super(corePoolSize, Integer.MAX_VALUE,
-          DEFAULT_KEEPALIVE_MILLIS, MILLISECONDS,
-          new DelayedWorkQueue(), threadFactory);
-}
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 1. 创建定长线程池对象 &amp; 设置线程池线程数量固定为3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ExecutorService fixedThreadPool <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Runnable task <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;执行任务啦&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. 向线程池提交任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>fixedThreadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span></code></pre></div><h3 id="定时线程池scheduledthreadpool-">定时线程池（ScheduledThreadPool ）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> DEFAULT_KEEPALIVE_MILLIS <span style="color:#f92672">=</span> 10L<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ScheduledExecutorService <span style="color:#a6e22e">newScheduledThreadPool</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ScheduledThreadPoolExecutor<span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ScheduledThreadPoolExecutor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">,</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>          DEFAULT_KEEPALIVE_MILLIS<span style="color:#f92672">,</span> MILLISECONDS<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">new</span> DelayedWorkQueue<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ScheduledExecutorService <span style="color:#a6e22e">newScheduledThreadPool</span><span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">,</span> ThreadFactory threadFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ScheduledThreadPoolExecutor<span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">,</span> threadFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ScheduledThreadPoolExecutor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                   ThreadFactory threadFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>corePoolSize<span style="color:#f92672">,</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>          DEFAULT_KEEPALIVE_MILLIS<span style="color:#f92672">,</span> MILLISECONDS<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">new</span> DelayedWorkQueue<span style="color:#f92672">(),</span> threadFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li><strong>特点</strong>：核心线程数量固定，非核心线程数量无限，执行完闲置 10ms 后回收，任务队列为延时阻塞队列。</li>
 <li><strong>应用场景</strong>：执行定时或周期性的任务。</li>
 </ul>
-<pre><code class="language-java">// 1. 创建 定时线程池对象 &amp; 设置线程池线程数量固定为5
-ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
-// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
-Runnable task =new Runnable(){
-  public void run() {
-     System.out.println(&quot;执行任务啦&quot;);
-  }
-};
-// 3. 向线程池提交任务
-scheduledThreadPool.schedule(task, 1, TimeUnit.SECONDS); // 延迟1s后执行任务
-scheduledThreadPool.scheduleAtFixedRate(task,10,1000,TimeUnit.MILLISECONDS);// 延迟10ms后、每隔1000ms执行任务
-</code></pre>
-<h3 id="可缓存线程池cachedthreadpool">可缓存线程池（CachedThreadPool）</h3>
-<pre><code class="language-java">
-public static ExecutorService newCachedThreadPool() {
-    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
-                                  60L, TimeUnit.SECONDS,
-                                  new SynchronousQueue&lt;Runnable&gt;());
-}
-public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
-    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
-                                  60L, TimeUnit.SECONDS,
-                                  new SynchronousQueue&lt;Runnable&gt;(),
-                                  threadFactory);
-}
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 1. 创建 定时线程池对象 &amp; 设置线程池线程数量固定为5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ScheduledExecutorService scheduledThreadPool <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newScheduledThreadPool</span><span style="color:#f92672">(</span>5<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Runnable task <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;执行任务啦&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. 向线程池提交任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>scheduledThreadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">schedule</span><span style="color:#f92672">(</span>task<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">);</span> <span style="color:#75715e">// 延迟1s后执行任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>scheduledThreadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleAtFixedRate</span><span style="color:#f92672">(</span>task<span style="color:#f92672">,</span>10<span style="color:#f92672">,</span>1000<span style="color:#f92672">,</span>TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">);</span><span style="color:#75715e">// 延迟10ms后、每隔1000ms执行任务
+</span></span></span></code></pre></div><h3 id="可缓存线程池cachedthreadpool">可缓存线程池（CachedThreadPool）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService <span style="color:#a6e22e">newCachedThreadPool</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  60L<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  <span style="color:#66d9ef">new</span> SynchronousQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService <span style="color:#a6e22e">newCachedThreadPool</span><span style="color:#f92672">(</span>ThreadFactory threadFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  60L<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                  <span style="color:#66d9ef">new</span> SynchronousQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;(),</span>
+</span></span><span style="display:flex;"><span>                                  threadFactory<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li><strong>特点</strong>：无核心线程，非核心线程数量无限，执行完闲置 60s 后回收，任务队列为不存储元素的阻塞队列。</li>
 <li><strong>应用场景</strong>：执行大量、耗时少的任务。</li>
 </ul>
-<pre><code class="language-java">// 1. 创建可缓存线程池对象
-ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
-// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
-Runnable task =new Runnable(){
-  public void run() {
-     System.out.println(&quot;执行任务啦&quot;);
-  }
-};
-// 3. 向线程池提交任务
-cachedThreadPool.execute(task)
-</code></pre>
-<h3 id="单线程化线程池singlethreadexecutor">单线程化线程池（SingleThreadExecutor）</h3>
-<pre><code class="language-java">public static ExecutorService newSingleThreadExecutor() {
-    return new FinalizableDelegatedExecutorService
-        (new ThreadPoolExecutor(1, 1,
-                                0L, TimeUnit.MILLISECONDS,
-                                new LinkedBlockingQueue&lt;Runnable&gt;()));
-}
-public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
-    return new FinalizableDelegatedExecutorService
-        (new ThreadPoolExecutor(1, 1,
-                                0L, TimeUnit.MILLISECONDS,
-                                new LinkedBlockingQueue&lt;Runnable&gt;(),
-                                threadFactory));
-}
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 1. 创建可缓存线程池对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ExecutorService cachedThreadPool <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newCachedThreadPool</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Runnable task <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;执行任务啦&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. 向线程池提交任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cachedThreadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>task<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="单线程化线程池singlethreadexecutor">单线程化线程池（SingleThreadExecutor）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService <span style="color:#a6e22e">newSingleThreadExecutor</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> FinalizableDelegatedExecutorService
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                0L<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">new</span> LinkedBlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;()));</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService <span style="color:#a6e22e">newSingleThreadExecutor</span><span style="color:#f92672">(</span>ThreadFactory threadFactory<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> FinalizableDelegatedExecutorService
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ThreadPoolExecutor<span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                0L<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">new</span> LinkedBlockingQueue<span style="color:#f92672">&lt;</span>Runnable<span style="color:#f92672">&gt;(),</span>
+</span></span><span style="display:flex;"><span>                                threadFactory<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li><strong>特点</strong>：只有 1 个核心线程，无非核心线程，执行完立即回收，任务队列为链表结构的有界队列。</li>
 <li><strong>应用场景</strong>：不适合并发但可能引起 IO 阻塞性及影响 UI 线程响应的操作，如数据库操作、文件操作等。</li>
 </ul>
-<pre><code class="language-java">// 1. 创建单线程化线程池
-ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
-Runnable task =new Runnable(){
-  public void run() {
-     System.out.println(&quot;执行任务啦&quot;);
-  }
-};
-// 3. 向线程池提交任务
-singleThreadExecutor.execute(task);
-</code></pre>
-<h3 id="对比">对比</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// 1. 创建单线程化线程池
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ExecutorService singleThreadExecutor <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newSingleThreadExecutor</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. 创建好Runnable类线程对象 &amp; 需执行的任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Runnable task <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;执行任务啦&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. 向线程池提交任务
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>singleThreadExecutor<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>task<span style="color:#f92672">);</span>
+</span></span></code></pre></div><h3 id="对比">对比</h3>
 <p><img src="https://blogimg.ytte.top//img-jixiang//20220310203126.png" alt=""></p>
 <h1 id="线程池模板">线程池模板</h1>
 <p>大佬链接====》<a href="https://www.cnblogs.com/keeya/archive/2018/11/27/10025260.html">Spring线程池配置模板- 博客园 </a></p>
-<pre><code class="language-java">@EnableAsync
-@Configuration
-public class LogThreadPoolConfig {
-
-  @Bean(name = &quot;logThreadPool&quot;)
-  public ThreadPoolTaskExecutor LogThreadPoolTask() {
-    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-    LogThreadPoolProperties properties = this.logThreadPoolProperties();
-
-    executor.setCorePoolSize(properties.getCorePoolSize());
-    executor.setMaxPoolSize(properties.getMaxPoolSize());
-    executor.setQueueCapacity(properties.getQueueCapacity());
-    executor.setKeepAliveSeconds(properties.getKeepAliveSeconds());
-    executor.setThreadNamePrefix(properties.getThreadName());
-    switch (properties.getRejectedExecutionHandler()) {
-      case &quot;abortPolicy&quot;:
-        executor.setRejectedExecutionHandler(new AbortPolicy());
-        break;
-      case &quot;callerRunsPolicy&quot;:
-        executor.setRejectedExecutionHandler(new CallerRunsPolicy());
-        break;
-      case &quot;discardOldestPolicy&quot;:
-        executor.setRejectedExecutionHandler(new DiscardOldestPolicy());
-        break;
-      case &quot;discardPolicy&quot;:
-        executor.setRejectedExecutionHandler(new DiscardOldestPolicy());
-        break;
-      default:
-        executor.setRejectedExecutionHandler(new CallerRunsPolicy());
-        break;
-    }
-    executor.initialize();
-    return executor;
-  }
-
-
-  @Bean
-  @ConfigurationProperties(prefix = &quot;threadpool.log&quot;)
-  public LogThreadPoolProperties logThreadPoolProperties() {
-    return new LogThreadPoolProperties();
-  }
-
-
-  //@Getter lombok提供的getset方法生成注解
-  //@Setter
-  @Configuration
-  public static class LogThreadPoolProperties {
-
-    /**
-     * 线程前缀名
-     */
-    private String threadName;
-    /**
-     * 核心线程池大小
-     */
-    private int corePoolSize;
-    /**
-     * 最大线程数
-     */
-    private int maxPoolSize;
-    /**
-     * 队列大小
-     */
-    private int queueCapacity;
-    /**
-     * 线程池维护空闲线程存在时间
-     */
-    private int keepAliveSeconds;
-    /**
-     * 拒绝策略
-     */
-    private String rejectedExecutionHandler;
-
-  }
-}
-</code></pre>
-<p>这样就可以在yml文件中配置参数了：</p>
-<pre><code class="language-yaml">threadpool:
-  log:
-    threadName: ThreadPool-log- # 线程池前缀名
-    corePoolSize: 8             # 核心线程池数：IO型推荐设置为cpu核心数*2；cpu型推荐设置为cpu数+1
-    maxPoolSize: 16             # 最大线程池数
-    queueCapacity: 1000         # 线程池阻塞队列容量
-    keepAliveSeconds: 60        # 允许线程空闲时间
-    # 拒绝策略 abortPolicy callerRunsPolicy discardOldestPolicy discardPolicy
-    rejectedExecutionHandler: callerRunsPolicy
-</code></pre>
-<p>使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@EnableAsync</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogThreadPoolConfig</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;logThreadPool&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> ThreadPoolTaskExecutor <span style="color:#a6e22e">LogThreadPoolTask</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    ThreadPoolTaskExecutor executor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadPoolTaskExecutor<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    LogThreadPoolProperties properties <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">logThreadPoolProperties</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setCorePoolSize</span><span style="color:#f92672">(</span>properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getCorePoolSize</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setMaxPoolSize</span><span style="color:#f92672">(</span>properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getMaxPoolSize</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setQueueCapacity</span><span style="color:#f92672">(</span>properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getQueueCapacity</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setKeepAliveSeconds</span><span style="color:#f92672">(</span>properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getKeepAliveSeconds</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setThreadNamePrefix</span><span style="color:#f92672">(</span>properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getThreadName</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getRejectedExecutionHandler</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;abortPolicy&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setRejectedExecutionHandler</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AbortPolicy<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;callerRunsPolicy&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setRejectedExecutionHandler</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> CallerRunsPolicy<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;discardOldestPolicy&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setRejectedExecutionHandler</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> DiscardOldestPolicy<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;discardPolicy&#34;</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setRejectedExecutionHandler</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> DiscardOldestPolicy<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        executor<span style="color:#f92672">.</span><span style="color:#a6e22e">setRejectedExecutionHandler</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> CallerRunsPolicy<span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    executor<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> executor<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@ConfigurationProperties</span><span style="color:#f92672">(</span>prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;threadpool.log&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> LogThreadPoolProperties <span style="color:#a6e22e">logThreadPoolProperties</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> LogThreadPoolProperties<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//@Getter lombok提供的getset方法生成注解
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//@Setter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogThreadPoolProperties</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 线程前缀名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String threadName<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 核心线程池大小
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> corePoolSize<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 最大线程数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> maxPoolSize<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 队列大小
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> queueCapacity<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 线程池维护空闲线程存在时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> keepAliveSeconds<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 拒绝策略
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String rejectedExecutionHandler<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>这样就可以在yml文件中配置参数了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">threadpool</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">log</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">threadName</span>: <span style="color:#ae81ff">ThreadPool-log-</span> <span style="color:#75715e"># 线程池前缀名</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">corePoolSize</span>: <span style="color:#ae81ff">8</span>             <span style="color:#75715e"># 核心线程池数：IO型推荐设置为cpu核心数*2；cpu型推荐设置为cpu数+1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">maxPoolSize</span>: <span style="color:#ae81ff">16</span>             <span style="color:#75715e"># 最大线程池数</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">queueCapacity</span>: <span style="color:#ae81ff">1000</span>         <span style="color:#75715e"># 线程池阻塞队列容量</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">keepAliveSeconds</span>: <span style="color:#ae81ff">60</span>        <span style="color:#75715e"># 允许线程空闲时间</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 拒绝策略 abortPolicy callerRunsPolicy discardOldestPolicy discardPolicy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rejectedExecutionHandler</span>: <span style="color:#ae81ff">callerRunsPolicy</span>
+</span></span></code></pre></div><p>使用：</p>
 <p>Spring提供了注解方式来方便我们使用线程池，只需要在要异步处理的方法上加 @Async(&ldquo;你配置的线程池名字&rdquo;)就可以了,注意这个类需要被spring扫描并纳入管理，所以要加@Service、@Component等注解。</p>
-<pre><code class="language-java">@Service
-public class ServiceImpl implements Service {
-
-  @Override
-  @Async(&quot;logThreadPool&quot;)
-  public void addOperationLog(BaseLog baseLog) {
-    //你要异步执行的逻辑
-  }
-}
-</code></pre>
-<h1 id="小总结">小总结</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceImpl</span> <span style="color:#66d9ef">implements</span> Service <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@Async</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;logThreadPool&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addOperationLog</span><span style="color:#f92672">(</span>BaseLog baseLog<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//你要异步执行的逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h1 id="小总结">小总结</h1>
 <ol>
 <li>==Executors 的 4 个功能线程池虽然方便，但现在已经不建议使用了，而是建议直接通过使用 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。==</li>
 </ol>
@@ -1144,127 +1118,121 @@ public class ServiceImpl implements Service {
 </li>
 </ul>
 <h2 id="使用">使用</h2>
-<pre><code class="language-java">public class ThreadLocaDemo {
-    
-    private static ThreadLocal&lt;String&gt; localVar = new ThreadLocal&lt;String&gt;();
-    
-    static void print(String str) {
-        //打印当前线程中本地内存中本地变量的值
-        System.out.println(str + &quot; :&quot; + localVar.get());
-        //清除本地内存中的本地变量
-        localVar.remove();
-    }
-    public static void main(String[] args) throws InterruptedException {
- 
-        new Thread(new Runnable() {
-            public void run() {
-                ThreadLocaDemo.localVar.set(&quot;local_A&quot;);
-                print(&quot;A&quot;);
-                //打印本地变量
-                System.out.println(&quot;after remove : &quot; + localVar.get());
-               
-            }
-        },&quot;A&quot;).start();
- 
-        Thread.sleep(1000);
- 
-        new Thread(new Runnable() {
-            public void run() {
-                ThreadLocaDemo.localVar.set(&quot;local_B&quot;);
-                print(&quot;B&quot;);
-                System.out.println(&quot;after remove : &quot; + localVar.get());
-              
-            }
-        },&quot;B&quot;).start();
-    }
-}
-A :local_A
-after remove : null
-B :local_B
-after remove : null
-</code></pre>
-<h3 id="set">set()</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocaDemo</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> ThreadLocal<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> localVar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadLocal<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;();</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//打印当前线程中本地内存中本地变量的值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; :&#34;</span> <span style="color:#f92672">+</span> localVar<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//清除本地内存中的本地变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        localVar<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                ThreadLocaDemo<span style="color:#f92672">.</span><span style="color:#a6e22e">localVar</span><span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;local_A&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//打印本地变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;after remove : &#34;</span> <span style="color:#f92672">+</span> localVar<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">},</span><span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>1000<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                ThreadLocaDemo<span style="color:#f92672">.</span><span style="color:#a6e22e">localVar</span><span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;local_B&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                print<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;B&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;after remove : &#34;</span> <span style="color:#f92672">+</span> localVar<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>              
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">},</span><span style="color:#e6db74">&#34;B&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">:</span>local_A
+</span></span><span style="display:flex;"><span>after remove <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>B <span style="color:#f92672">:</span>local_B
+</span></span><span style="display:flex;"><span>after remove <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span></code></pre></div><h3 id="set">set()</h3>
 <p>==向ThreadLocal里面存东西就是向它里面的Map存东西的，然后ThreadLocal把这个Map挂到当前的线程底下==</p>
-<pre><code class="language-java"> public void set(T value) {
-        //1、获取当前线程
-        Thread t = Thread.currentThread();
-        //2、获取线程中的属性 threadLocalMap ,如果threadLocalMap 不为空，
-        //则直接更新要保存的变量值，否则创建threadLocalMap，并赋值
-        ThreadLocalMap map = getMap(t);
-        if (map != null)
-            map.set(this, value);
-        else
-            // 初始化thradLocalMap 并赋值
-            createMap(t, value);
-    }
-</code></pre>
-<p>从上面的代码可以看出，ThreadLocal  set赋值的时候首先会获取当前线程thread,并获取thread线程中的ThreadLocalMap属性。如果map属性不为空，则直接更新value值，如果map为空，则实例化threadLocalMap,并将value值初始化。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>T value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//1、获取当前线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Thread t <span style="color:#f92672">=</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//2、获取线程中的属性 threadLocalMap ,如果threadLocalMap 不为空，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//则直接更新要保存的变量值，否则创建threadLocalMap，并赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ThreadLocalMap map <span style="color:#f92672">=</span> getMap<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            map<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> value<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 初始化thradLocalMap 并赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            createMap<span style="color:#f92672">(</span>t<span style="color:#f92672">,</span> value<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>从上面的代码可以看出，ThreadLocal  set赋值的时候首先会获取当前线程thread,并获取thread线程中的ThreadLocalMap属性。如果map属性不为空，则直接更新value值，如果map为空，则实例化threadLocalMap,并将value值初始化。</p>
 <p>==ThreadLocalMap呢是当前线程Thread一个叫threadLocals的变量中获取的。每个线程Thread都维护了自己的threadLocals变量，所以在每个线程创建ThreadLocal的时候，实际上数据是存在自己线程Thread的threadLocals变量里面的，别人没办法拿到，从而实现了隔离。==</p>
-<pre><code class="language-java">ThreadLocalMap getMap(Thread t) {
-        return t.threadLocals;
-    }
-</code></pre>
-<pre><code class="language-java">  static class ThreadLocalMap {
-        /**
-         * The entries in this hash map extend WeakReference, using
-         * its main ref field as the key (which is always a
-         * ThreadLocal object).  Note that null keys (i.e. entry.get()
-         * == null) mean that the key is no longer referenced, so the
-         * entry can be expunged from table.  Such entries are referred to
-         * as &quot;stale entries&quot; in the code that follows.
-         */
-        static class Entry extends WeakReference&lt;ThreadLocal&lt;?&gt;&gt; {
-            /** The value associated with this ThreadLocal. */
-            Object value;
- 
-            Entry(ThreadLocal&lt;?&gt; k, Object v) {
-                super(k);
-                value = v;
-            }
-        }
-    }
-</code></pre>
-<p>可看出ThreadLocalMap是ThreadLocal的内部静态类，而它的构成主要是用Entry来保存数据 ，而且还是继承的弱引用。在Entry内部使用ThreadLocal作为key，使用我们设置的value作为value。<!-- raw HTML omitted -->IPHP<!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ThreadLocalMap <span style="color:#a6e22e">getMap</span><span style="color:#f92672">(</span>Thread t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> t<span style="color:#f92672">.</span><span style="color:#a6e22e">threadLocals</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocalMap</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * The entries in this hash map extend WeakReference, using
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * its main ref field as the key (which is always a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * ThreadLocal object).  Note that null keys (i.e. entry.get()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * == null) mean that the key is no longer referenced, so the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * entry can be expunged from table.  Such entries are referred to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         * as &#34;stale entries&#34; in the code that follows.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         */</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Entry</span> <span style="color:#66d9ef">extends</span> WeakReference<span style="color:#f92672">&lt;</span>ThreadLocal<span style="color:#f92672">&lt;?&gt;&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">/** The value associated with this ThreadLocal. */</span>
+</span></span><span style="display:flex;"><span>            Object value<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            Entry<span style="color:#f92672">(</span>ThreadLocal<span style="color:#f92672">&lt;?&gt;</span> k<span style="color:#f92672">,</span> Object v<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>k<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                value <span style="color:#f92672">=</span> v<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>可看出ThreadLocalMap是ThreadLocal的内部静态类，而它的构成主要是用Entry来保存数据 ，而且还是继承的弱引用。在Entry内部使用ThreadLocal作为key，使用我们设置的value作为value。<!-- raw HTML omitted -->IPHP<!-- raw HTML omitted --></p>
 <p>姬祥todo createMap</p>
 <h3 id="get">get()</h3>
-<pre><code class="language-java">    public T get() {
-        //1、获取当前线程
-        Thread t = Thread.currentThread();
-        //2、获取当前线程的ThreadLocalMap
-        ThreadLocalMap map = getMap(t);
-        //3、如果map数据为空，
-        if (map != null) {
-            //3.1、获取threalLocalMap中存储的值
-            ThreadLocalMap.Entry e = map.getEntry(this);
-            if (e != null) {
-                @SuppressWarnings(&quot;unchecked&quot;)
-                T result = (T)e.value;
-                return result;
-            }
-        }
-        //如果是数据为null，则初始化，初始化的结果，TheralLocalMap中存放key值为threadLocal，值为null
-        return setInitialValue();
-    }
- 
-private T setInitialValue() {
-        T value = initialValue();
-        Thread t = Thread.currentThread();
-        ThreadLocalMap map = getMap(t);
-        if (map != null)
-            map.set(this, value);
-        else
-            createMap(t, value);
-        return value;
-    }
-</code></pre>
-<h3 id="remove">remove()</h3>
-<pre><code class="language-java"> public void remove() {
-         ThreadLocalMap m = getMap(Thread.currentThread());
-         if (m != null)
-             m.remove(this);
-}
-</code></pre>
-<p>remove方法，直接将ThrealLocal 对应的值从当前相差Thread中的ThreadLocalMap中删除。为什么要删除，这涉及到内存泄露的问题。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">get</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//1、获取当前线程
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Thread t <span style="color:#f92672">=</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//2、获取当前线程的ThreadLocalMap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ThreadLocalMap map <span style="color:#f92672">=</span> getMap<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//3、如果map数据为空，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//3.1、获取threalLocalMap中存储的值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            ThreadLocalMap<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span> e <span style="color:#f92672">=</span> map<span style="color:#f92672">.</span><span style="color:#a6e22e">getEntry</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>e <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">@SuppressWarnings</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;unchecked&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>                T result <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>T<span style="color:#f92672">)</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">value</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//如果是数据为null，则初始化，初始化的结果，TheralLocalMap中存放key值为threadLocal，值为null
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> setInitialValue<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> T <span style="color:#a6e22e">setInitialValue</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        T value <span style="color:#f92672">=</span> initialValue<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        Thread t <span style="color:#f92672">=</span> Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        ThreadLocalMap map <span style="color:#f92672">=</span> getMap<span style="color:#f92672">(</span>t<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>            map<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> value<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>            createMap<span style="color:#f92672">(</span>t<span style="color:#f92672">,</span> value<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> value<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="remove">remove()</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">remove</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>         ThreadLocalMap m <span style="color:#f92672">=</span> getMap<span style="color:#f92672">(</span>Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">currentThread</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>m <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>             m<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>remove方法，直接将ThrealLocal 对应的值从当前相差Thread中的ThreadLocalMap中删除。为什么要删除，这涉及到内存泄露的问题。</p>
 <p>如上所说（<a href="#ThreadLocalMap">Local跳转方式</a>，<a href="">Shimo跳转方式</a>）， ThreadLocalMap 中使用的 key 为 ThreadLocal 的弱引用，弱引用的特点是，如果这个对象只存在弱引用，那么在下一次垃圾回收的时候必然会被清理掉。</p>
 <p>所以如果 ThreadLocal 没有被外部强引用的情况下，在垃圾回收的时候会被清理掉的，这样一来 ThreadLocalMap中使用这个 ThreadLocal 的 key 也会被清理掉。但是，value 是强引用，不会被清理，这样一来就会出现 key 为 null 的 value。这样就造成了内存泄露。</p>
 <h2 id="threadlocal与threadthreadlocalmap之间的关系">ThreadLocal与Thread，ThreadLocalMap之间的关系</h2>
@@ -1283,76 +1251,74 @@ private T setInitialValue() {
 <p>当时我们使用SimpleDataFormat的parse()方法，内部有一个Calendar对象，调用SimpleDataFormat的parse()方法会先调用Calendar.clear（），然后调用Calendar.add()。<a href="https://blog.csdn.net/qq_35190492/article/details/107599875?ops_request_misc=%7B%22request%5Fid%22%3A%22164696626016781683978633%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=164696626016781683978633&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-107599875.pc_search_result_cache&amp;utm_term=ThreadLocal&amp;spm=1018.2226.3001.4187">ThreadLocal_敖丙-CSDN博客</a>。如果一个线程先调用了add()然后另一个线程又调用了clear()，这时候parse()方法解析的时间就不对了。</p>
 <p>在这种情况下，每个Thread内都有自己的实例副本，且该副本只能由当前Thread访问到并使用，相当于每个线程内部的本地变量，这也是ThreadLocal命名的含义。因为每个线程独享副本，而不是公用的，所以不存在多线程间共享的问题。</p>
 <p>比如有<strong>1000</strong>个线程都要用到SimpleDateFormat</p>
-<pre><code class="language-java">public class ThreadLocalDemo011 {
-   public static ExecutorService threadPool = Executors.newFixedThreadPool(16);
-
-    public static void main(String[] args) throws InterruptedException {
-
-        for (int i = 0; i &lt; 1000; i++) {
-            int finalI = i;
-            threadPool.submit(() -&gt; {
-                String data = new ThreadLocalDemo011().date(finalI);
-                System.out.println(data);
-            });
-        }
-        threadPool.shutdown();
-    }
-    public static Integer id= 0;
-    private String date(int seconds){
-        Date date = new Date(1000 * seconds);
-        id++;
-        System.out.println(id+&quot;=============&quot;);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;mm:ss&quot;);
-        return simpleDateFormat.format(date);
-    }
-}
-</code></pre>
-<p>可以看出，我们用了一个16线程的线程池，并且给这个线程池提交了1000次任务。每个任务中它做的事情和之前是一样的，还是去执行date方法，并且在这个方法中创建一个simpleDateFormat 对象。近1000个simpleDateFormat 对象会被创建。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocalDemo011</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService threadPool <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span>16<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 1000<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> finalI <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">submit</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                String data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadLocalDemo011<span style="color:#f92672">().</span><span style="color:#a6e22e">date</span><span style="color:#f92672">(</span>finalI<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Integer id<span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String <span style="color:#a6e22e">date</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> seconds<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        Date date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date<span style="color:#f92672">(</span>1000 <span style="color:#f92672">*</span> seconds<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        id<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>id<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;=============&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        SimpleDateFormat simpleDateFormat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mm:ss&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> simpleDateFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>date<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>可以看出，我们用了一个16线程的线程池，并且给这个线程池提交了1000次任务。每个任务中它做的事情和之前是一样的，还是去执行date方法，并且在这个方法中创建一个simpleDateFormat 对象。近1000个simpleDateFormat 对象会被创建。</p>
 <p>这么多对象的创建是有开销的，并且在使用完之后的销毁同样是有开销的，同时存在在内存中也是一种内存的浪费。</p>
 <p>我们可能会想到，要不所有的线程共用一个 simpleDateFormat 对象？但是simpleDateFormat 又不是线程安全的，我们必须做同步，比如使用synchronized加锁。到这里也许就是我们最终的一个解决方法。但是使用synchronized加锁会陷入一种排队的状态，多个线程不能同时工作，这样一来，整体的效率就被大大降低了。</p>
 <ul>
 <li>使用ThreadLocal</li>
 </ul>
 <p>对这种场景，ThreadLocal再合适不过了，ThreadLocal给每个线程维护一个自己的simpleDateFormat对象，这个对象在线程之间是独立的，互相没有关系的。这也就避免了线程安全问题。与此同时，simpleDateFormat对象还不会创造过多，线程池一共只有 16 个线程，所以需要16个对象即可。</p>
-<pre><code class="language-java">public class ThreadLocalDemo04 {
-
-    public static ExecutorService threadPool = Executors.newFixedThreadPool(16);
-
-    public static void main(String[] args) throws InterruptedException {
-
-        for (int i = 0; i &lt; 1000; i++) {
-            int finalI = i;
-            threadPool.submit(() -&gt; {
-                String data = new ThreadLocalDemo04().date(finalI);
-                System.out.println(data);
-            });
-        }
-        threadPool.shutdown();
-    }
-
-    private String date(int seconds){
-        Date date = new Date(1000 * seconds);
-        SimpleDateFormat dateFormat = ThreadSafeFormater.dateFormatThreadLocal.get();
-        return dateFormat.format(date);
-    }
-}
-
-class ThreadSafeFormater{
-    public static Integer id= 0;
-    public static ThreadLocal&lt;SimpleDateFormat&gt; dateFormatThreadLocal = ThreadLocal.withInitial(() -&gt; {
-        id++;
-        System.out.println(id+&quot;=============&quot;);
-        return new SimpleDateFormat(&quot;mm:ss&quot;);
-    });
-}
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocalDemo04</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ExecutorService threadPool <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span>16<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 1000<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> finalI <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">submit</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                String data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadLocalDemo04<span style="color:#f92672">().</span><span style="color:#a6e22e">date</span><span style="color:#f92672">(</span>finalI<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>data<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        threadPool<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String <span style="color:#a6e22e">date</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> seconds<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        Date date <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date<span style="color:#f92672">(</span>1000 <span style="color:#f92672">*</span> seconds<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        SimpleDateFormat dateFormat <span style="color:#f92672">=</span> ThreadSafeFormater<span style="color:#f92672">.</span><span style="color:#a6e22e">dateFormatThreadLocal</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> dateFormat<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>date<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadSafeFormater</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Integer id<span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ThreadLocal<span style="color:#f92672">&lt;</span>SimpleDateFormat<span style="color:#f92672">&gt;</span> dateFormatThreadLocal <span style="color:#f92672">=</span> ThreadLocal<span style="color:#f92672">.</span><span style="color:#a6e22e">withInitial</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        id<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>id<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;=============&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mm:ss&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
 <li>
 <p>结果：</p>
 <p>可以看出只创建了16个SimpleDateFormat对象。</p>
 </li>
 </ul>
-<pre><code>1=============
+<pre tabindex="0"><code>1=============
 4=============
 5=============
 6=============
@@ -1377,8 +1343,7 @@ class ThreadSafeFormater{
 16:04
 16:03
 16:02
-</code></pre>
-<ul>
+</code></pre><ul>
 <li>问题：
 <ul>
 <li>这种情况每个线程的SimpleDataFormat的parse()方法，在一个任务执行后其他任务继续使用这个线程执行任务时，会不会造成数据混乱。</li>
@@ -1396,54 +1361,53 @@ class ThreadSafeFormater{
 <p>在线程生命周期内，都通过这个静态 ThreadLocal 实例的 get() 方法取得自己 set 过的那个对象，避免了将这个对象（如 user 对象）作为参数传递的麻烦。</p>
 <p>比如说我们是一个用户系统，那么当一个请求进来的时候，一个线程会负责执行这个请求，然后这个请求就会依次调用service-1()、service-2()、service-3()、service-4()，这4个方法可能是分布在不同的类中的。</p>
 <p><img src="https://blogimg.ytte.top//img-jixiang//20220312212450.png" alt=""></p>
-<pre><code class="language-java">package com.kong.threadlocal;
-
-
-public class ThreadLocalDemo05 {
-    public static void main(String[] args) {
-        User user = new User(&quot;jack&quot;);
-        new Service1().service1(user);
-    }
-}
-
-class Service1 {
-    public void service1(User user){
-        //给ThreadLocal赋值，后续的服务直接通过ThreadLocal获取就行了。
-        UserContextHolder.holder.set(user);
-        new Service2().service2();
-    }
-}
-
-class Service2 {
-    public void service2(){
-        User user = UserContextHolder.holder.get();
-        System.out.println(&quot;service2拿到的用户:&quot;+user.name);
-        new Service3().service3();
-    }
-}
-
-class Service3 {
-    public void service3(){
-        User user = UserContextHolder.holder.get();
-        System.out.println(&quot;service3拿到的用户:&quot;+user.name);
-        //在整个流程执行完毕后，一定要执行remove
-        UserContextHolder.holder.remove();
-    }
-}
-
-class UserContextHolder {
-    //创建ThreadLocal保存User对象
-    public static ThreadLocal&lt;User&gt; holder = new ThreadLocal&lt;&gt;();
-}
-
-class User {
-    String name;
-    public User(String name){
-        this.name = name;
-    }
-}
-</code></pre>
-<h1 id="守护线程">守护线程</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.kong.threadlocal<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThreadLocalDemo05</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        User user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jack&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Service1<span style="color:#f92672">().</span><span style="color:#a6e22e">service1</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Service1</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">service1</span><span style="color:#f92672">(</span>User user<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//给ThreadLocal赋值，后续的服务直接通过ThreadLocal获取就行了。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        UserContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">holder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Service2<span style="color:#f92672">().</span><span style="color:#a6e22e">service2</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Service2</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">service2</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>        User user <span style="color:#f92672">=</span> UserContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">holder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;service2拿到的用户:&#34;</span><span style="color:#f92672">+</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Service3<span style="color:#f92672">().</span><span style="color:#a6e22e">service3</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Service3</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">service3</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>        User user <span style="color:#f92672">=</span> UserContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">holder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;service3拿到的用户:&#34;</span><span style="color:#f92672">+</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//在整个流程执行完毕后，一定要执行remove
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        UserContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">holder</span><span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserContextHolder</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//创建ThreadLocal保存User对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ThreadLocal<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> holder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadLocal<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h1 id="守护线程">守护线程</h1>
 <h1 id="面试题">面试题</h1>
 <h2 id="线程池创建的4中方法">线程池创建的4中方法</h2>
 <p><a href="#6%E3%80%81%E5%8A%9F%E8%83%BD%E7%BA%BF%E7%A8%8B%E6%B1%A0">Local跳转方式</a>，<a href="">Shimo跳转方式</a></p>
