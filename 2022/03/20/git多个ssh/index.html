@@ -39,7 +39,7 @@
 <meta itemprop="name" content="Git多个ssh">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-03-20T14:28:34+08:00" />
 <meta itemprop="dateModified" content="2022-03-20T14:28:34+08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="508">
 <meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git多个ssh"/>
 <meta name="twitter:description" content=""/>
@@ -346,12 +346,84 @@ function tagCloud(where, min, max) {
     <a class="article-tag-link" href="/tags/git/"> git </a>
   </span>
 
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 0 words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 0 minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 508 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 2 minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      
+      <h1 id="本地同步到一个git仓库">本地同步到一个git仓库</h1>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>意译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git init</td>
+<td>初始化仓库</td>
+</tr>
+<tr>
+<td>在仓库端点击初始化仓库添加readme文件</td>
+<td></td>
+</tr>
+<tr>
+<td>git pull 远程仓库地址</td>
+<td>拉取同步远程仓库代码</td>
+</tr>
+<tr>
+<td>git config &ndash;global user.name &ldquo;xxx&rdquo;</td>
+<td>设置commit后显示的提交用户的name==这里要注意&ndash;global，后面如果需要让不容仓库使用不同的name，email，可以将&ndash;global去掉==</td>
+</tr>
+<tr>
+<td>git config &ndash;global user.email &ldquo;<a href="mailto:xxx@xxx.com">xxx@xxx.com</a>&rdquo;</td>
+<td>设置commit后显示的提交用户的email</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>将本地文件代码等交给暂存区，（HEAD指针不变化，依然指向init的状态）</td>
+</tr>
+<tr>
+<td>git commit -m “提交辨识信息”</td>
+<td>将本地文件代码等交给本地仓库（HEAD指针指向“提交辨识信息”）</td>
+</tr>
+<tr>
+<td>git remote -v</td>
+<td>查看有无远程仓库</td>
+</tr>
+<tr>
+<td>ssh-keygen -t rsa -C &ldquo;<a href="mailto:xxx@qq.com">xxx@qq.com</a>&rdquo;</td>
+<td>为了使用ssh连接，创建ssh公钥</td>
+</tr>
+<tr>
+<td>将C:\Users\Administrator\ .ssh\id_rsa.pub  里面的内容复制到github右上角头像里下方设置里ssh里面。</td>
+<td></td>
+</tr>
+<tr>
+<td>ssh -T <a href="mailto:git@github.com">git@github.com</a></td>
+<td>测试是否连接</td>
+</tr>
+<tr>
+<td>git remote add origin <a href="mailto:git@github.com">git@github.com</a>:xxx/xxx.github.io.git</td>
+<td>使用ssh地址添加远程仓库</td>
+</tr>
+<tr>
+<td>git  branch -v</td>
+<td>查看本地分支</td>
+</tr>
+<tr>
+<td>git push -u origin master</td>
+<td>将本地仓库本地分支的内容同步到远程仓库origin的master分支</td>
+</tr>
+<tr>
+<td>git branch &ndash;set-upstream-to=origin/远程分支的名字 本地分支的名字</td>
+<td>关联本地分支与远程分支（这样以后同步只需要git push）</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5bg6">5bg6</h1>
+<p>4b5g6fd gf</p>
     </div>
     <div class="article-footer">
 <blockquote class="mt-2x">
