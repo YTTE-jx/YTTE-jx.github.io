@@ -25,7 +25,7 @@
     <title>静态个人博客创建配置部署 - YTTE Site</title>
     
     
-    <link rel="stylesheet" href="https://gb.ytte.top/css/style.min.a85959a41e7abcc0db1f81f44bd264649303417f91b536e87dcde644340fea6d.css">
+    <link rel="stylesheet" href="https://gb.ytte.top/css/style.min.52539b052050345189e34ff8fa6d1921c56f731df70a62d5984b6b2e8826d6e9.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/monokai.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
@@ -39,7 +39,7 @@
 <meta itemprop="name" content="静态个人博客创建配置部署">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-03-21T14:34:13+08:00" />
 <meta itemprop="dateModified" content="2022-03-21T14:34:13+08:00" />
-<meta itemprop="wordCount" content="20">
+<meta itemprop="wordCount" content="5522">
 <meta itemprop="keywords" content="bolg,hugo,hexo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="静态个人博客创建配置部署"/>
 <meta name="twitter:description" content=""/>
@@ -295,7 +295,7 @@ function tagCloud(where, min, max) {
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://gb.ytte.top/2022/03/20/git%E5%A4%9A%E4%B8%AAssh/" class="title">Git多个ssh</a>
+                        <a href="https://gb.ytte.top/2022/03/20/git_ssh%E5%92%8C%E5%A4%9A%E4%B8%AAssh/" class="title">git_ssh和多个ssh</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2022-03-20 14:28:34 &#43;0800 CST" itemprop="datePublished">2022-03-20</time>
@@ -370,12 +370,736 @@ function tagCloud(where, min, max) {
     <a class="article-tag-link" href="/tags/hexo/"> hexo </a>
   </span>
 
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 20 words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 1 minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5522 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 12 minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <blockquote>
+      <h1 id="前言">前言</h1>
+<p>本文讲述hexo和hugo搭建静态个人博客，配置，部署到gitee和github，给github的仓库配置自定义访问域名。<strong>首先会最简单的方式实现功能</strong>，所以文章分为<strong>基本篇</strong>和<strong>进阶篇</strong>。</p>
+<h1 id="基础篇">基础篇</h1>
+<p>快速实现基本功能。两种实现方式：</p>
+<p>**hexo：**js写的，页面加载速度不hugo；但是用的人多，中文好看的主题多。</p>
+<p>**hugo：**go写的，用的人少，如果不使用本文使用的主题，就需要自己去多研究其他主题怎么更改配置；但是页面加载速度快。</p>
+<p><strong>基本环境：</strong></p>
+<ol>
+<li>
+<p>安装Git</p>
+<p><a href="https://blog.csdn.net/sanxd/article/details/82624127">参考2</a></p>
+<ul>
+<li>
+<p>详细的学习网站：</p>
+<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600">参考3</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>安装Node.js</p>
+<p><a href="https://blog.csdn.net/zhangkaidsy/article/details/86645070?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2.pc_relevant_antiscanv2&amp;utm_relevant_index=5">参考4</a></p>
+</li>
+</ol>
+<h2 id="方式一hexo">方式一：hexo</h2>
+<p>hexo中文文档 ：<a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a></p>
+<ol>
+<li>安装Hexo</li>
+<li>GitHub创建个人仓库</li>
+<li>生成SSH添加到GitHub</li>
+<li>hexo配置远程仓库GitHub</li>
+<li>发布文章</li>
+<li>配置文件</li>
+<li>主题</li>
+</ol>
+<h3 id="安装hexo">安装Hexo</h3>
+<ol>
+<li>
+<p>创建一个文件夹blog（命名随意），在这个文件夹下直接右键打开git bash，输入如下代码安装hexo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install -g hexo-cli
+</span></span></code></pre></div></li>
+<li>
+<p>安装完成后 <code>hexo -v</code>查看一下版本</p>
+</li>
+<li>
+<p>初始化hexo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexo init myblog
+</span></span></code></pre></div><p>然后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd myblog //进入这个myblog文件夹
+</span></span><span style="display:flex;"><span>npm install
+</span></span></code></pre></div></li>
+<li>
+<p>install完成后文件夹目录如下</p>
+<ul>
+<li>node_modules: hexo依赖包</li>
+<li>public：存放生成的页面（执行相关命令后md文件会被转换成html文件自动放在这里）</li>
+<li>scaffolds：生成文章的一些模板（之后创建md文章的时候就会默认使用这里的模板）</li>
+<li>source：用来存放你的文章 （自己写的文章全部放在这里，md文件放在post文件夹里）</li>
+<li>themes：主题文件</li>
+<li>_config.yml: 博客的配置文件</li>
+</ul>
+</li>
+<li>
+<p>本地启动看看是否安装及配置成功</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>hexo g 是用来将md文件生成html页面自动放入public的。</li>
+<li>hexo server是用来本地启动的</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexo new 
+</span></span><span style="display:flex;"><span>hexo g 
+</span></span><span style="display:flex;"><span>hexo server
+</span></span></code></pre></div><ul>
+<li>启动完成会提示浏览器访问 <a href="http://localhost:4000/">localhost:4000</a>。</li>
+<li>出现一下图片样式，即表示本地启动配置成功。</li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/21/165532071.png" alt=""></p>
+<ul>
+<li>使用ctrl+c可以把服务关掉</li>
+</ul>
+<h3 id="github创建个人仓库">GitHub创建个人仓库</h3>
+<p><!-- raw HTML omitted --> IPHP <!-- raw HTML omitted --></p>
+<ul>
+<li>在GitHub.com中看到一个New repository，新建仓库</li>
+<li>创建一个和<strong>你用户名相同的仓库</strong>，<strong>后面加.github.io</strong>，只有这样，部署到GitHub page的时候，才会被识别，才能通过xxxx.github.io访问到博客，其中xxx就是你注册GitHub的用户名。</li>
+<li>仓库类型选择【public】，勾选【Initialize this repository with a README】</li>
+<li>点击【create repository】</li>
+</ul>
+<h3 id="生成ssh添加到github">生成SSH添加到GitHub</h3>
+<p><a href="https://gb.ytte.top/2022/03/20/git_ssh%E5%92%8C%E5%A4%9A%E4%B8%AAssh/">传送——Git多个ssh - YTTE Site</a>)中的本地同步到一个git仓库 9~11步骤</p>
+<h3 id="hexo配置远程仓库github">hexo配置远程仓库GitHub</h3>
+<ul>
+<li>
+<p>打开根目录下的配置文件 <code>_config.yml</code>，翻到最后，修改一下代码。这里使用ssh方式push（如果没有配置ssh密钥，<a href="https://gb.ytte.top/2022/03/20/git%E5%A4%9A%E4%B8%AAssh/">传送</a></p>
+<pre tabindex="0"><code>deploy:
+  type: git
+  repo: 
+  	github: git@github.com/YourgithubName/YourgithubName.github.io.git
+  branch: master
+</code></pre></li>
+<li>
+<p>根目录下右键git bash 安装deploy-git 部署的命令，将git命令简化。等待安装完成。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npm install hexo-deployer-git --save
+</span></span></code></pre></div></li>
+<li>
+<p>新建文章：layout一般选择post及文章 ，E.g. (比如)  hexo new  post 好好学习，然后会自动把 .md文章发送到根目录/source/_post中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexo new <span style="color:#f92672">[</span>layout<span style="color:#f92672">]</span> &lt;title&gt;   
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="发布文章">发布文章</h3>
+<ul>
+<li>
+<p>使用hexo的命令来clean清理上一次生成的静态页面（也可以不清理），generate生成静态文章，deploy部署</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexo clean
+</span></span><span style="display:flex;"><span>hexo g
+</span></span><span style="display:flex;"><span>hexo d
+</span></span></code></pre></div></li>
+<li>
+<p>如图表示成功。通过http://yourgithubname.github.io即可访问你自己的博客。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/21/182621740.png" alt=""></p>
+</li>
+</ul>
+<h3 id="配置文件">配置文件</h3>
+<p>根目录下的<code>_config.yml</code>，Ctrl + F 查询填写，即可查看必须要更改的地方</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Hexo Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Docs: https://hexo.io/docs/configuration.html</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Source: https://github.com/hexojs/hexo/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Ctrl + F 查询填写，即可查看必须要更改的地方</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Site</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#ae81ff">YTTE                </span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">subtitle</span>: <span style="color:#e6db74">&#39;Personal Blogs&#39;</span>  <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">keywords</span>: <span style="color:#ae81ff">java </span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">author</span>: <span style="color:#ae81ff">JX </span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">language</span>: <span style="color:#ae81ff">en</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">timezone</span>: <span style="color:#e6db74">&#39;Asia/Shanghai&#39;</span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># URL</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Set your site url here. For example, if you use GitHub Page, set url as &#39;https://username.github.io/project&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">url</span>: <span style="color:#ae81ff">https://gb.ytte.top </span> <span style="color:#75715e"># 填写 域名或者https://YourgithubName.github.io</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permalink</span>: :<span style="color:#ae81ff">year/:month/:day/:title/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permalink_defaults</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pretty_urls</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trailing_index</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Set to false to remove trailing &#39;index.html&#39; from permalinks</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trailing_html</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Set to false to remove trailing &#39;.html&#39; from permalinks</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">source_dir</span>: <span style="color:#ae81ff">source</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">public_dir</span>: <span style="color:#ae81ff">public</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tag_dir</span>: <span style="color:#ae81ff">tags</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">archive_dir</span>: <span style="color:#ae81ff">archives</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">category_dir</span>: <span style="color:#ae81ff">categories</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">code_dir</span>: <span style="color:#ae81ff">downloads/code</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">i18n_dir</span>: :<span style="color:#ae81ff">lang</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">skip_render</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Writing</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">new_post_name</span>: :<span style="color:#ae81ff">title.md</span> <span style="color:#75715e"># File name of new posts</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">default_layout</span>: <span style="color:#ae81ff">post</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">titlecase</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Transform title into titlecase</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">external_link</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Open external links in new tab</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">field</span>: <span style="color:#ae81ff">site</span> <span style="color:#75715e"># Apply to the whole site</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">exclude</span>: <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">filename_case</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">render_drafts</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">post_asset_folder</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">relative_link</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">future</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">highlight</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">line_number</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">auto_detect</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tab_replace</span>: <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">wrap</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hljs</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">prismjs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">preprocess</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">line_number</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tab_replace</span>: <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Home page setting</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># path: Root path for your blogs index page. (default = &#39;&#39;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># per_page: Posts displayed per page. (0 = disable pagination)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># order_by: Posts order. (Order by date descending by default)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">index_generator</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">per_page</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">order_by</span>: -<span style="color:#ae81ff">date</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Category &amp; Tag</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">default_category</span>: <span style="color:#ae81ff">uncategorized</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">category_map</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tag_map</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Metadata elements</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">meta_generator</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Date / Time format</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Hexo uses Moment.js to parse and display date</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## You can customize the date format as defined in</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## http://momentjs.com/docs/#/displaying/format/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">date_format</span>: <span style="color:#ae81ff">YYYY-MM-DD</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">time_format</span>: <span style="color:#ae81ff">HH:mm:ss</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## updated_option supports &#39;mtime&#39;, &#39;date&#39;, &#39;empty&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">updated_option</span>: <span style="color:#e6db74">&#39;mtime&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pagination</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Set per_page to 0 to disable pagination</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">per_page</span>: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pagination_dir</span>: <span style="color:#ae81ff">page</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Include / Exclude file(s)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## include:/exclude: options only apply to the &#39;source/&#39; folder</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">include</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">exclude</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">ignore</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extensions</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Plugins: https://hexo.io/plugins/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Themes: https://hexo.io/themes/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">theme</span>: <span style="color:#ae81ff">pure  </span> <span style="color:#75715e"># 填写选择跟目录下theme文件夹里的主题的文件夹 名称 </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Docs: https://hexo.io/docs/one-command-deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#e6db74">&#39;git&#39;</span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">repo</span>: 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">github</span>: <span style="color:#ae81ff">git@github.com:YourgithubName/YourgithubName.github.io.git </span> <span style="color:#75715e"># 填写</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">branch</span>: <span style="color:#ae81ff">master </span> <span style="color:#75715e"># 填写</span>
+</span></span></code></pre></div><p><a href="https://hexo.io/zh-cn/docs/configuration">官方文档配置 | Hexo</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">网站标题</td>
+</tr>
+<tr>
+<td style="text-align:center">subtitle</td>
+<td style="text-align:center">网站副标题</td>
+</tr>
+<tr>
+<td style="text-align:center">description</td>
+<td style="text-align:center">网站描述</td>
+</tr>
+<tr>
+<td style="text-align:center">author</td>
+<td style="text-align:center">您的名字</td>
+</tr>
+<tr>
+<td style="text-align:center">language</td>
+<td style="text-align:center">网站使用的语言</td>
+</tr>
+<tr>
+<td style="text-align:center">timezone</td>
+<td style="text-align:center">网站时区。&lsquo;Asia/Shanghai&rsquo;</td>
+</tr>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">网址（域名或者https://YourgithubName.github.io）</td>
+</tr>
+<tr>
+<td style="text-align:center">root</td>
+<td style="text-align:center">网站根目录</td>
+</tr>
+<tr>
+<td style="text-align:center">permalink</td>
+<td style="text-align:center">文章的 <a href="https://hexo.io/zh-cn/docs/permalinks">永久链接</a> 格式</td>
+</tr>
+</tbody>
+</table>
+<p>比如新建一个文章叫<code>test.md</code>，那么这个时候他自动生成的地址就是<code>http://yoursite.com/2022/01/01/test</code>，或者<code>http://YourgithubName.github.io/2022/01/01/test</code>。</p>
+<p>打开 根目录/scaffolds/post.md  在里面可以设置 每次new 的post 的模板。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>title: {{ title }}
+</span></span><span style="display:flex;"><span>date: {{ date }}
+</span></span><span style="display:flex;"><span>tags: {{ tags }}
+</span></span><span style="display:flex;"><span>categories: {{categories}}
+</span></span><span style="display:flex;"><span>toc: true 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>#以上代码放在yaml font matter（在typora中右键-插入当中）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;referrer&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no-referrer&#34;</span>/&gt;  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--more--&gt;</span>  
+</span></span></code></pre></div><p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/21/193213601.png" alt=""></p>
+<h3 id="更换主题">更换主题</h3>
+<p>官方给的主题：<a href="https://hexo.io/themes/">Themes | Hexo</a></p>
+<p>这里本文采用pure主题<a href="https://github.com/cofess/hexo-theme-pure">Hexo theme pure(github.com)</a></p>
+<ul>
+<li>
+<p>在根目录下使用git bash 然后git clone 主题的github。例如pure主题的，并在最后加上theme/pure，表示在clone到theme下并重命名为pure。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/cofess/hexo-theme-pure.git  theme/pure
+</span></span></code></pre></div><p><strong>主题目录：</strong>（不同主题可能不同）（本人后端，对前端不是很懂）</p>
+<ul>
+<li>_source：</li>
+<li>languages：</li>
+<li>layout：主题布局样式 ，调用函数等</li>
+<li>screenshot：</li>
+<li>scripts：</li>
+<li>source：你的头像之类的公共资源，js，css</li>
+<li>_config.yml：主题的配置文件</li>
+</ul>
+</li>
+<li>
+<p>每个主题都有不同的要求，有点需要你把文件夹复制到根目录，有的只需要你在根目录下_config.yml配置文件把theme 改为XXX。</p>
+<p>所以使用主题，需要仔细阅读它github的README.md；一般作者都会介绍如何使用。</p>
+</li>
+<li>
+<p>pure中要求：</p>
+<ol>
+<li>把本hexo根目录下_config.yml配置文件把theme 改为pure。（切记不是theme/pure/下的config.yml）。</li>
+<li><code>根目录\themes\pure\_source</code>下（是_source 不是source）所有文件夹复制到根目录下的source文件夹。</li>
+<li><code>根目录\themes\pure\_config.yml</code>中可以更改一些自己相关的信息，比如点击头像跳转自己的github。等等。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexo clean
+</span></span><span style="display:flex;"><span>hexo g 
+</span></span><span style="display:flex;"><span>hexo s  <span style="color:#75715e"># 本地启动</span>
+</span></span></code></pre></div><p>本地启动查看是否设置成功。</p>
+<p>然后推送到github。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hexo clean
+</span></span><span style="display:flex;"><span>hexo g
+</span></span><span style="display:flex;"><span>hexo d
+</span></span></code></pre></div><p><a href="http://YourgithubName.github.io">http://YourgithubName.github.io</a></p>
+</li>
+</ul>
+<h2 id="方式二hugo">方式二：hugo</h2>
+<p>实现过程与hexo很类似</p>
+<p>hugo中文文档 ：<a href="https://www.gohugo.org/">Hugo中文文档 (gohugo.org)</a></p>
+<p>hugo  github ：<a href="https://github.com/gohugoio/hugo">hugo: (github.com)</a></p>
+<ol>
+<li>安装hugo</li>
+<li>GitHub创建个人仓库</li>
+<li>生成SSH添加到GitHub</li>
+<li>将hexo部署到GitHub发布文章</li>
+<li>配置文件</li>
+<li>主题</li>
+</ol>
+<h3 id="安装hugo">安装hugo</h3>
+<p>安装地址<a href="https://github.com/gohugoio/hugo/releases">Releases · gohugoio/hugo (github.com)</a></p>
+<ul>
+<li>
+<p>下载解压带extend的压缩包（很多主题都采用这个扩展版hugo）。</p>
+</li>
+<li>
+<p>解压完成会得到如下几个文件（一下目录以**<code>F:\hugo\bin</code>**为例）</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/21/212110407.png" alt=""></p>
+</li>
+<li>
+<p>将F:\hugo\bin加到<strong>path</strong>变量中，注意两点: (1) 是**<code>path</code>**，不是CLASSPATH，要区分下 (2) 路径后面记得加英文分号 ;以上设置好后，就可以在cmd中查看是否安装成功。</p>
+</li>
+<li>
+<p>执行命令：<strong><code>hugo version</code></strong> HugoStatic Site Generator v0.57.2-A849CB2D windows/amd64 BuildDate: 2019-08-17T17:54:13Z　显示该条即表示成功</p>
+</li>
+</ul>
+<h3 id="生成站点">生成站点</h3>
+<ul>
+<li><strong><code>hugo new site</code><strong>文件名称 (如<code>blog</code>) 。执行后，在F:\hugo\bin目录下就会生成一个 名叫blog的</strong>站点文件夹</strong></li>
+<li>站点文件夹目录结构：
+<ul>
+<li>archetypes　(存放default.md，头文件格式，每次新建文章默认显示的头部信息在此修改)</li>
+<li>content 　　 (存放博客文章，markdown格式文件)</li>
+<li>data       (存放自定义或者导入的模板)</li>
+<li>layouts     (存放网站的数据模板)</li>
+<li>static       (存放图片、css、js等静态资源)</li>
+<li>themes     (存放主题文件，每个主题都是一个独立的文件夹)</li>
+<li>config.toml  (网站配置文件)</li>
+</ul>
+</li>
+</ul>
+<h3 id="创建文章">创建文章</h3>
+<ul>
+<li>
+<p>进入<strong>站点根目录</strong><code>blog</code>下，执行命令：</p>
+<p><strong><code>hugo new post/test.md</code></strong></p>
+</li>
+</ul>
+<p>执行后，会自动在content/post下生成 test.md文件，打开可编辑内容，ps.文件头部的draft要改为false，这样部署后才能看到文章。</p>
+<p>当前网站是没有任何内容的，需要下载个主题。</p>
+<h3 id="下载主题">下载主题</h3>
+<ul>
+<li>
+<p>本文使用pure主题 <a href="https://github.com/xiaoheiAh/hugo-theme-pure/blob/master/README-ZH.md">hugo-theme-pure/README-ZH.md (github.com)</a></p>
+</li>
+<li>
+<p>hugo主题合集<a href="https://themes.gohugo.io/">Hugo Themes (gohugo.io)</a></p>
+</li>
+<li>
+<p>进入<strong>站点的themes</strong>目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/xiaoheiAh/hugo-theme-pure.git themes/pure
+</span></span></code></pre></div><p>此时可回到站点目录下打开<code>config.toml</code>配置指定主题。如theme = &ldquo;pure&rdquo; 没有theme参数就自己写上</p>
+</li>
+<li>
+<p>将themes\pure\exampleSite选的content文件夹复制到站点目录下。</p>
+</li>
+<li>
+<p>在archetypes\default.md中更改</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>title: &#34;{{ .Name | humanize | title }}&#34;
+</span></span><span style="display:flex;"><span>date: &#34;{{ .Date }}&#34;
+</span></span><span style="display:flex;"><span>tags:
+</span></span><span style="display:flex;"><span> - &#34;java&#34;
+</span></span><span style="display:flex;"><span>categories:
+</span></span><span style="display:flex;"><span> - &#34;java&#34;
+</span></span><span style="display:flex;"><span>toc: true
+</span></span><span style="display:flex;"><span># bookComments: false
+</span></span><span style="display:flex;"><span># bookSearchExclude: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#以上代码放在yaml font matter（在typora中右键-插入当中）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--more--&gt;</span>
+</span></span></code></pre></div><p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/21/230225109.png" alt=""></p>
+</li>
+</ul>
+<h3 id="本地启动">本地启动</h3>
+<p><strong>站点根目录</strong>下，执行命令：</p>
+<pre tabindex="0"><code>hugo server
+</code></pre><p>执行后会显示</p>
+<blockquote>
+<p>&hellip;&hellip;&hellip;&hellip;此处省略上方信息</p>
+<p>Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) Press Ctrl+C to stop</p>
+</blockquote>
+<p>可访问：http://localhost:1313/ 查看效果。 Ctrl+C 结束本地运行。</p>
+<h3 id="部署github-pages上">部署github pages上</h3>
+<ul>
+<li>
+<p>登录后，点击右上角，出现下拉菜单，点击 Your repositories 进入页面</p>
+</li>
+<li>
+<p>点击new新建仓库（如果操作过<a href="#%E4%B8%8A%E8%BF%B0hexo%E7%89%88%E6%9C%AC">上述hexo版本</a>，可以不新建，毕竟仓库名为yourgithubname.github.io的只能有一个）。</p>
+</li>
+<li>
+<p>进入 Creat a new repository 页面。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/21/231025200.png" alt=""></p>
+<p>图中的 yourname 要换成自己的github的用户名，即上图中Owner显示的用户名。最后点击Creat repository即完成</p>
+</li>
+<li>
+<p>站点目录**<code>config.toml</code><strong>中</strong><code>baseURL</code>**要换成自己建立的仓库，如baseURL = &ldquo;<a href="https://yourname.github.io/%22">https://yourname.github.io/&quot;</a></p>
+</li>
+<li>
+<p>进入<strong>站点根目录</strong>下，执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div></li>
+<li>
+<p>执行后，站点根目录下会生成一个 <code>public</code> 文件夹，该文件下的内容即Hugo生成的整个静态网站。每次更新内容后，将 pubilc 目录里所有文件 push到GitHub即可。</p>
+</li>
+<li>
+<p>首次使用的时候要执行以下命令：</p>
+<ul>
+<li>
+<p>注意：与hexo不同的是</p>
+<ul>
+<li>
+<p>hexo在站点目录（根目录）下执行代码。</p>
+</li>
+<li>
+<p>hugo生成静态页面的代码<code>hugo</code>在站点目录下执行，git命令在public 目录下执行。</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd  public 
+</span></span></code></pre></div><ul>
+<li>
+<p>使用ssh连接远程仓库：</p>
+<p><a href="https://gb.ytte.top/2022/03/20/git_ssh%E5%92%8C%E5%A4%9A%E4%B8%AAssh/">传送——git_ssh和多个ssh - YTTE Site</a>中的本地同步到一个git仓库 9~11步骤</p>
+<p>即</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t rsa -C “xxx@qq.com”
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将C:\Users\Administrator\ .ssh\id_rsa.pub 里面的内容复制到github右上角头像里下方设置里ssh里面。</span>
+</span></span><span style="display:flex;"><span>ssh -T git@github.com <span style="color:#75715e">#测试设置ssh是否成功</span>
+</span></span></code></pre></div></li>
+<li>
+<p>git：(在public文件夹中)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git init 
+</span></span><span style="display:flex;"><span>git pull git@github.com:yourgithubname/yourgithubname.github.io.git
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;init&#34;</span>
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:yourgithubname/yourgithubname.github.io.git
+</span></span><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></div></li>
+<li>
+<p>以后每次<strong>站点目录</strong>下执行 <code>hugo</code> 命令后，再到<code>public</code>下执行推送命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;xxx&#34;</span>
+</span></span><span style="display:flex;"><span>git push -u origin master  <span style="color:#f92672">(</span>此处较易出错，error了就百度吧，比较经常发送的是连接失败，多试几次，还是不行，问题可能千奇百怪<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>之后就可以到GitHub上看提交到分支的内容，也可访问 <a href="http://YourgithubName.github.io">http://YourgithubName.github.io</a>看页面了。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置文件-1">配置文件</h3>
+<p>#Ctrl + F 查询 更改 ，即可查看必须要更改的地方</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">#Ctrl + F 查询 更改 ，即可查看必须要更改的地方</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">baseURL</span>: <span style="color:#ae81ff">https://YourgithubName.github.io    </span> <span style="color:#75715e">#更改</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">theme</span>: <span style="color:#ae81ff">pure    								#更改</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#ae81ff">YTTE Site							#更改</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">copyright</span>: <span style="color:#ae81ff">CC BY 4.0 CN</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaultContentLanguage</span>: <span style="color:#ae81ff">en </span> <span style="color:#75715e"># en/zh/...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">footnoteReturnLinkContents</span>: <span style="color:#ae81ff">↩</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hasCJKLanguage</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">paginate</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">enableEmoji</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">PygmentsCodeFences</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">googleAnalytics</span>: <span style="color:#e6db74">&#34;&#34;</span>      <span style="color:#75715e"># UA-XXXXXXXX-X </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permalinks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">posts</span>: <span style="color:#ae81ff">/:year/:month/:day/:title/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">taxonomies</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">category </span>: <span style="color:#ae81ff">categories</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tag </span>: <span style="color:#ae81ff">tags</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">series </span>: <span style="color:#ae81ff">series</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">outputFormats</span>:          <span style="color:#75715e"># use for search. recommend not to modify </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">SearchIndex</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mediaType</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">baseName</span>: <span style="color:#e6db74">&#34;searchindex&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">isPlainText</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">notAlternative</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">outputs</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">home</span>: [<span style="color:#e6db74">&#34;HTML&#34;</span>,<span style="color:#e6db74">&#34;RSS&#34;</span>,<span style="color:#e6db74">&#34;SearchIndex&#34;</span>]  <span style="color:#75715e"># recommend not to modify</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sitemap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">sitemap</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">changefreq</span>: <span style="color:#ae81ff">monthly</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">filename</span>: <span style="color:#ae81ff">sitemap.xml</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">priority</span>: <span style="color:#ae81ff">0.5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">menu</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">main</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">home</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Home</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Home</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">archives</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Archives</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Archives</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">/posts/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">categories</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Categories</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Categories</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">/categories/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">tags</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Tags</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Tags</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">/tags/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">about</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">About</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">About</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">/about/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">weight</span>: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">params</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">since</span>: <span style="color:#ae81ff">2022</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dateFormatToUse</span>: <span style="color:#e6db74">&#34;2006-01-02&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enablePostCopyright</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">copyright_link</span>: <span style="color:#ae81ff">http://creativecommons.org/licenses/by/4.0/deed.zh</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the directory under content folder that you want to render</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mainSections</span>: [<span style="color:#e6db74">&#34;posts&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Enable/Disable menu icons</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Icon Reference: http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enableMathJax</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e">#Enable mathjax support, to use mathematical notations</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">highlightjs</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">langs</span>: [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;javascript&#34;</span>] <span style="color:#75715e"># refer to http://staticfile.org/, search highlight.js, already have highlight.min.js</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tag_cloud</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">min</span>: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">max</span>: <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Allows you to specify an override stylesheet</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># put custom.css in $hugo_root_dir/static/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># customCSS: css/custom.css</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">menuIcons</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># 是否启用导航菜单图标</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">home</span>: <span style="color:#ae81ff">icon-home-fill</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">archives</span>: <span style="color:#ae81ff">icon-archives-fill</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">categories</span>: <span style="color:#ae81ff">icon-folder</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tags</span>: <span style="color:#ae81ff">icon-tags</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">repository</span>: <span style="color:#ae81ff">icon-project</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">books</span>: <span style="color:#ae81ff">icon-book-fill</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">links</span>: <span style="color:#ae81ff">icon-friendship</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">about</span>: <span style="color:#ae81ff">icon-cup-fill</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># profile</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">profile</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Whether to show profile bar</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">avatar</span>: <span style="color:#ae81ff">avatar.png</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">gravatar</span>: <span style="color:#75715e"># Gravatar email address, if you enable Gravatar, your avatar config will be overriden</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">author</span>: <span style="color:#ae81ff">YTTE														#更改	</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">author_title</span>: <span style="color:#ae81ff">努力奋斗，不负韶华。									#更改	</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">author_description</span>: <span style="color:#ae81ff">Good Good Study, Day Day Up~					#更改	</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span>: <span style="color:#ae81ff">Anhui, China												#更改	</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">follow</span>: <span style="color:#ae81ff">https://github.com/yougithubname							#更改	</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Social Links</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">social</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">links</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">github</span>: <span style="color:#ae81ff">https://github.com/yougithubname							#更改</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># weibo: http://weibo.com/{yourid}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># twitter: https://twitter.com/</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># facebook: /</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">rss</span>: <span style="color:#ae81ff">/index.xml</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">link_tooltip: false # enable the social link tooltip, options</span>: <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Site</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">site</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">logo</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">width</span>: <span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">height</span>: <span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">favicon.ico</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">title</span>: <span style="color:#ae81ff">YTTE-blogs</span> <span style="color:#75715e"># 页面title								#更改</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">favicon</span>: <span style="color:#ae81ff">favicon.ico</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">board</span>: <span style="color:#ae81ff">&lt;p&gt; 人生无常，大肠包小肠~&lt;/p&gt;</span> <span style="color:#75715e"># 公告牌						更改</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Share</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">share</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># 是否启用分享</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">sites</span>: <span style="color:#ae81ff">weibo,qq,wechat,facebook,twitter</span> <span style="color:#75715e"># PC端显示的分享图标</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">mobile_sites</span>: <span style="color:#ae81ff">weibo,qq,qzone</span> <span style="color:#75715e"># 移动端显示的分享图标</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Comment</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">comment</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>:  <span style="color:#75715e"># type disqus/gitalk/valine 启用哪种评论系统</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">disqus</span>: <span style="color:#ae81ff">your_disqus_name</span> <span style="color:#75715e"># enter disqus shortname here</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">gitalk</span>: <span style="color:#75715e"># gitalk. https://gitalk.github.io/</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">owner</span>: <span style="color:#75715e">#必须. GitHub repository 所有者，可以是个人或者组织。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">admin</span>: <span style="color:#75715e">#必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">repo</span>:  <span style="color:#75715e">#必须. GitHub repository.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ClientID</span>: <span style="color:#75715e">#必须. GitHub Application Client ID.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">ClientSecret</span>: <span style="color:#75715e">#必须. GitHub Application Client Secret.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">valine</span>: <span style="color:#75715e"># Valine. https://valine.js.org</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">appid</span>: <span style="color:#75715e"># your leancloud application appid</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">appkey</span>: <span style="color:#75715e"># your leancloud application appkey</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">notify</span>: <span style="color:#75715e"># mail notifier , https://github.com/xCss/Valine/wiki</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">verify</span>: <span style="color:#75715e"># Verification code</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">placeholder</span>: <span style="color:#ae81ff">enjoy~</span> <span style="color:#75715e"># comment box placeholder</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">avatar</span>: <span style="color:#ae81ff">mm</span> <span style="color:#75715e"># gravatar style</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">meta</span>: <span style="color:#ae81ff">nick,mail</span> <span style="color:#75715e"># custom comment header</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">pageSize</span>: <span style="color:#ae81ff">10</span> <span style="color:#75715e"># pagination size</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">visitor</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Article reading statistic https://valine.js.org/visitor.html</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Donate</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">donate</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 微信打赏</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">wechatpay</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">qrcode</span>: <span style="color:#ae81ff">donate/wechatpayimg.png</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">微信支付</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 支付宝打赏</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">alipay</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">qrcode</span>: <span style="color:#ae81ff">donate/alipayimg.png</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">title</span>: <span style="color:#ae81ff">支付宝</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># PV</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pv</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">busuanzi</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># 不蒜子统计</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">leancloud</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># leancloud统计</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">app_id</span>: <span style="color:#75715e"># leancloud &lt;AppID&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">app_key</span>: <span style="color:#75715e"># leancloud &lt;AppKey&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># wordcount</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">postCount</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">wordcount</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># 文章字数统计</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">min2read</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># read time 阅读时长预计</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># config</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">config</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">skin</span>: <span style="color:#ae81ff">theme-black</span> <span style="color:#75715e"># theme color default is white. other type [theme-black,theme-blue,theme-green,theme-purple]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">layout</span>: <span style="color:#ae81ff">main-center</span> <span style="color:#75715e"># main-left main-center main-right</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">excerpt_link</span>: <span style="color:#ae81ff">Read More</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">toc</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Sidebar</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">sidebar</span>: <span style="color:#ae81ff">right</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Search</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">search</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># enable search. thanks for https://raw.githubusercontent.com/ppoffice/hexo-theme-icarus/master/source/js/insight.js</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Sidebar only the following widgets. you can remove any you don&#39;t like it.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">widgets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">board</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">tag_cloud</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">category</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">recent_posts</span>
+</span></span></code></pre></div><h1 id="扩展篇">扩展篇</h1>
+<p>鉴于扩展篇中需要其他知识的支持，所以提前把链接放出来：</p>
+<blockquote>
+<p><a href="https://gb.ytte.top/2022/03/16/%E4%B8%80%E7%BA%A7%E5%9F%9F%E5%90%8D/">一级域名 - YTTE Site</a></p>
+<p><a href="https://gb.ytte.top/2022/03/16/%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D/">二级域名 - YTTE Site</a></p>
+<p><a href="https://gb.ytte.top/2022/03/19/https/">Https - YTTE Site</a></p>
+<p><a href="https://gb.ytte.top/2022/03/20/git_ssh%E5%92%8C%E5%A4%9A%E4%B8%AAssh/">Git多个ssh - YTTE Site</a></p>
+</blockquote>
+<p>继续更新中。。。。。。。。。。。。。。。</p>
+<blockquote>
+<p>参考 ：</p>
+<ol>
+<li><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程_zjufangzh-CSDN_hexo</a></li>
+<li><a href="https://blog.csdn.net/sanxd/article/details/82624127">Git下载安装及设置详细教程-CSDN博客_git下载</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600">Git教程 - 廖雪峰的官方网站 (liaoxuefeng.com)</a></li>
+<li><a href="https://blog.csdn.net/zhangkaidsy/article/details/86645070?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2.pc_relevant_antiscanv2&amp;utm_relevant_index=5">NodeJ 安装及环境配置_DistanceZK的博客-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/zoelius/p/11424333.html">windows+hugo+github搭建个人博客 - nira - 博客园 (cnblogs.com)</a></li>
+</ol>
 <p>搞定！</p>
 <p>人生无常，大肠包小肠！</p>
 <p>继续学习吧！</p>
