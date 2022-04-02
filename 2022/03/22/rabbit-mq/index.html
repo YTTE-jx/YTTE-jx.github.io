@@ -39,7 +39,7 @@
 <meta itemprop="name" content="Rabbit Mq">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-03-22T13:31:53+08:00" />
 <meta itemprop="dateModified" content="2022-03-22T13:31:53+08:00" />
-<meta itemprop="wordCount" content="8938">
+<meta itemprop="wordCount" content="8925">
 <meta itemprop="keywords" content="Rabbit Mq," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rabbit Mq"/>
 <meta name="twitter:description" content=""/>
@@ -382,7 +382,7 @@ function tagCloud(where, min, max) {
     <a class="article-tag-link" href="/tags/rabbit-mq/"> Rabbit Mq </a>
   </span>
 
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 8938 words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 8925 words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 18 minutes </span>
       </div>
     </div>
@@ -391,7 +391,7 @@ function tagCloud(where, min, max) {
 <h2 id="mq-的相关概念">MQ 的相关概念</h2>
 <h2 id="rabbitmq">RabbitMQ</h2>
 <h3 id="概念">概念</h3>
-<p>RabbitMQ是一个消息中间件：它接受并转发消息。可以把它当做一个<strong>快递站点</strong>，当你要发送一个包裹时，你把你的包裹放到快递站，快递员最终会把你的快递送到收件人那里，按照这种逻辑RabbitMQ是一个快递站，一个快递员帮你传递快件。RabbitMQ与快递站的主要区别在于，它不处理快件而是==接收==，==存储==和==转发消息数据==。</p>
+<p>RabbitMQ是一个消息中间件：它接受并转发消息。可以把它当做一个<strong>快递站点</strong>，当你要发送一个包裹时，你把你的包裹放到快递站，快递员最终会把你的快递送到收件人那里，按照这种逻辑RabbitMQ是一个快递站，一个快递员帮你传递快件。RabbitMQ与快递站的主要区别在于，它不处理快件而是<strong>接收</strong>，<strong>存储</strong>和<strong>转发消息数据</strong>。</p>
 <h3 id="四大核心">四大核心</h3>
 <ul>
 <li>
@@ -415,8 +415,8 @@ function tagCloud(where, min, max) {
 </ul>
 <h3 id="核心模式">核心模式</h3>
 <ol>
-<li>[Hello World——简单模式](##hello  world)</li>
-<li>[Work Queue——工作模式](##工作队列 Work Queue)</li>
+<li><a href="#helloworld">Hello World——简单模式</a></li>
+<li>[Work Queue——工作模式](#工作队列 work queue)</li>
 <li>Publish/Subscribe——发布/订阅模式</li>
 <li>Routing——路由模式</li>
 <li>Topics——主题模式</li>
@@ -600,7 +600,7 @@ function tagCloud(where, min, max) {
 <p>登陆网页查看</p>
 </li>
 </ol>
-<h1 id="hello--world">hello  world</h1>
+<h1 id="helloworld">helloworld</h1>
 <p>用 Java 编写两个程序。发送单个消息的生产者和接收消息并打印出来的消费者。</p>
 <p>在下图中，“ P”是我们的生产者，“ C”是我们的消费者。中间的框是一个队列-RabbitMQ 代表使用者保留的消息缓冲区</p>
 <p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/26/123228234.png" alt=""></p>
@@ -725,7 +725,7 @@ function tagCloud(where, min, max) {
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div></li>
 </ul>
-<h1 id="工作队列-work-queue">工作队列 Work Queue</h1>
+<h1 id="工作队列workqueue">工作队列WorkQueue</h1>
 <p><img src="https://blogimg.ytte.top//img-jixiang/2022/03/27/093053298.png" alt=""></p>
 <p>工作队列(又称任务队列)的主要思想是避免立即执行资源密集型任务，而不得不等待它完成。我们把任务发送到队列。==当有多个工作线程时，这些工作线程将一起处理这些任务。每个消息任务只能被完整的执行一次，如果一个消费者工作线程断开连接，他正在处理的消息任务会返回队列中，并由其他消费者工作线程来执行，所以说是只能被<strong>完整</strong>的执行一次。==</p>
 <h2 id="轮循分发消息">轮循分发消息</h2>
@@ -1107,10 +1107,10 @@ function tagCloud(where, min, max) {
 </span></span></code></pre></div><p>创建出来之后长成这样:</p>
 <p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/02/153920239.png" alt=""></p>
 <h2 id="绑定bindings">绑定(bindings)</h2>
-<p>binding 是 exchange 和 queue 之间的桥梁，表示exchange 和队列进行了绑定关系。比如说下面这张图告诉我们的就是 X 与 Q1 和 Q2 进行了绑定</p>
+<p>binding 是 exchange 和 queue 之间<strong>的桥梁</strong>，表示exchange 和队列进行了绑定关系。比如说下面这张图告诉我们的就是 X 与 Q1 和 Q2 进行了绑定</p>
 <p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/02/155056828.png" alt=""></p>
 <h2 id="fanout">Fanout</h2>
-<p>Fanout 是将接收到的所有消息广播到它知道的所有队列中。系统中默认有些 exchange 类型。</p>
+<p>Fanout 是将接收到的所有消息==广播到它知==道的所有队列中。系统中默认有些 exchange 类型。</p>
 <p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/02/160333798.png" alt=""></p>
 <p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/02/160410731.png" alt=""></p>
 <p>Logs 和临时队列的绑定关系如下图:</p>
