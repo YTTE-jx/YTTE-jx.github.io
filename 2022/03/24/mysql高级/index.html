@@ -39,7 +39,7 @@
 <meta itemprop="name" content="MySql高级">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-03-24T16:49:54+08:00" />
 <meta itemprop="dateModified" content="2022-03-24T16:49:54+08:00" />
-<meta itemprop="wordCount" content="28904">
+<meta itemprop="wordCount" content="28925">
 <meta itemprop="keywords" content="mysql," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySql高级"/>
 <meta name="twitter:description" content=""/>
@@ -381,7 +381,7 @@ function tagCloud(where, min, max) {
     <a class="article-tag-link" href="/tags/mysql/"> mysql </a>
   </span>
 
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 28904 words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 28925 words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 58 minutes </span>
       </div>
     </div>
@@ -1846,8 +1846,10 @@ CREATE TMEPORARY TABLE创建的表)，由于它们只能在当前会话中可见
 <hr>
 <p>2022-4-1</p>
 <h3 id="使用举例1提交与回滚">使用举例1：提交与回滚</h3>
-<p>这里我讲解下MySQL中<code>completion._type</code>参数的作用，实际上这个参数有3种可能：</p>
-<ol>
+<p>事务执行参数completion._type：</p>
+<p>MySQL中<code>completion._type</code>参数的作用，实际上这个参数有3种可能：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#f92672">@@</span>completion_type <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><ol>
 <li>completion=0（NO CHAIN），这是<strong>默认情况</strong>。当我们执行COMMIT的时候会提交事务，在执行下一个事务时，还需要使 用START TRANSACTION或者BEGIN来开启.</li>
 <li>completion=1，这种情况下，当我们提交事务后，相当于执行了COMMIT AND CHAIN，也就是开启一个 链式事务，即当我们提交事务之后会开启一个相同隔离级别的事务。</li>
 <li>completion=2，这种情况下COMMIT=COMMIT AND RELEASE，也就是当我们提交后，会自动与服务器断 开连接。</li>
