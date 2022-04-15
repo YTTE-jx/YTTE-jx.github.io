@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        Spring - YTTE Site
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="" />
+    <meta name="generator" content="Hugo 0.95.0 with theme pure" />
+    <title>Spring - YTTE Site</title>
+    
+    
+    <link rel="stylesheet" href="https://gb.ytte.top/css/style.min.94fb31a739193798661aa396c30dad43a5124b4c7e4ca72f3ed92bd85f3fd7df.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/monokai.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Spring" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gb.ytte.top/2022/04/08/spring/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-08T10:29:44+08:00" />
+<meta property="article:modified_time" content="2022-04-08T10:29:44+08:00" />
+
+<meta itemprop="name" content="Spring">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-04-08T10:29:44+08:00" />
+<meta itemprop="dateModified" content="2022-04-08T10:29:44+08:00" />
+<meta itemprop="wordCount" content="6998">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring"/>
+<meta name="twitter:description" content=""/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/YTTE-jx" target="_blank">
+            <img class="img-circle img-rotate" src="https://gb.ytte.top/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">YTTE</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">努力奋斗，不负韶华。</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Anhui, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p> 人生无常，大肠包小肠~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://gb.ytte.top/tags/bolg/" class="tag-list-link" rel="1">bolg<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/docker/" class="tag-list-link" rel="1">docker<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/git/" class="tag-list-link" rel="1">git<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/gitee/" class="tag-list-link" rel="2">gitee<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/github/" class="tag-list-link" rel="1">github<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/hexo/" class="tag-list-link" rel="1">hexo<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/https/" class="tag-list-link" rel="1">https<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/hugo/" class="tag-list-link" rel="1">hugo<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/index/" class="tag-list-link" rel="1">index<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/java/" class="tag-list-link" rel="1">java<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/jvm/" class="tag-list-link" rel="1">jvm<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/mysql/" class="tag-list-link" rel="3">mysql<span
+               class="tag-list-count">3</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/rabbit-mq/" class="tag-list-link" rel="1">rabbit-mq<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/spring-mvc/" class="tag-list-link" rel="1">spring-mvc<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/springboot/" class="tag-list-link" rel="1">springboot<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/springcloud/" class="tag-list-link" rel="1">springcloud<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/thread/" class="tag-list-link" rel="1">thread<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/typora/" class="tag-list-link" rel="1">typora<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/zookeeper/" class="tag-list-link" rel="1">zookeeper<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E5%9F%9F%E5%90%8D/" class="tag-list-link" rel="2">域名<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E5%9F%BA%E7%A1%80/" class="tag-list-link" rel="3">基础<span
+               class="tag-list-count">3</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/" class="tag-list-link" rel="1">谷粒商城<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E9%A2%98%E7%9B%AE/" class="tag-list-link" rel="1">题目<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/bolg/" class="category-list-link">bolg</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/git/" class="category-list-link">git</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/zookeeper/" class="category-list-link">zookeeper</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="category-list-link">服务器</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%9D%82%E9%A1%B9/" class="category-list-link">杂项</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="category-list-link">消息队列</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-list-link">计算机网络</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E9%A1%B9%E7%9B%AE/" class="category-list-link">项目</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/08/spring/" class="title">Spring</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-08 10:29:44 &#43;0800 CST" itemprop="datePublished">2022-04-08</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/05/spring-mvc/" class="title">Spring Mvc</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-05 16:02:39 &#43;0800 CST" itemprop="datePublished">2022-04-05</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/03/31/mysql-exercises-and-summaries/" class="title">Mysql Exercises and Summaries</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-03-31 21:49:37 &#43;0800 CST" itemprop="datePublished">2022-03-31</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/03/24/mysql%E5%9F%BA%E7%A1%80/" class="title">MySql基础</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-03-24 16:49:54 &#43;0800 CST" itemprop="datePublished">2022-03-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/03/24/mysql%E9%AB%98%E7%BA%A7/" class="title">MySql高级</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-03-24 16:49:54 &#43;0800 CST" itemprop="datePublished">2022-03-24</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/04/08/spring/"
+    >Spring</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://gb.ytte.top/2022/04/08/spring/" class="article-date">
+  <time datetime="2022-04-08 10:29:44 &#43;0800 CST" itemprop="datePublished">2022-04-08</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/java/"> java </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/java/"> java </a>
+  </span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 6998 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 14 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="iocdi">IOC、DI</h1>
+<p>xml====》<a href="https://www.cnblogs.com/dubhlinn/p/10662763.html">xml配置文件注册bean类</a></p>
+<p>注解====》 <a href="https://blog.csdn.net/MobiusStrip/article/details/110211808?ops_request_misc=%7B%22request%5Fid%22%3A%22164602448316780357219504%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=164602448316780357219504&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-110211808.pc_search_result_cache&amp;utm_term=spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91&amp;spm=1018.2226.3001.4187">注解开发-CSDN博客</a></p>
+<ul>
+<li>
+<p>IOC(Inversion of Control)：反转控制。由主动的 new 资源变为被动的接受资源</p>
+<p>即组件以一些预先定义好的方式(例如：setter 方法)接受来自于容器的资源注入。</p>
+</li>
+<li>
+<p>DI(Dependency Injection)：依赖注入。</p>
+</li>
+</ul>
+<h2 id="ioc-容器和-bean-的配置">IOC 容器和 Bean 的配置</h2>
+<p>链接 2.1====》笔记 <a href="https://kdocs.cn/l/sbXi4zd44O2S">【金山文档】 尚硅谷 IOC和bean的配置</a></p>
+<h2 id="resource-与autowired-的-区别">@Resource 与@Autowired 的 区别</h2>
+<ul>
+<li>@Resource 默认是按照变量名称来装配注入的，只有当找不到与名称匹配的 bean 才会按照类型来装配注入；</li>
+<li>@Autowired 默认是按照类型装配注入的，如果想按照变量名称来转配注入，则需要结合@Qualifier 一起使用</li>
+</ul>
+<p>todo 动态注册bean</p>
+<h2 id="泛型依赖注入">泛型依赖注入</h2>
+<p>链接 2.2====》 <a href="https://www.bilibili.com/video/BV1d4411g7tv?p=57&amp;t=28.1">视频57~59——尚硅谷</a></p>
+<p><a href="https://www.bilibili.com/video/BV1d4411g7tv?p=57&amp;t=28.1">不懂就点击看视频</a></p>
+<h3 id="使用场景todo">使用场景：todo</h3>
+<h3 id="解释">解释：</h3>
+<ul>
+<li>
+<p>单继承，自然很容易确定子类类型。</p>
+</li>
+<li>
+<p><strong>Spring中如果有继承且有泛型，Spring会通过泛型来确定子类的类型</strong>。</p>
+</li>
+<li>
+<p><strong>两个子类之间的依赖关系不需要在子类中去声明，而是在父类中进行了声明，而依赖的纽带就是 泛型类型，必须是相同的父类泛型类型才具有依赖关系。</strong></p>
+<p>类似如图</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/223556111.png" alt=""></p>
+</li>
+</ul>
+<h4 id="举例">举例：</h4>
+<p>我们创建三个Dao，BookDao和UserDao都继承BaseDao，并且二者都有一个save方法，各自的Service都调用各自的Dao的Save方法。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/204921289.png" alt=""></p>
+<p>Dao：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/204948968.png" alt=""></p>
+<p>Service：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/205010841.png" alt=""></p>
+<p>Test：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/205031254.png" alt=""></p>
+<p>这样必然是能执行成功的，但是很繁琐，有形式重复代码。</p>
+<p>现在使用泛型依赖注入。</p>
+<p>将BookService 和UserService都清空，都继承BaseService，代码都放在BaseService中。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/205202287.png" alt=""></p>
+<p>这样就成功的进行了泛型依赖注入，</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/205243554.png" alt=""></p>
+<p>值得注意的是，BaseService不需要注入容器中；因为BookService 和UserService继承了BaseService，便可以时候用器save方法和@autowired  （<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=57&amp;t=608.8">不懂就点击○演示</a> ）</p>
+<p>原理：
+为什么BookService 能找到BaseDao——<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=58&amp;t=46.5">原理</a></p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/205355633.png" alt=""></p>
+<p>Spring中如果有继承且有泛型，Spring会通过泛型来确定子类的类型</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/205419754.png" alt=""></p>
+<h1 id="aop">AOP</h1>
+<h2 id="什么是aop">什么是AOP</h2>
+<p>面向切面编程：</p>
+<p>日常中权限校验、日志记录、统计等，这些代码会散落穿插在各个业务逻辑中，非常冗余且不利于维护。而且每次新的业务都需要新添加日志记录等，太繁琐，造成了高耦合低内聚。</p>
+<p>AOP将权限校验、日志记录等非业务代码完全提取出来，与业务代码分离，并寻找节点切入业务代码中：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/104207368.png" alt=""></p>
+<h2 id="aop要做三类事">AOP要做三类事：</h2>
+<ul>
+<li><strong>在哪里切入</strong>，也就是权限校验等非业务操作在哪些业务代码中执行。</li>
+<li><strong>在什么时候切入</strong>，是业务代码执行前还是执行后。</li>
+<li><strong>切入后做什么事</strong>，比如做权限校验、日志记录等。</li>
+</ul>
+<p>AOP的体系可以梳理为下图：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/105006452.png" alt=""></p>
+<h2 id="相关名称和概念">相关名称和概念</h2>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/105348818.png" alt=""></p>
+<p>切点表达式：切入点就相当于数据库中的数据，切入点表达式就相当于与sql语句。</p>
+<ul>
+<li>
+<p><strong>横切关注点</strong>：从每个方法中抽取出来的同一类非核心业务。</p>
+</li>
+<li>
+<p><strong>切面(Aspect)</strong>：封装横切关注点信息的类，每个关注点体现为一个通知方法。</p>
+</li>
+<li>
+<p><strong>通知(Advice)</strong>：切面的各个具体工作</p>
+</li>
+<li>
+<p><strong>目标(Target)</strong>：被通知的对象</p>
+</li>
+<li>
+<p><strong>代理(Proxy)</strong>：目标对象加了通知之后的代理对象</p>
+</li>
+<li>
+<p><strong>连接点(Joinpoint)</strong>：<strong>横切关注点在程序代码中的具体体现，对应程序执行的某个特定位置</strong>。例如：类某个方法调用前、调用后、方法捕获到异常后等。在应用程序中可以使用横纵两个坐标来定位一个具体的连接点如下图</p>
+</li>
+<li>
+<p><strong>切入点(pointcut)</strong>：<strong>真正使用通知方法的连接点</strong>。每个类的方法中都包含多个连接点。如果把连接点看作数据库中的记录，那么切入点就是查询条件——AOP可以通过切入点定位到特定的连接点。切点通过org.springframework.aop.Pointcut 接口进行描述，它使用类和方法作为连接点的查询条件。</p>
+</li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/105601637.png" alt=""></p>
+<h2 id="相关包依赖配置">相关包依赖配置</h2>
+<h3 id="手动">手动</h3>
+<p>基础包：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/110659983.png" alt=""></p>
+<p>面向切面编程包：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/110638982.png" alt=""></p>
+<h3 id="maven">maven</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-aop<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><h3 id="在springboot配置类中加enableaspectjautoproxy">在Springboot配置类中加@EnableAspectJAutoProxy</h3>
+<p>加不加都可。</p>
+<blockquote>
+<p>todo 看看原码配置与否的区别</p>
+</blockquote>
+<h2 id="注解">注解</h2>
+<h3 id="通知注解顺序">通知注解顺序</h3>
+<ol>
+<li>@Before</li>
+<li>@After</li>
+<li>@AfterReturning</li>
+<li>@AfterThrowing</li>
+<li>@Around</li>
+</ol>
+<h3 id="pointcut">@Pointcut</h3>
+<p><code>@Pointcut</code> 注解，用来定义一个切点。其他通知注解，可以直接使用pointcut =“pointCut()”</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Aspect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogAspectHandler</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 定义一个切面，拦截 com.ytte.controller 包和子包下的所有方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Pointcut</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.ytte.controller..*.*(..))&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pointCut</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>@Pointcut 注解指定一个切点，定义需要拦截的东西，这里介绍两个常用的表达式：</p>
+<ul>
+<li>
+<p><code>execution()</code>，</p>
+</li>
+<li>
+<p><code>annotation()</code>。</p>
+</li>
+</ul>
+<p><strong>execution表达式：</strong></p>
+<ul>
+<li>切入点表达式的语法格式</li>
+</ul>
+<p>execution([权限修饰符（<strong>可写可不写</strong>）] [返回值类型] [简单类名/全类名] [方法名] ([参数列表]))</p>
+<ul>
+<li>举例说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>execution(* com.ytte.spring.ArithmeticCalculator.*(..))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含义</td>
+<td>ArithmeticCalculator接口中声明的所有方法。<!-- raw HTML omitted -->第一个 “ * ”代表任意修饰符及任意返回值。<!-- raw HTML omitted -->第二个 “ * ”代表任意方法。<!-- raw HTML omitted -->“..”匹配任意数量、任意类型的参数。<!-- raw HTML omitted -->若目标类、接口与该切面类在同一个包中可以省略包名。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>execution(<strong>public</strong> * ArithmeticCalculator.*(..))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含义</td>
+<td>ArithmeticCalculator接口的所有公有方法</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>execution(public <strong>double</strong> ArithmeticCalculator.*(..))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含义</td>
+<td>ArithmeticCalculator接口中返回double类型数值的方法</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>execution(public double ArithmeticCalculator.*(<strong>double</strong>, ..))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含义</td>
+<td>第一个参数为double类型的方法。“..” 匹配任意数量、任意类型的参数。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>execution(public double ArithmeticCalculator.*(<strong>double</strong>, <strong>double</strong>))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含义</td>
+<td>参数类型为double，double类型的方法</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在AspectJ中，切入点表达式可以通过 “&amp;&amp;”、“||”、“!”等操作符结合起来。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>execution (* <em>.add(int,..)) <strong>||</strong> execution(</em> *.sub(int,..))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>含义</td>
+<td>任意类中第一个参数为int类型的add方法或sub方法</td>
+</tr>
+</tbody>
+</table>
+<p><strong>annotation() 表达式：</strong></p>
+<p><code>annotation()</code> 方式是针对某个注解来定义切点，比如我们对具有 @PostMapping 注解的方法做切面，可以如下定义切面：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Pointcut</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;@annotation(org.springframework.web.bind.annotation.PostMapping)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">annotationPointcut</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><p>然后使用该切面的话，就会切入注解是 <code>@PostMapping</code> 的所有方法。这种方式很适合处理 <code>@GetMapping、@PostMapping、@DeleteMapping</code>不同注解有各种特定处理逻辑的场景。</p>
+<p>针对自定义注解来定义切面。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Pointcut</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;@annotation(com.example.demo.PermissionsAnnotation)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">permissionCheck</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h3 id="around">@Around</h3>
+<p><strong>Around增强处理有以下特点</strong>：</p>
+<ul>
+<li>
+<p>@Around可以自由选择增强动作与目标方法的执行顺序，可以在增强动作前后，甚至过程中执行目标方法。</p>
+<ul>
+<li>当定义一个Around增强处理方法时，该方法的第一个形参必须是 ProceedingJoinPoint 类型（至少一个形参）。（ProceedingJoinPoint是JoinPoint子类）（注意是大写的P）</li>
+<li>在增强处理方法体内调用ProceedingJoinPoint参数的procedd()方法才会执行目标方法。</li>
+</ul>
+</li>
+<li>
+<p>@Around可以改变执行目标方法的参数值，也可以改变执行目标方法之后的返回值。</p>
+<ul>
+<li>调用ProceedingJoinPoint的proceed方法时，还可以传入一个Object<input disabled="" type="checkbox"> 对象，该数组中的值将被传入目标方法作为实参。</li>
+</ul>
+<blockquote>
+<p>如果传入的Object[ ]数组长度与目标方法所需要的参数个数不相等，或者Object[ ]数组元素与目标方法所需参数的类型不匹配，程序就会出现异常。</p>
+</blockquote>
+</li>
+</ul>
+<p>**@Around功能虽然强大，但通常需要在线程安全的环境下使用。因此，如果使用普通的Before、AfterReturning就能解决的问题，就没有必要使用Around。**如果需要目标方法执行之前和之后共享某种状态数据，则应该考虑使用Around。</p>
+<p><strong>使用场景：需要使用增强处理阻止目标的执行，或需要改变目标方法的返回值时</strong>，则只能使用Around增强处理了。</p>
+<h4 id="例子">例子</h4>
+<ul>
+<li>
+<p>自定义注解类：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Target</span><span style="color:#f92672">(</span>ElementType<span style="color:#f92672">.</span><span style="color:#a6e22e">METHOD</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Retention</span><span style="color:#f92672">(</span>RetentionPolicy<span style="color:#f92672">.</span><span style="color:#a6e22e">RUNTIME</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Documented</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@interface</span> PermissionAnnotation<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>定义接口类：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.alibaba.fastjson.JSON<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.alibaba.fastjson.JSONObject<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.*<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/permission&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/check&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PermissionsAnnotation</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> JSONObject <span style="color:#a6e22e">getGroupList</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> JSONObject request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> JSON<span style="color:#f92672">.</span><span style="color:#a6e22e">parseObject</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{\&#34;message\&#34;:\&#34;SUCCESS\&#34;,\&#34;code\&#34;:200,\&#34;data\&#34;:&#34;</span> <span style="color:#f92672">+</span> request <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>唯一切面类：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.alibaba.fastjson.JSONObject<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.aspectj.lang.ProceedingJoinPoint<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.aspectj.lang.annotation.Around<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.aspectj.lang.annotation.Aspect<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.aspectj.lang.annotation.Pointcut<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.core.annotation.Order<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Aspect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Order</span><span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PermissionAdvice</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Pointcut</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;@annotation(com.example.demo.PermissionsAnnotation)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">permissionCheck</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Around</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;permissionCheck()&#34;</span><span style="color:#f92672">)</span> <span style="color:#75715e">//（注意是大写的P）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">permissionCheck</span><span style="color:#f92672">(</span>ProceedingJoinPoint joinPoint<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Throwable <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;===================开始增强处理===================&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//获取请求参数，详见接口类
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Object<span style="color:#f92672">[]</span> objects <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getArgs</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        Long id <span style="color:#f92672">=</span> <span style="color:#f92672">((</span>JSONObject<span style="color:#f92672">)</span> objects<span style="color:#f92672">[</span>0<span style="color:#f92672">]).</span><span style="color:#a6e22e">getLong</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        String name <span style="color:#f92672">=</span> <span style="color:#f92672">((</span>JSONObject<span style="color:#f92672">)</span> objects<span style="color:#f92672">[</span>0<span style="color:#f92672">]).</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id1-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#34;</span> <span style="color:#f92672">+</span> id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name1-&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&#34;</span> <span style="color:#f92672">+</span> name<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 修改入参
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        JSONObject object <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JSONObject<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        object<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">,</span> 8<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        object<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;lisi&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        objects<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> object<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 将修改后的参数传入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">proceed</span><span style="color:#f92672">(</span>objects<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>结果：</p>
+<p>传入参数：<code>{&quot;id&quot;:-8,&quot;name&quot;:&quot;--lisi &quot;}</code>，响应结果表明：<code>@Around</code>截取到了接口的入参，并使接口返回了切面类中的结果。可看出对返回值进行了更改，。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/130546088.png" alt=""></p>
+</li>
+</ul>
+<h3 id="before">@Before</h3>
+<p><strong>注解指定的方法在切面切入目标方法之前执行</strong>，可以做一些 <code>Log</code> 处理，也可以做一些信息的统计，比如获取用户的请求 <code>URL</code> 以及用户的 <code>IP</code> 地址等等。</p>
+<p><code>JointPoint</code> 可以用来获取一个签名，利用签名可以获取请求的包名、方法名，包括参数（通过<code>joinPoint.getArgs()</code> 获取）等。</p>
+<p>例如下面代码：</p>
+<blockquote>
+<p>pointCut()为1中定义的，这里是使用重复的切入点表达式<a href="#@pointcut">@Pointcut</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> lombok.extern.slf4j.Slf4j<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.context.request.RequestContextHolder<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.context.request.ServletRequestAttributes<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.servlet.http.HttpServletRequest<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Aspect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Slf4j</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogAspectHandler</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 在上面定义的切面方法之前执行该方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param joinPoint jointPoint
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Before</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;pointCut()&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doBefore</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;====doBefore方法进入了====&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获取签名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Signature signature <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getSignature</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获取切入的全限定类名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        String declaringTypeName <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaringTypeName</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获取即将执行的方法名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        String funcName <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;即将执行方法为: {}，属于{}包&#34;</span><span style="color:#f92672">,</span> funcName<span style="color:#f92672">,</span> declaringTypeName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 也可以用来记录一些信息，比如获取请求的 URL 和 IP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ServletRequestAttributes attributes <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ServletRequestAttributes<span style="color:#f92672">)</span> RequestContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">getRequestAttributes</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        HttpServletRequest request <span style="color:#f92672">=</span> attributes<span style="color:#f92672">.</span><span style="color:#a6e22e">getRequest</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获取请求 URL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        String url <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getRequestURL</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获取请求 IP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        String ip <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getRemoteAddr</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;用户请求的url为：{}，ip地址为：{}&#34;</span><span style="color:#f92672">,</span> url<span style="color:#f92672">,</span> ip<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="after">@After</h3>
+<p><code>@After</code> 注解和 <code>@Before</code> 注解相对应，指定的方法在切面切入目标方法之后执行，也可以做一些完成某方法之后的 Log 处理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Aspect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Slf4j</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogAspectHandler</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 定义一个切面，拦截 com.mutest.controller 包下的所有方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Pointcut</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.mutest.controller..*.*(..))&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pointCut</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 在上面定义的切面方法之后执行该方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param joinPoint jointPoint
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@After</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;pointCut()&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doAfter</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;==== doAfter 方法进入了====&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        Signature signature <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getSignature</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        String method <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;方法{}已经执行完&#34;</span><span style="color:#f92672">,</span> method<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>写个 Controller 测试一下执行结果，新建一个 AopController 如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/aop&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AopController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{name}&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">testAop</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>启动项目，在浏览器中访问 localhost:8080/aop/name，观察一下控制台的输出信息：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">====</span>doBefore 方法进入了<span style="color:#f92672">====</span>  
+</span></span><span style="display:flex;"><span>即将执行方法为: testAop<span style="color:#960050;background-color:#1e0010">，</span>属于com<span style="color:#f92672">.</span><span style="color:#a6e22e">itcodai</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mutest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">AopController包</span>  
+</span></span><span style="display:flex;"><span>用户请求的 url 为<span style="color:#960050;background-color:#1e0010">：</span>http<span style="color:#f92672">:</span><span style="color:#75715e">//localhost:8080/aop/name，ip地址为：0:0:0:0:0:0:0:1  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">====</span> doAfter 方法进入了<span style="color:#f92672">====</span>  
+</span></span><span style="display:flex;"><span>方法 testAop 已经执行完
+</span></span></code></pre></div><h3 id="afterreturning">@AfterReturning</h3>
+<p><code>@AfterReturning</code> 注解和 <code>@After</code> 有些类似，区别在于 <code>@AfterReturning</code> 注解可以用来捕获切入方法执行完之后的返回值，对返回值进行业务逻辑上的增强处理(<strong>AfterReturning切面类拿到的是原方法的return 而不是原方法的参数，不能影响更改原方法的返回值ProceedingJoinPoint is only supported for around advice</strong>)，例如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Aspect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Slf4j</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogAspectHandler</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param joinPoint joinPoint
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param result result
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@AfterReturning</span><span style="color:#f92672">(</span>pointcut <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pointCut()&#34;</span><span style="color:#f92672">,</span> returning <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;result&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doAfterReturning</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">,</span> Object result<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Signature signature <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getSignature</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        String classMethod <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;方法{}执行完毕，返回参数为：{}&#34;</span><span style="color:#f92672">,</span> classMethod<span style="color:#f92672">,</span> result<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 实际项目中可以根据业务做具体的返回值增强
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;对返回参数进行业务上的增强：{}&#34;</span><span style="color:#f92672">,</span> result <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;增强版&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>需要注意的是，在 @AfterReturning 注解 中，<strong>属性 returning 的值必须要和参数保持一致</strong>，否则会检测不到。<strong>该方法中的第二个入参就是被切方法的返回值</strong>，在 doAfterReturning 方法中可以对返回值进行增强，可以根据业务需要做相应的封装。测试一下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>方法 testAop 执行完毕<span style="color:#960050;background-color:#1e0010">，</span>返回参数为<span style="color:#960050;background-color:#1e0010">：</span>Hello CSDN  
+</span></span><span style="display:flex;"><span>对返回参数进行业务上的增强<span style="color:#960050;background-color:#1e0010">：</span>Hello CSDN 增强版
+</span></span></code></pre></div><h3 id="afterthrowing">@AfterThrowing</h3>
+<p>当方法抛出异常时，会进入 <code>@AfterThrowing</code> 注解的方法中执行。要注意的<strong>是 <code>throwing</code> 属性的值必须要和参数一致</strong>，否则会报错。<strong>该方法中的第二个入参即为抛出的异常</strong>。<strong>异常接受类型一定要Exception，写子类写小了AOP接受不到。</strong>
+<strong>返回值也是如此，写Object</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Aspect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Slf4j</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogAspectHandler</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * 在上面定义的切面方法执行抛异常时，执行该方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param joinPoint jointPoint
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param ex ex
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@AfterThrowing</span><span style="color:#f92672">(</span>pointcut <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pointCut()&#34;</span><span style="color:#f92672">,</span> throwing <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ex&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">afterThrowing</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">,</span> Exception ex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Signature signature <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getSignature</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        String method <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 处理异常的逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;执行方法{}出错，异常为：{}&#34;</span><span style="color:#f92672">,</span> method<span style="color:#f92672">,</span> ex<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="order">@Order</h3>
+<ul>
+<li>
+<p>在同一个连接点上应用不止一个切面时，除非明确指定，否则它们的优先级是不确定的。</p>
+</li>
+<li>
+<p>切面的优先级可以通过实现Ordered接口或利用@Order注解指定。</p>
+</li>
+<li>
+<p>实现Ordered接口，getOrder()方法的返回值越小，优先级越高。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/154722426.png" alt=""></p>
+</li>
+</ul>
+<h3 id="注意事项">注意事项</h3>
+<h4 id="afterreturning与around的区别">AfterReturning与Around的区别</h4>
+<ul>
+<li>
+<p>ProceedingJoinPoint的proceed方法，只能用在Around上，所以AfterReturning无法改变原方法的返回值</p>
+</li>
+<li>
+<p>Around拿到的是原方法的参数，通过对参数的更改，来改变返回值；而AfterReturning拿到的是原方法的return</p>
+</li>
+</ul>
+<h4 id="joinpoint获取目标方法的信息---导包注意是大写的p">JoinPoint获取目标方法的信息   导包：（注意是大写的P）</h4>
+<p>视频 p72 ———— <a href="https://www.bilibili.com/video/BV1d4411g7tv?p=72&amp;t=8.1">尚硅谷</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.aspectj.lang.JoinPoint<span style="color:#f92672">;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object<span style="color:#f92672">[]</span> objects <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getArgs</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div><ul>
+<li>
+<p>获取方法签名（通过签名可以你获得方法所有信息）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> Signature signature <span style="color:#f92672">=</span> joinPoint<span style="color:#f92672">.</span><span style="color:#a6e22e">getSignature</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
+<li>
+<p>获取方法名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> String funcName <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
+<li>
+<p>获取切入的全限定类名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String declaringTypeName <span style="color:#f92672">=</span> signature<span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaringTypeName</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="spring对通知方法的约束">Spring对通知方法的约束</h4>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/08/155702744.png" alt=""></p>
+<p><strong>补充：异常接受类型一定要Exception，写子类写小了AOP接受不到。返回值也是如此，写Object</strong></p>
+<h1 id="动态代理">动态代理：</h1>
+<p>aop 实质就是用了 jdk 的动态代理（需要对象实现了接口）</p>
+<p>代理设计模式的原理：**使用一个代理将对象包装起来，然后用该代理对象取代原始对象。**任何对原始对象的调用都要通过代理。代理对象决定是否以及何时将方法调用转到原始对象上。</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/191556716.png" alt=""></p>
+<p><a href="https://www.bilibili.com/video/BV1d4411g7tv?p=62">不懂就点击○代码在这里</a></p>
+<p>作用：</p>
+<ul>
+<li>
+<p>动态代理主要<strong>用来做方法的增强</strong>，让你可以在不修改源码的情况下，增强一些方法，在方法执行前后做任何你想做的事情（甚至根本不去执行这个方法）。因为在InvocationHandler的invoke方法中，你可以直接获取正在调用方法对应的Method对象，具体应用的话，比如可以添加调用日志，做事务控制等。</p>
+</li>
+<li>
+<p>还有一个有趣的作用是<strong>可以用作远程调用</strong>。比如现在有Java接口，这个接口的实现部署在其它服务器上，在编写客户端代码的时候，没办法直接调用接口方法，因为接口是不能直接生成对象的，这个时候就可以考虑代理模式（动态代理）了，通过Proxy.newProxyInstance代理一个该接口对应的InvocationHandler对象，然后在InvocationHandler的invoke方法内封装通讯细节就可以了。具体的应用，最经典的当然是Java标准库的RMI，其它比如hessian，各种webservice框架中的远程调用，大致都是这么实现的。</p>
+</li>
+<li>
+<p>Proxy类的代码量被固定下来，不会因为业务的逐渐庞大而庞大。</p>
+</li>
+<li>
+<p>可以实现AOP编程，实际上静态代理也可以实现，总的来说，AOP可以算作是代理模式的一个典型应用。</p>
+</li>
+<li>
+<p><strong>解耦</strong>，通过参数就可以判断真实类，不需要事先实例化，更加灵活多变。</p>
+</li>
+</ul>
+<p>两个很大的问题（日常不使用动态代理的原因）：</p>
+<ul>
+<li>
+<p><strong>代理对象和被代理对象的关联就在于实现了同一个接口，一旦被代理对象没有实现接口就不能进行动态代理（cglib 可以为没有接口的对象创建代理对象）</strong></p>
+</li>
+<li>
+<p><strong>写着麻烦</strong>，每有一个被代理对象就需要写一个代理类</p>
+</li>
+</ul>
+<p>因此出现了 AOP</p>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li><strong>代理对象调用的方法也要是 public 修饰符</strong>，否则方法中获取不到注入的 bean，会报空指针错误。</li>
+<li>AopContext.currentProxy ()可以获取到本类的代理对象</li>
+</ul>
+</blockquote>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/191657928.png" alt=""></p>
+<h1 id="事务控制">事务控制</h1>
+<blockquote>
+<p>链接 ====》 <a href="https://www.bilibili.com/video/BV1d4411g7tv?p=94">视频94——尚硅谷</a></p>
+<p>链接 ====》<a href="https://blog.csdn.net/weixin_44159306/article/details/90484651">spring注解开发-事务管理</a></p>
+<p>链接 ====》[【金山文档】 <a href="https://kdocs.cn/l/sh2FcRNhN7gH">尚硅谷]第08章 声明式事务</a></p>
+</blockquote>
+<h2 id="事务控制基于xml">事务控制基于xml</h2>
+<blockquote>
+<p>链接 ====》<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=115&amp;spm_id_from=pageDriver">视频115——尚硅谷</a></p>
+</blockquote>
+<h2 id="transactional">@Transactional</h2>
+<blockquote>
+<p>链接 ====》 <a href="https://blog.csdn.net/fanxb92/article/details/81296005?spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-3.pc_relevant_paycolumn_v3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-3.pc_relevant_paycolumn_v3&amp;utm_relevant_index=6">@Transactional注解详解-CSDN博客</a></p>
+</blockquote>
+<h3 id="几种属性">几种属性</h3>
+<h4 id="transactionaltimeout">@Transactional(timeout=?)</h4>
+<p>设置事务处理超时时间为？秒，超时则会报异常 TransactionTimedOutException</p>
+<h4 id="transactionalreadonlytrue">@Transactional(readOnly=true)</h4>
+<p>默认是 false，使用场景：方法内都是查询方法，使用 readOnly 可以优化事务，提高运行速度。 如果方法内不全是查询方法使用 readOnly 属性则会报错：TransientDataAccessResourceException。</p>
+<h4 id="transactionalnorollbackforarithmeticexceptionclass">@Transactional(noRollbackFor={ArithmeticException.class})</h4>
+<p>noRollbackFor：设置哪些异常出现可以不回滚</p>
+<p>rollbackFor：设置哪些异常出现必须回滚</p>
+<ul>
+<li>
+<p>运行时异常会回滚</p>
+</li>
+<li>
+<p>编译期异常事务不会回滚</p>
+</li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/192753379.png" alt=""></p>
+<h2 id="隔离级别">隔离级别</h2>
+<p>链接 ====》 <a href="https://www.bilibili.com/video/BV1d4411g7tv?p=104&amp;spm_id_from=pageDriver">视频104——尚硅谷</a></p>
+<h3 id="概念">概念：</h3>
+<ul>
+<li>
+<p>脏读（不允许发生）：（<strong>读取到了没有提交的数据</strong>）</p>
+<p><strong>后者读到前者修改后的值后，前者将值回滚了，后者读到了没有意义数据。</strong></p>
+</li>
+<li>
+<p>不可重复读：</p>
+<p><strong>在一个事务中多次读取同一个数据时，结果出现不一致。</strong></p>
+</li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/195512576.png" alt=""></p>
+<ul>
+<li>
+<p>幻读（<strong>被他人插入了新数据</strong>）：</p>
+<p><strong>在一个事务中使用相同的 SQL 两次读取，第二次读取到了其他事务新插入的行。</strong></p>
+</li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/195649805.png" alt=""></p>
+<p>各个隔离级别解决并发问题的能力   和   各种数据库产品对事务隔离级别的支持程度见下表</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+<th>Oracle</th>
+<th>MySQL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>READ UNCOMMITTED <strong>读未提交</strong></td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>READ COMMITTED <strong>读已提交</strong></td>
+<td>无</td>
+<td>有</td>
+<td>有</td>
+<td>√(默认)</td>
+<td>√</td>
+</tr>
+<tr>
+<td>REPEATABLE READ <strong>可重复读</strong></td>
+<td>无</td>
+<td>无</td>
+<td>有</td>
+<td>×</td>
+<td>√(默认)</td>
+</tr>
+<tr>
+<td>SERIALIZABLE <strong>串行化</strong></td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h2 id="事务的传播行为">事务的传播行为</h2>
+<p>视频====》<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=111&amp;spm_id_from=pageDriver">视频110~112——尚硅谷</a></p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/200352826.png" alt=""></p>
+<ul>
+<li><strong>默认值是第一种</strong> <strong>required 和require_new</strong></li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/200451397.png" alt=""></p>
+<p>例子加深印象====》<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=112&amp;t=736.7">视频112——尚硅谷</a></p>
+<ul>
+<li>
+<p><strong>required</strong>：事务的属性继承于大事务</p>
+<p>视频====》<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=113">视频113——尚硅谷</a></p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/200548179.png" alt=""></p>
+</li>
+<li>
+<p><strong>注意：在@Transactional 注解的方法中，再调用本类中的其他方法 method2 时，那么 method2 方法上的@Transactional 注解是不！会！生！效！的！想要其生效，需要使用代理对象去调用本类方法</strong></p>
+<!-- raw HTML omitted -->
+<p>原因：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/09/200831983.png" alt=""></p>
+</li>
+</ul>
+<h1 id="jdbc">Jdbc</h1>
+<p>链接 5.1====》<a href="https://kdocs.cn/l/ss6cmDFWTyGw">【金山文档】 尚硅谷 第07章 JdbcTemplate</a></p>
+<p>链接 5.2====》<a href="https://www.bilibili.com/video/BV1d4411g7tv?p=84">视频84——尚硅谷</a></p>
+<p>todo</p>
+<h1 id="原码分析">原码分析</h1>
+<p>链接 6.1====》 <a href="https://www.bilibili.com/video/BV1d4411g7tv?p=96">视频96——尚硅谷</a></p>
+<p>todo</p>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://blog.csdn.net/mu_wind/article/details/102758005">切面AOP——云深i不知处-CSDN博客</a></li>
+<li><a href="https://www.kdocs.cn/l/st8pkRdlS4yc">尚硅谷_第05章 AOP细节 (kdocs.cn)</a></li>
+<li><a href="https://www.kdocs.cn/l/svU6JJMWErMu">尚硅谷_第04章 AOP概述 (kdocs.cn)</a></li>
+<li><a href="https://www.cnblogs.com/dubhlinn/p/10662763.html">xml配置文件注册bean类</a></li>
+<li><a href="https://blog.csdn.net/MobiusStrip/article/details/110211808?ops_request_misc=%7B%22request%5Fid%22%3A%22164602448316780357219504%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=164602448316780357219504&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-110211808.pc_search_result_cache&amp;utm_term=spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91&amp;spm=1018.2226.3001.4187">注解开发-CSDN博客</a></li>
+</ol>
+<blockquote>
+<p>搞定！</p>
+<p>人生无常，大肠包小肠！</p>
+<p>继续学习吧！</p>
+</blockquote>
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://gb.ytte.top/2022/04/08/spring/" title="Spring" target="_blank" rel="external">https://gb.ytte.top/2022/04/08/spring/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/YTTE-jx" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://gb.ytte.top/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/YTTE-jx" target="_blank"><span class="text-dark">YTTE</span><small class="ml-1x">努力奋斗，不负韶华。</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://gb.ytte.top/2022/04/05/spring-mvc/" title="Spring Mvc"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/YTTE-jx" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://gb.ytte.top/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2022  -
+    2022
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+    
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://gb.ytte.top/js/application.min.e720b935330b2a176cfb4b8bd9a6cc632caf6b752f94e87c62152a9557ff6d15.js"></script>
+<script src="https://gb.ytte.top/js/plugin.min.334875d4d4a72afb866e446df61b5f4bf1f0a516d1303166f52f7804d17ef3ab.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/gb.ytte.top\/',
+            CONTENT_URL: 'https:\/\/gb.ytte.top\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://gb.ytte.top/js/insight.min.759e5002714e12761afcd512f103d39c86573165db51972dd3b24df6eddf238ed3e3e85c1988e96cba09419d1deccdeb68c15284f2c3d03049fad53c11774524.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -3,13 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gb.ytte.top/2022/04/08/</loc>
-    <lastmod>2022-04-08T10:29:44+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://gb.ytte.top/categories/</loc>
     <lastmod>2022-04-08T10:29:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,6 +25,13 @@
   
   <url>
     <loc>https://gb.ytte.top/posts/</loc>
+    <lastmod>2022-04-08T10:29:44+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://gb.ytte.top/2022/04/08/spring/</loc>
     <lastmod>2022-04-08T10:29:44+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
