@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        面试题 - YTTE Site
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="" />
+    <meta name="generator" content="Hugo 0.95.0 with theme pure" />
+    <title>面试题 - YTTE Site</title>
+    
+    
+    <link rel="stylesheet" href="https://gb.ytte.top/css/style.min.94fb31a739193798661aa396c30dad43a5124b4c7e4ca72f3ed92bd85f3fd7df.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/monokai.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="面试题" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gb.ytte.top/2022/04/15/%E9%9D%A2%E8%AF%95%E9%A2%98/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-15T16:30:37+08:00" />
+<meta property="article:modified_time" content="2022-04-15T16:30:37+08:00" />
+
+<meta itemprop="name" content="面试题">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-04-15T16:30:37+08:00" />
+<meta itemprop="dateModified" content="2022-04-15T16:30:37+08:00" />
+<meta itemprop="wordCount" content="12036">
+<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="面试题"/>
+<meta name="twitter:description" content=""/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/YTTE-jx" target="_blank">
+            <img class="img-circle img-rotate" src="https://gb.ytte.top/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">YTTE</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">努力奋斗，不负韶华。</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Anhui, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p> 人生无常，大肠包小肠~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://gb.ytte.top/tags/bolg/" class="tag-list-link" rel="1">bolg<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/docker/" class="tag-list-link" rel="1">docker<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/git/" class="tag-list-link" rel="1">git<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/gitee/" class="tag-list-link" rel="2">gitee<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/github/" class="tag-list-link" rel="1">github<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/hexo/" class="tag-list-link" rel="1">hexo<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/https/" class="tag-list-link" rel="1">https<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/hugo/" class="tag-list-link" rel="1">hugo<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/index/" class="tag-list-link" rel="1">index<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/java/" class="tag-list-link" rel="2">java<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/jvm/" class="tag-list-link" rel="1">jvm<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/mysql/" class="tag-list-link" rel="3">mysql<span
+               class="tag-list-count">3</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/rabbit-mq/" class="tag-list-link" rel="1">rabbit-mq<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/spring-mvc/" class="tag-list-link" rel="1">spring-mvc<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/springboot/" class="tag-list-link" rel="1">springboot<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/springcloud/" class="tag-list-link" rel="1">springcloud<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/thread/" class="tag-list-link" rel="1">thread<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/typora/" class="tag-list-link" rel="1">typora<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/zookeeper/" class="tag-list-link" rel="1">zookeeper<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E5%9F%9F%E5%90%8D/" class="tag-list-link" rel="2">域名<span
+               class="tag-list-count">2</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E5%9F%BA%E7%A1%80/" class="tag-list-link" rel="3">基础<span
+               class="tag-list-count">3</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/" class="tag-list-link" rel="1">谷粒商城<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://gb.ytte.top/tags/%E9%A2%98%E7%9B%AE/" class="tag-list-link" rel="1">题目<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/bolg/" class="category-list-link">bolg</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/git/" class="category-list-link">git</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/java/" class="category-list-link">java</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/jvm/" class="category-list-link">jvm</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/zookeeper/" class="category-list-link">zookeeper</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="category-list-link">服务器</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%9D%82%E9%A1%B9/" class="category-list-link">杂项</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" class="category-list-link">消息队列</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-list-link">计算机网络</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://gb.ytte.top/categories/%E9%A1%B9%E7%9B%AE/" class="category-list-link">项目</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/15/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="title">面试题</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-15 16:30:37 &#43;0800 CST" itemprop="datePublished">2022-04-15</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/13/springcloud-alibaba/" class="title">SpringCloud alibaba</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-13 16:02:39 &#43;0800 CST" itemprop="datePublished">2022-04-13</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/08/spring/" class="title">Spring</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-08 10:29:44 &#43;0800 CST" itemprop="datePublished">2022-04-08</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/06/springboot/" class="title">SpringBoot</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-06 16:02:39 &#43;0800 CST" itemprop="datePublished">2022-04-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://gb.ytte.top/2022/04/05/jvm%E4%B8%8A%E7%AF%87/" class="title">JVM上篇</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2022-04-05 16:02:39 &#43;0800 CST" itemprop="datePublished">2022-04-05</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/04/15/%E9%9D%A2%E8%AF%95%E9%A2%98/"
+    >面试题</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://gb.ytte.top/2022/04/15/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
+  <time datetime="2022-04-15 16:30:37 &#43;0800 CST" itemprop="datePublished">2022-04-15</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/java/"> java </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/java/"> java </a>
+  </span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 12036 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 25 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>文段太长的情况请使用区域高亮标出重要文字
+未做的在尾部表示 ：谁 todo  。例如姬祥todo
+基础篇</p>
+<ol>
+<li>JDK 和 JRE 有什么区别？
+JDK：Java Development Kit 的简称，java 开发⼯具包，提供了 java 的开发环境和运⾏环境。
+JRE：Java Runtime Environment 的简称，java 运⾏环境，为 java 的运⾏提供了所需环境。
+JDK 其实包含了 JRE，同时还包含了编译 java 源码的编译器 javac， java 程序调试和分析的⼯具。</li>
+<li>== 和 equals 的区别是什么？
+==
+对于基本类型和引⽤类型 == 的作⽤效果是不同的，如下所示： 
+基本类型：⽐较的是值本身是否相同；
+引⽤类型：⽐较的是引⽤地址是否相同；</li>
+</ol>
+<p>equals 
+equals 本质上就是 ==，只不过 String 和 Integer 等重写了 equals ⽅法，把它变成了值⽐较。</p>
+<p>3、两个对象的 hashCode()相同，则 equals()也不⼀定为 true
+先看视频在回来看文字有助于理解：</p>
+<p>官方的解释中：
+1）、hashCode的存在主要是用于查找的快捷性，如Hashtable，HashMap等，hashCode是用来在散列存储结构中确定对象的存储地址的；
+2）、如果两个对象相同，就是适用于equals(java.lang.Object) 方法，那么这两个对象的hashCode一定要相同；
+3）、如果对象的equals方法被重写，那么对象的hashCode也尽量重写，并且产生hashCode使用的对象，一定要和equals方法中使用的一致，否则就会违反上面提到的第2点；
+4）、两个对象的hashCode相同，并不一定表示两个对象就相同，也就是不一定适用于equals(java.lang.Object) 方法，只能够说明这两个对象在散列存储结构中，如Hashtable，他们“存放在同一个篮子里”。
+通俗解释：
+1、hashcode是用来查找的
+例如内存中有这样的位置
+0  1  2  3  4  5  6  7<br>
+而我有个类，这个类有个字段叫ID,我要把这个类存放在以上8个位置之一，如果不用hashcode而任意存放，那么当查找时就需要到这八个位置里挨个去找，或者用二分法一类的算法。
+但如果用hashcode那就会使效率提高很多。
+那么我们就定义我们的hashcode为ID％8，然后把我们的类存放在取得得余数那个位置。比如我们的ID为9，9除8的余数为1，那么我们就把该类存在1这个位置。这样，以后在查找该类时就可以通过ID除 8求余数直接找到存放的位置了。</p>
+<p>2、但是如果两个类有相同的hashcode怎么办（我们假设上面的类的ID不是唯一的），例如9除以8和17除以8的余数都是1，那么这是不是合法的，回答是：可以这样。那么如何判断呢？在这个时候就需要定义 equals了。
+也就是说，我们先通过 hashcode来判断两个类是否存放某个桶里，但这个桶里可能有很多类，那么我们就需要再通过 equals 来在这个桶里找到我们要的类。</p>
+<p>那么。重写了equals()，为什么还要重写hashCode()呢？
+想想，你要在一个桶里找东西，你必须先要找到这个桶啊，你不通过重写hashcode()来找到桶，光重写equals()有什么用啊
+代码解释
+public class HashTest {
+private int i;
+public int getI() {
+return i;
+}
+public void setI(int i) {
+this.i = i;
+}
+public int hashCode() {
+return i % 10;
+}
+public final static void main(String[] args) {
+HashTest a = new HashTest();
+HashTest b = new HashTest();
+a.setI(1);
+b.setI(1);
+Set<!-- raw HTML omitted --> set = new HashSet<!-- raw HTML omitted -->();
+set.add(a);
+set.add(b);
+System.out.println(a.hashCode() == b.hashCode());
+System.out.println(a.equals(b));
+System.out.println(set);
+}
+}
+结果：
+true
+false
+[com.ubs.sae.test.HashTest@1, com.ubs.sae.test.HashTest@1]
+以上这个示例，我们只是重写了hashCode方法，从上面的结果可以看出，虽然两个对象的hashCode相等，但是实际上两个对象并不是相等；，我们没有重写equals方法，那么就会调用object默认的equals方法，是比较两个对象的引用是不是相同，显示这是两个不同的对象，两个对象的引用肯定是不同的。这里我们将生成的对象放到了HashSet中，而HashSet中只能够存放唯一的对象，也就是相同的（适用于equals方法）的对象只会存放一个，但是这里实际上是两个对象a,b都被放到了HashSet中。</p>
+<p>此时我们把equals方法给加上：
+public class HashTest {
+private int i;
+public int getI() {
+return i;
+}
+public void setI(int i) {
+this.i = i;
+}
+public boolean equals(Object object) {
+if (object == null) {
+return false;
+}
+if (object == this) {
+return true;
+}
+if (!(object instanceof HashTest)) {
+return false;
+}
+HashTest other = (HashTest) object;
+if (other.getI() == this.getI()) {
+return true;
+}
+return false;
+}
+public int hashCode() {
+return i % 10;
+}
+public final static void main(String[] args) {
+HashTest a = new HashTest();
+HashTest b = new HashTest();
+a.setI(1);
+b.setI(1);
+Set<!-- raw HTML omitted --> set = new HashSet<!-- raw HTML omitted -->();
+set.add(a);
+set.add(b);
+System.out.println(a.hashCode() == b.hashCode());
+System.out.println(a.equals(b));
+System.out.println(set);
+}
+}
+结果：
+true
+true
+[com.ubs.sae.test.HashTest@1]
+从结果我们可以看出，现在两个对象就完全相等了，HashSet中也只存放了一份对象。</p>
+<p>4、关于字节
+字节是我们常见的计算机中最小存储单元。计算机存储任何的数据，都是以字节的形式存储。
+8个bit（二进制位） 0000-0000表示为1个字节，写成1 byte或者1 B。</p>
+<p>8 bit = 1 B 
+1024 B =1 KB 
+1024 KB =1 MB 
+1024 MB =1 GB 
+1024 GB = 1 TB 
+ps：实际开发中可能会定义各种byte数组，要对空间大致有印象。
+5、关于虚拟机(知道虚拟机是什么，作用是什么)
+JVM（Java Virtual Machine ）：
+Java虚拟机，简称JVM，是运行所有Java程序的假想计算机，是Java程序的 
+运行环境，是Java 最具吸引力的特性之一。我们编写的Java代码，都运行在 JVM 之上。 
+如下图：
+图片: <a href="https://uploader.shimo.im/f/qVVm5cukxLZ2NvCX.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/qVVm5cukxLZ2NvCX.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+6、java程序开发的三个步骤
+1.编写源程序<br>
+2.编译源程序
+3.运行
+例如：Hello.java 由javac命令编译成 Hello.class，即字节码文件，再由jvm编译解释执行运行。
+7.数据类型（重要）
+Java的数据类型分为两大类： 
+基本数据类型：包括 整数 、浮点数 、字符 、布尔 。 (四类八种)
+引用数据类型：包括 类 、数组 、接口 。 
+图片: <a href="https://uploader.shimo.im/f/1F4zAAzf9F76TNDz.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/1F4zAAzf9F76TNDz.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<ol>
+<li>long类型：建议数据后加L表示。 
+2.float类型：建议数据后加F表示。 
+3.ASCII码中，一个英文字母占一个字节的空间，一个中文汉字占两个字节的空间；2、UTF-8编码中，一个英文字符等于一个字节，一个中文（含繁体）等于三个字节。
+要求：要能记熟。多看
+ps:之前面试博彦科技初级程序员，让写过，不要小视。
+8.数据类型转换
+将取值范围小的类型自动提升为范围大的类型
+范围小的类型向范围大的类型提升， byte、short、char 运算时直接提升为 int 。 
+9.强制转换
+基本数据类型
+将取值范围大的类型 强制转换成 取值范围小的类型 ，byte，short，int，long，float，double 数值类型不要求显示强制类型转换，自动进行转换。
+从其他数值类型转换为char类型时，必须进行强制转换。将char类型转换为其他数值类型时，除了byte、short必须强制转换之外，int、long、float、double都不用强制转换。
+数据类型 变量名 =（数据类型）被转数据值； 
+引用类型
+父类引用可以指向子类对象，子类引用不能指向父类对象。
+把子类对象直接赋给父类引用叫做向上转型，向上转型不用强制转型，如Father f1=new Son()，
+把指向子类对象的父类引用赋给子类引用叫做向下转型，要强制转型，如Son s1 = (Son)f1。向上转型会丢失子类特有的方法，但是子类override父类的方法，子类方法有效。
+非继承类相互转换会报错
+10.ASCII编码表 （是什么ASCII编码？）
+图片: <a href="https://uploader.shimo.im/f/mYbZoRzlQsJhsRuB.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/mYbZoRzlQsJhsRuB.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+记住常用的几个：
+图片: <a href="https://uploader.shimo.im/f/uyGSR81YF2Bj3o92.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/uyGSR81YF2Bj3o92.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+11.运算符
+%：取模运算，两个数字相除取余数 
+a++ ++a的区别
+图片: <a href="https://uploader.shimo.im/f/aSeSH25fafT5nkCF.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/aSeSH25fafT5nkCF.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+加号在拼接字符串中的作用：
+图片: <a href="https://uploader.shimo.im/f/fmDy2yS3f6OvLUkU.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/fmDy2yS3f6OvLUkU.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+逻辑与或非取反的符号：|| &amp;&amp; ！
+三元运算符：</li>
+</ol>
+<p>图片: <a href="https://uploader.shimo.im/f/INeYgv8sLvokoyvV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/INeYgv8sLvokoyvV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+12.方法的入门
+图片: <a href="https://uploader.shimo.im/f/MoJeFPEd8znE6nTk.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/MoJeFPEd8znE6nTk.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+13.类型
+if else
+switch语句
+for循环
+while循环
+do-while循环
+死循环（while(true)）
+嵌套循环
+break终止循环，continue结束本次循环，进行下一次循环
+14.Idea,方法(day04)
+idea和方法的基本知识点就不赘述了
+方法重载
+图片: <a href="https://uploader.shimo.im/f/PrsEiT45GnoHFnBV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/PrsEiT45GnoHFnBV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+15.数组（day05）
+1.数组的定义与访问
+数组的定义（三种）
+图片: <a href="https://uploader.shimo.im/f/1cD70Tv9Fk8bNHar.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/1cD70Tv9Fk8bNHar.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/prGpqtPRlOxAzkHR.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/prGpqtPRlOxAzkHR.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/TFj1ikuz5wPzDW1d.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/TFj1ikuz5wPzDW1d.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+数组的访问
+数组名[索引]
+数组的索引从0开始
+2.数组原理内存图
+图片: <a href="https://uploader.shimo.im/f/9CznENKAqQmSFWYm.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/9CznENKAqQmSFWYm.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图如下：
+图片: <a href="https://uploader.shimo.im/f/BcBbjT1hcjOYWeX2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/BcBbjT1hcjOYWeX2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+两个变量指向一个数组：
+图片: <a href="https://uploader.shimo.im/f/s61jvjdUfpLCy1KY.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/s61jvjdUfpLCy1KY.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>3.数组的常见操作
+数组越界异常
+数组空指针异常
+数组的遍历
+图片: <a href="https://uploader.shimo.im/f/jlI4jv93TFYTLlLo.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/jlI4jv93TFYTLlLo.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+数组获取最大元素
+数组反转
+图片: <a href="https://uploader.shimo.im/f/sAA2abYxTEi1SZuE.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/sAA2abYxTEi1SZuE.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+import java.util.<em>;
+public class RunoobTest {
+/</em> 使用 java.util.Arrays.asList(array) 方法*/
+static void reverse(Integer a[])
+{
+Collections.reverse(Arrays.asList(a));
+System.out.println(Arrays.asList(a));
+}
+public static void main(String[] args)
+{
+Integer [] arr = {10, 20, 30, 40, 50};
+reverse(arr);
+}
+}</p>
+<p>4.数组作为方法参数和返回值
+数组作为方法参数传递，传递的参数是数组内存的地址。</p>
+<p>Ps：方法的参数为基本类型时,传递的是数据值. 方法的参数为引用类型时,传递的是地址值.</p>
+<p>16.面向对象思想
+面向对象思想概述
+类与对象
+类的定义
+对象的使用
+图片: <a href="https://uploader.shimo.im/f/jKKBoVBAsr61mNjj.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/jKKBoVBAsr61mNjj.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>类与对象的练习
+对象内存图
+成员变量和局部变量的区别
+位置如下图：
+图片: <a href="https://uploader.shimo.im/f/SvYFfH9w6upH3XFm.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/SvYFfH9w6upH3XFm.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+区别总结：
+图片: <a href="https://uploader.shimo.im/f/x7VJYU3wLyxJVHr2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/x7VJYU3wLyxJVHr2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+17.封装
+封装的概述
+封装的步骤
+封装的操作-private关键字
+封装优化-this关键字
+封装优化-构造方法
+图片: <a href="https://uploader.shimo.im/f/foM70PDYnN6QeVqj.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/foM70PDYnN6QeVqj.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+标准代码-javaBean
+图片: <a href="https://uploader.shimo.im/f/nbuuHpwlLQjR3tV0.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/nbuuHpwlLQjR3tV0.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>18.api
+图片: <a href="https://uploader.shimo.im/f/jNEMSKGibOHfos35.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/jNEMSKGibOHfos35.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+19.Scanner
+20.Random
+21.ArrayList
+图片: <a href="https://uploader.shimo.im/f/oF6HdlRYATNJOqCc.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/oF6HdlRYATNJOqCc.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+常用方法
+图片: <a href="https://uploader.shimo.im/f/7cCtFr7tu6KgYOjn.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/7cCtFr7tu6KgYOjn.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+如何存储基本类型？得用包装类
+图片: <a href="https://uploader.shimo.im/f/FdN7nnvKPkeZM7SL.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/FdN7nnvKPkeZM7SL.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>22.String类
+字符串的只创建后不能更改
+因String对象是不可变的，所以可以被共享
+&ldquo;abc&rdquo; 等效于 char[] data={ &lsquo;a&rsquo; , &lsquo;b&rsquo; , &lsquo;c&rsquo; } 。 
+构造方法
+图片: <a href="https://uploader.shimo.im/f/jGvgMN3rIMXyLT72.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/jGvgMN3rIMXyLT72.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+判断功能方法
+图片: <a href="https://uploader.shimo.im/f/8JD2j3tWFDhegNo4.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/8JD2j3tWFDhegNo4.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+获取功能的方法
+图片: <a href="https://uploader.shimo.im/f/TfvINJJyUwN8gaJx.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/TfvINJJyUwN8gaJx.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+转换功能的方法
+图片: <a href="https://uploader.shimo.im/f/eWQOgxT9nRAODOe2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/eWQOgxT9nRAODOe2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+分隔功能的方法
+图片: <a href="https://uploader.shimo.im/f/t9MJ8VczKqjq3URu.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/t9MJ8VczKqjq3URu.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+23.static关键字
+图片: <a href="https://uploader.shimo.im/f/LYlATNNzXKqLWwZK.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/LYlATNNzXKqLWwZK.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+定义和使用格式
+静态原理图解
+静态代码块
+图片: <a href="https://uploader.shimo.im/f/ELUJ7iUOGHkf4azl.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/ELUJ7iUOGHkf4azl.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/VbuGPw5P06G4fKA4.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/VbuGPw5P06G4fKA4.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+24.Arrays类
+图片: <a href="https://uploader.shimo.im/f/p2HaE6nS4nMqCPzg.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/p2HaE6nS4nMqCPzg.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+操作数组的方法
+图片: <a href="https://uploader.shimo.im/f/7xKgblfv79SG7Ef8.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/7xKgblfv79SG7Ef8.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/yfFh3UwSz9cb2WTx.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/yfFh3UwSz9cb2WTx.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+25.Maths类
+图片: <a href="https://uploader.shimo.im/f/THpm2gXHwGt3Xjow.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/THpm2gXHwGt3Xjow.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+基本运算的方法
+图片: <a href="https://uploader.shimo.im/f/2hQzyxaDfNkPZHGV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/2hQzyxaDfNkPZHGV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/Cl6cDfOVlWtxf7Vh.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/Cl6cDfOVlWtxf7Vh.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+26.继承
+图片: <a href="https://uploader.shimo.im/f/vInEI2dFeV0laMJw.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/vInEI2dFeV0laMJw.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+继承的关键字是extend
+访问变量时，注意理解super关键字和this关键字
+继承只支持单继承，不能支持多继承
+27.抽象类
+图片: <a href="https://uploader.shimo.im/f/WJOq7i0lqDyoQOqy.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/WJOq7i0lqDyoQOqy.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+关键字abstract 举例：  public abstract void run()；
+如果一个类包含抽象方法，那么该类一定是抽象类
+继承抽象类的子类必须重写父类所有的抽象方法
+抽象类不能创建对象
+抽象类中可以有构造方法
+抽象类中不一定有抽象方法
+继承的综合案例：发红包
+待补充详细~~~~~~</p>
+<p>28.接口
+图片: <a href="https://uploader.shimo.im/f/18Sd9YuucQq29m13.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/18Sd9YuucQq29m13.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+关键字interface，它不是类，而是一种数据引用类型
+重复的逻辑封装到私有方法上，供静态方法调用
+接口中无法定义成员变量，但是可以定义常量
+接口没有构造方法，无法创建对象
+接口中，没有静态代码块
+29.多态
+多态的体现
+图片: <a href="https://uploader.shimo.im/f/soVQudtwS68XFelO.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/soVQudtwS68XFelO.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+当使用多态调用方法时，先检查父类中有没有此方法，如果没有则编译报错，如果有，执行的是子类的重写方法。
+引用类型转换：当父类引用指向一个子类对象时，就是一个向上转型。
+instanceof 关键字，判断某个对象是不是某个类型。
+接口多态的实例&mdash;-笔记本电脑</p>
+<p>30.final
+不可改变，用于修饰类，方法，和变量
+被修饰的类无法继承
+被修饰的方法无法重写
+被修饰的变量无法更改
+31.权限修饰符
+public protected default private
+图片: <a href="https://uploader.shimo.im/f/w5gsghHMuIRQk4kh.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/w5gsghHMuIRQk4kh.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+32.内部类(工作中基本没用到过，略)
+匿名内部类
+图片: <a href="https://uploader.shimo.im/f/OGcJYziztiN2Z9OF.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/OGcJYziztiN2Z9OF.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+33.引用类型用法总结
+class作为成员变量
+interface作为成员变量
+接口作为参数时，传递的是它的子类对象
+接口作为返回值类型的时候，返回它的子类对象
+34.发红包案例&mdash;&mdash;界面版本</p>
+<p>35.String类能被继承吗，为什么？
+不能被继承。在string类当中类本身被final修饰，而被final修饰的类、方法、变量都是都是不能被继承的
+《编程思想》书当中说到：
+final类不能被继承，没有子类，final类中的方法默认是final的。<br>
+final方法不能被子类的方法覆盖，但可以被继承。
+final成员变量表示常量，只能被赋值一次，赋值后值不再改变。<br>
+final不能用于修饰构造方法。</p>
+<p>36.各种集合差异
+图片: <a href="https://uploader.shimo.im/f/1CkTo9gcL4VLRLhd.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/1CkTo9gcL4VLRLhd.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/MB1Q7RUC1izmBC3C.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/MB1Q7RUC1izmBC3C.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+HashMap与HashTable的异同：==&gt;超链接###
+关于hash算法见下方高级篇
+集合
+1）、说说你对Java集合的理解
+集合就是用存储相关数据的一种形式，主要包括两大接口Collection接口和Map接口以及相关的工具类（Iterator迭代器接口、Enumeration枚举类、Arrays和Colletions）。</p>
+<p>2）、ArrayList和LinkedList的区别
+ArrayList是基于数组实现的，无序，查找快，增删慢，每次扩容为原来的0.5倍
+Linkedlist是基于双向链表实现的，有序，查找慢，增删快，基于双向链表没有固定扩容大小，用多少扩多大，两头均可扩容
+引申：扩容机制 姬祥todotooearly</p>
+<p>3）、它们都线程安全吗？如何得到线程安全的List？
+需要将list 的每个方法加上同步关键字。其中Vector是线程安全的，是基于数组实现的，效率慢，查找快，增删慢，每次扩容原来1倍的大小。</p>
+<p>4）、CopyOnWriteArrayList用过吗？优缺点？ReentrantReadWriteLock用过吗？优缺点？
+详细资料见===&gt;CopyOnWriteArrayList</p>
+<p>CopyOnWriteArrayList 是满足 CopyOnWrite 的 ArrayList，CopyOnWriteArrayList 类的所有可变操作（add，set等等）都是通过创建底层数组的新副本来实现的。被修改的时候，是对原有数据进行一次拷贝，将修改的内容写入副本中。写完之后，再将修改完的副本替换成原来的数据，再将原来指向的内存指针指到新的内存，原来的内存就可以被回收，这样就可以保证写操作不会影响读操作。
+读到旧的数据，因为开始读的那一刻已经确定了读的对象是旧对象。
+CopyOnWriteList用于读多写少的并发场景。比如白名单，黑名单等场景。</p>
+<p>优点：读写分离，读时读取旧数据，写操作新的副本对象，并发读操作不影响并发写的操作。
+缺点：
+①、内存占用问题，读操作时复制新的副本对象，这时堆中就会同时存在两个CopyOnWriteArrayList对象，如果CopyOnWriteArrayList本身就是个大对象，再复制新副本 很有可能造FullGC，从而影响服务器的用户线程停顿。
+②、数据一致性问题：读时如若正在进行写操作，那读的就是旧对象。再等写操作完成就是新对象。如果在写数据的时候立马能读到写入的数据，CopyOnWriteArrayList就不适合了。</p>
+<p>ReentrantReadWriteLock
+详细资料===&gt; java读写锁(ReentrantReadWriteLock)
+ReentrantReadWriteLock的锁策略有两种，分为公平策略和非公平策略，相比之下，非公平策略的吞吐量较大，所以ReentrantReadWriteLock默认使用的是非公平策略
+总结：
+当全局处于写锁的情况，一旦任何一个线程1获取了写锁，除了该线程自己，其它线程都将无法获取读锁和写锁，这时候，线程1再次请求一个读锁，这是允许的，但反过来如果一个线程先获取了读锁，再获取写锁则是不行的
+当全局处于读锁状态，二者有区别。
+公平策略下，线程1获取读锁，不允许后续不管读还是写获得锁；线程1再次获取读锁处于重入状态，且队列第一个不是写，紧随其后的其他读可以获得锁，至于数量不明 姬祥todo
+非公平策略下，线程1获取读锁，队列中第一个如果是写，则不允许后续读抢锁。如果队列中第一个是读，紧随其后的其他读可以抢锁。线程1再次获取读锁，处于重入状态，这就和公平策略下相同。</p>
+<p>公平策略：
+获取读锁情况：
+a. 如果当前全局处于无锁状态，则当前线程获取读锁
+b. 如果当前全局处于读锁状态，且队列中没有等待线程，则当前线程获取读锁
+c. 如果当前全局处于写锁占用状态（并且不是当前线程占有），则当前线程入队尾</p>
+<p>获取写锁，规则如下：
+h. 如果当前处于无锁状态，则当前线程获取写锁
+i. 如果当前全局处于读锁状态，当前线程入队尾
+j. 如果当前全局处于写锁状态，除非是重入获取写锁，否则入队尾
+非公平策略：
+获取读锁情况：
+a. 如果当前全局处于无锁状态，则当前线程获取读锁
+b. 如果当前全局处于读锁状态，且队列中没有等待线程，则当前线程获取读锁
+c. 如果当前全局处于写锁占用状态（并且不是当前线程占有），则当前线程入队尾
+d. 如果当前全局处于读锁状态，且等待队列中第一个等待线程想获取写锁，那么当前线程能够获取到读锁的条件为：当前线程获取了写锁，还未释放；当前线程获取了读锁，这一次只是重入读锁而已；其它情况当前线程入队尾。之所以这样处理一方面是为了效率，一方面是为了避免想获取写锁的线程饥饿，老是得不到执行的机会
+e. 如果当前全局处于读锁状态，且等待队列中第一个等待线程不是写锁，则当前线程可以抢占读锁</p>
+<p>获取写锁的情况同上。</p>
+<p>5）、Set是有序还是无序的？一定无序吗？
+既有无序，也有有序。HashSet无序，LinkedSet因为底层链表+哈希表，所以是有序的且唯一的。TreeSet是有序的，通过自然排序或者比较器排序。</p>
+<p>6）、TreeSet的底层实现
+姬祥todo</p>
+<p>7）、把你所知道的HashMap的所有知识都说一下？（包括底层实现、扩容机制、1.7与1.8的区别、长度为什么是2的n次幂）
+底层实现是哈希表，初始大小为11，每次扩容为原来的2n+1，jdk1.7中采用数组+链表，1.8中采用数组+链表+红黑树实现</p>
+<p>扩容机制，底层实现原理  姬祥todo</p>
+<p>8）、保证线程安全的Map是什么？ConcurrentHashMap聊一下？（和HashMap答题类似，不过重点要回答的是为什么线程安全）
+Hashtable和ConcurrentHashMap是线程安全的</p>
+<p>讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构造函数，字段，当new的时候，他们的执行顺序。
+姬祥todo for jx jvm</p>
+<p>39.异常
+异常分为哪几种？他们的父类是什么？
+图片: <a href="https://uploader.shimo.im/f/8uZzh3mPzKXsMhsc.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/8uZzh3mPzKXsMhsc.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+异常的父类是Throwable类，Throwable的父类是object类。
+Throwable类的子类分别是error和exception类。
+error的出现，程序是无法运行的，只能交给程序员进行处理。
+exception的出现，程序是可以继续运行，但是控制台会报错，分为两种异常，编译期异常和运行时异常。所有的异常都是在程序运行期间的情况，特别指明编译期异常是编译前预先处理的异常。
+常见编译期异常：IOException和TimeoutException。
+常见运行时异常：NullPointerException，ClassCastException， ArithmeticException，数组角标越界异常。</p>
+<p>受检异常与非受检异常的区别？
+详细解释见===&gt;受检异常与非受检异常的区别###
+非受检异常：Error、RuntimeException，是指不需要调用者显示捕获的异常。
+受检异常：编译时异常IOException/SqlException，在没有捕获的情况下，会显示提示语法错误，是指需要调用者显示通过try-catch捕获的异常
+Error可以捕获吗？
+有error程序会停止运行，不可以捕获。</p>
+<p>栈溢出和堆溢出是什么？OOM可以捕获吗？什么情况可以捕获？
+1)、 栈溢出和堆溢出是什么？  姬祥todo
+2）、 OOM可以捕获，但是没有必要  姬祥todo
+3）、   姬祥todo</p>
+<p>UUID</p>
+<p>高级篇
+1.Object类
+Object类是java语言中的根类，是所有类的父类。
+toString方法，返回该对象的字符串表示。经常  覆盖重写
+equals方法，如果没有覆盖重写，则比较的是地址值，只要不是一个对象肯定不相等。
+Objects类，空指针安全的。
+图片: <a href="https://uploader.shimo.im/f/F9SIAvJL47iUTzcg.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/F9SIAvJL47iUTzcg.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>2.Date类
+构造方法
+图片: <a href="https://uploader.shimo.im/f/gDk3GI1wd2vJJI7P.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/gDk3GI1wd2vJJI7P.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+把日期对象转换成对应的毫秒值：
+图片: <a href="https://uploader.shimo.im/f/MKgcqgXA9gkpM848.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/MKgcqgXA9gkpM848.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+打印结果：
+图片: <a href="https://uploader.shimo.im/f/4gpK95vRhdi9aADP.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/4gpK95vRhdi9aADP.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+DateFormart类（重要）
+DateFormart类为抽象类，常用它的子类SimpleDateFormat类
+图片: <a href="https://uploader.shimo.im/f/rK6t6P0Wjaeh8LsV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/rK6t6P0Wjaeh8LsV.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+使用方法：
+图片: <a href="https://uploader.shimo.im/f/NrV0XJxQYfER4eDW.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/NrV0XJxQYfER4eDW.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/rmEQoIR0EUiIZJxO.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/rmEQoIR0EUiIZJxO.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+示例如下：
+format方法：
+图片: <a href="https://uploader.shimo.im/f/n8JqttzGIqV9Bv8W.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/n8JqttzGIqV9Bv8W.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+parse方法：
+图片: <a href="https://uploader.shimo.im/f/kUWlFhWlbPwIqyaw.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/kUWlFhWlbPwIqyaw.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>Canlender类
+工作中没用过，略&hellip;&hellip;..</p>
+<p>3.System类（不重要）
+图片: <a href="https://uploader.shimo.im/f/Cd0NYZSVpIWZ6cmM.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/Cd0NYZSVpIWZ6cmM.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+示例：
+图片: <a href="https://uploader.shimo.im/f/zd7RrdFta9JlyxsG.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/zd7RrdFta9JlyxsG.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+ps:不常用</p>
+<p>4.StringBuilder类（非常重要）
+概述
+图片: <a href="https://uploader.shimo.im/f/fqBAKoX3NV24OlND.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/fqBAKoX3NV24OlND.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+构造方法
+图片: <a href="https://uploader.shimo.im/f/8yMLJT1b7ohNDDUe.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/8yMLJT1b7ohNDDUe.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+常用方法
+图片: <a href="https://uploader.shimo.im/f/BQ9afeQqvVApBRK5.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/BQ9afeQqvVApBRK5.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+备注：该类重写了Object类中的toString方法</p>
+<p>String，Stringbuffer，StringBuilder的区别
+String 是不可变的，而 StringBuffer 和 StringBuilder 是可变类。
+StringBuffer 是线程安全和同步的，而 StringBuilder 不是。线程同步线程安全会造成速度降低
+字符串连接运算符 (+) 在内部使用的是 StringBuilder 类。
+对于非多线程环境中的字符串操作，我们一般使用 StringBuilder 否则使用 StringBuffer 类。
+姬祥todo for jx  jvm中new string</p>
+<p>包装类
+包装类的作用
+①、集合中不能使用基本类型。
+②、方便类型之间的转换（如：string类型转换成int类型 int a= new Integer(&ldquo;123&rdquo;)）
+常用的
+图片: <a href="https://uploader.shimo.im/f/Gu7uR0MPZpzjOkAe.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/Gu7uR0MPZpzjOkAe.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+装箱与拆箱
+图片: <a href="https://uploader.shimo.im/f/Pkmw4GmecTQXBmCu.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/Pkmw4GmecTQXBmCu.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+自动装箱和自动拆箱
+图片: <a href="https://uploader.shimo.im/f/ke73CTl0F7ZiG52y.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/ke73CTl0F7ZiG52y.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+基本类型和字符串之间的转换，这里只讲最简单的一种方式，直接加“”，如34+“”
+除了Character类之外，其它所有的包装类都具有parseXxx静态方法可以将字符串参数转换成对应的基本类型
+示例如下：
+图片: <a href="https://uploader.shimo.im/f/TbpPHbinKRdYthdh.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/TbpPHbinKRdYthdh.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>迭代器
+获取迭代器
+图片: <a href="https://uploader.shimo.im/f/tYN3gUcu1cuUQREB.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/tYN3gUcu1cuUQREB.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+迭代器方法
+图片: <a href="https://uploader.shimo.im/f/XlLWcskNCPAnOsoz.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/XlLWcskNCPAnOsoz.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+使用方法(比较简单)
+图片: <a href="https://uploader.shimo.im/f/Pe6u13wuvooRqiq1.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/Pe6u13wuvooRqiq1.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+增强for循环
+图片: <a href="https://uploader.shimo.im/f/iifcFUbYsRq9wJLl.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/iifcFUbYsRq9wJLl.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>泛型(知道集合中怎么放泛型就行了)
+概述
+可以在类或方法中预支地使用未知的类型
+使用泛型的好处
+将运行时期的ClassCastException,转移到了编译时期变成了编译失败
+2. 避免了类型强转的麻烦
+泛型的定义和使用
+在创建对象的时候确定泛型
+调用方法是，确定泛型的类型
+泛型的通配符
+通配符的高级使用，受限泛型
+图片: <a href="https://uploader.shimo.im/f/6spS5qREaQaDRfD2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/6spS5qREaQaDRfD2.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+示例：
+图片: <a href="https://uploader.shimo.im/f/qvbzE4jRBukwePKd.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/qvbzE4jRBukwePKd.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>集合的案例（斗地主）</p>
+<p>数据结构
+常见的数据结构（栈、队列、数组链表、红黑树）
+栈：
+stack，又称堆栈，它是运算受限的线性表，其限制是仅允许在标的一段进行插入和删除操作，不允许再其他任何位置进行添加、查找、删除操作。
+图片: <a href="https://uploader.shimo.im/f/ZapHwLHMNxmhOH0u.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/ZapHwLHMNxmhOH0u.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+队列：queue，它同堆栈一样，也是一种运算受限的线性表，其限制是仅允许在表的一段进行插入，而在表的另一端进行删除。
+简单的说，采用该结构的集合，对元素的存取有如下的特点：
+先进先出（即，存进去的元素，要在后它前面的元素依次取出后，才能取出该元素）。
+队列的入口、出口各占一侧。例如，下图中的左侧为入口，右侧为出口。
+图片: <a href="https://uploader.shimo.im/f/nle5buO62uU9zFUK.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/nle5buO62uU9zFUK.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+数组：Array，是有序的元素序列，数组是在内存中开辟一段连续的空间，并在此空间存放元素。
+图片: <a href="https://uploader.shimo.im/f/SGamM8oYNpddpuJp.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/SGamM8oYNpddpuJp.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+链表：
+图片: <a href="https://uploader.shimo.im/f/JXQNlgOxRRjRurtK.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/JXQNlgOxRRjRurtK.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+图片: <a href="https://uploader.shimo.im/f/mSKBe7Y6c9k6M8pq.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/mSKBe7Y6c9k6M8pq.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>hashcode与hash算法
+详细资料见===&gt;超链接###</p>
+<p>反射
+反射详细笔记===》反射——自己的笔记</p>
+<p>1）、反射是什么？举几个例子？</p>
+<p>图片: <a href="https://uploader.shimo.im/f/X8ClRTv4tZtxtmlq.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/X8ClRTv4tZtxtmlq.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+在java注解，xml，properties配置文件，jdbc和springaop中都使用反射的原理</p>
+<p>在项目中，通过反射加载各功能模块的操作界面，不使用反射机制通过代码也可以实现，但是问题是在代码中将程序写死，当你再想扩展功能的时候你必须修改之前的代码才可以实现，就会违背代码的设计的开闭原则—对扩展开放，对修改关闭。但是使用反射就解决了这个问题，将按键对应的变量和其对应的类的全限定名称存放到数据库，在程序中从库中获取数据，对数据进行统一操作。扩展时只需要在数据库中对应位置添加写好的类的全限定名称即可。
+在比如需要对某一些类进行自定义统一处理时，为了方便自己建立工具类，这时候就需要使用反射和泛型来实现统一化处理。</p>
+<p>2）、通过反射可以拿到类中的变量信息吗？
+可以拿到类的变量信息。
+①、通过Class类的方法getClass拿到类的Class对象
+Class c1=Class.getClass(com.xx.User)
+②、通过newInstance创建对象 object
+Object o1=c1.newInstance()
+③、通过getDeclaredField(&ldquo;变量名（属性名）&quot;)来获得属性变量的Field field。
+Field field=c1.getDeclaredField(&ldquo;属性名&rdquo;)
+④、通过field.set(object,&ldquo;值&rdquo;)设置值
+field.set(o1,&ldquo;值&rdquo;)
+⑤、私有方法还需要在set之前关闭安全检测
+field.setAccessiable(true)</p>
+<p>设计模式（一般与SpringAOP一同问）
+姬祥todo</p>
+<p>多线程
+链接===》https://shimo.im/docs/9030MPb0axF50Jqw/</p>
+<p>比较器</p>
+<p>并发篇
+volatile
+tooearly</p>
+<p>java中的锁 与数据库锁
+java锁：
+详细资料===&gt;java 中的锁 &ndash; 偏向锁、轻量级锁、自旋锁、重量级锁 tooearly
+详细资料===&gt;java中各种锁  tooearly
+概念：
+①、死锁：至少两个线程，各自拥有资源，彼此还互相请求对方资源，造成无法继续进行的情况
+图片: <a href="https://uploader.shimo.im/f/ITtHoVZD4KzLrDON.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/ITtHoVZD4KzLrDON.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a></p>
+<p>java常见锁分类：</p>
+<ol>
+<li>乐观锁 VS 悲观锁</li>
+<li>自旋锁 VS 适应性自旋锁</li>
+<li>无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁</li>
+<li>公平锁 VS 非公平锁</li>
+<li>可重入锁 VS 非可重入锁</li>
+<li>独享锁 VS 共享锁</li>
+</ol>
+<p>乐观锁 VS 悲观锁
+对于同一个数据的并发操作，悲观锁认为自己在使用数据的时候一定有别的线程来修改数据，因此在获取数据的时候会先加锁，确保数据不会被别的线程修改。Java中，synchronized关键字和Lock的实现类都是悲观锁。
+而乐观锁认为自己在使用数据时不会有别的线程修改数据，所以不会添加锁，只是在更新数据的时候去判断之前有没有别的线程更新了这个数据。如果这个数据没有被更新，当前线程将自己修改的数据成功写入。如果数据已经被其他线程更新，则根据不同的实现方式执行不同的操作（例如报错或者自动重试）。
+乐观锁在Java中是通过使用无锁编程来实现，最常采用的是CAS算法，Java原子类中的递增操作就通过CAS自旋实现的。</p>
+<p>图片: <a href="https://uploader.shimo.im/f/U1GykgPADiG7tWFI.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8">https://uploader.shimo.im/f/U1GykgPADiG7tWFI.png!thumbnail?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTAwMTE1NjUsImZpbGVHVUlEIjoiOTEzSlZRR1hQVnRMWGEzRSIsImlhdCI6MTY1MDAxMTI2NSwidXNlcklkIjo2NjUzNTM5N30.0LRqIU3nKnunHokjPG99WgixJ7ki3OK2Vc83-tIxsW8</a>
+根据从上面的概念描述我们可以发现：
+悲观锁适合写操作多的场景，先加锁可以保证写操作时数据正确。（效率低）
+乐观锁适合读操作多的场景，不加锁的特点能够使其读操作的性能大幅提升。（通常数据库读写操作的时候使用版本号字段来控制数据统一，使用mybatis-plus乐观锁插件，并且在实体类version字段上加上@veision 注解，就可以可以自动检测版本号，自己的语句中不需要修改版本号，每次写操作都会将版本号加1）</p>
+<p>CAS全称 Compare And Swap（比较与交换），是一种无锁算法。在不使用锁（没有线程被阻塞）的情况下实现多线程之间的变量同步。java.util.concurrent包中的原子类就是通过CAS来实现了乐观锁。
+CAS算法涉及到三个操作数：
+需要读写的内存值 V。
+进行比较的值 A。
+要写入的新值 B。
+当且仅当 V 的值等于 A 时，CAS通过原子方式用新值B来更新V的值（“比较+更新”整体是一个原子操作），否则不会执行任何操作。一般情况下，“更新”是一个不断重试的操作。</p>
+<p>数据库锁：
+详细视频===&gt;锁与事务
+MySQL中，采用了表锁，页锁，行锁（取决不同的存储引擎，mysql默认innodb引擎）</p>
+<p>事务的持久性：事务在进行，但是服务器宕机，再一次启动的时候进行回滚</p>
+<p>框架篇</p>
+<p>Rabbitmq
+RabbitMQ 面试题 | ZC 的学习录 (zhangc233.github.io)</p>
+<h1 id="jvm">JVM</h1>
+<h2 id="举例栈溢出的情况">举例栈溢出的情况？</h2>
+<p>StackoverflowError
+栈设置成固定大小时，溢出就会出现StackoverflowError。
+栈非固定大小时，不对增加不断扩容，先出现StackoverflowError，最后内存不足时会报错OOM内存溢出。</p>
+<h2 id="调整栈大小就能保证不出现溢出吗">调整栈大小，就能保证不出现溢出吗？</h2>
+<p>不能，死循环即使给在大的空间也会溢出。</p>
+<h2 id="分配的栈-内存越大越好吗">分配的栈 内存越大越好吗？</h2>
+<p>不对，给的太大，影响其他线程的内存，其他程序的内存。</p>
+<h2 id="垃圾回收是否会涉及到虚拟机栈">垃圾回收是否会涉及到虚拟机栈？</h2>
+<p>不会的，栈只能出栈入栈，出栈即回收，无法GC线程来GC。</p>
+<h2 id="方法中定义的局部变量是否线程安全">方法中定义的局部变量是否线程安全？</h2>
+<p>不一定</p>
+<p>安全：
+方法内部定义并且内部消费掉
+s1在内部定义，方法返回字符串，但是返回时返回新new一个或者s1.tostring，这样s1生命周期结束的情况是安全的。</p>
+<p>不安全：
+多线程中作为形参传入方法中
+内部定义，但是作为返回值返回出去，在其他线程中不安全。</p>
+<h2 id="说一下jvm内存模型有哪些区分别干什么的">说一下JVM内存模型，有哪些区，分别干什么的？</h2>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/15/165307966.png" alt=""></p>
+<h2 id="java8-内存分代的改进">java8 内存分代的改进</h2>
+<p>去除永久代，使用元空间（方法区的实现），放在内存中，非堆空间。</p>
+<h2 id="jvm栈和堆的区别堆的结构为什么有两个survivor区">JVM栈和堆的区别？堆的结构？为什么有两个Survivor区？</h2>
+<ul>
+<li>
+<p>栈：运行时单位，解决如何运行程序。</p>
+</li>
+<li>
+<p>堆：存储单位，解决如何存储处理数据。</p>
+</li>
+<li>
+<p>堆结构：</p>
+<ul>
+<li>新生代
+<ul>
+<li>Eden</li>
+<li>Survivor1</li>
+<li>Survivor2</li>
+</ul>
+</li>
+<li>老年代</li>
+</ul>
+</li>
+<li>
+<p>两个Survivor区是为了能使用标记复制算法，为了能解决碎片化问题。新生代与老年代比例1:2，然后新生代还划分成了Eden和s0、s1，比例8:1:1。如果没有复制算法，即只有一个survivor区，一次minorGC后，eden存活对象A放进survivor区，然后第二次MinorGC，倘若survivor第一次放入的对象A比较小且被第二次MinorGC清除，第二次由eden进入survivor的存活对象B又比较大，就只能存储在后方，这就造成了对象A的存储区域无法被利用，就造成了碎片化问题。</p>
+</li>
+</ul>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/15/181903766.png" alt=""></p>
+<p>所以采用新生代采用复制算法即使用两个survivor区，每次只使用一个survivor区，将eden和survivor1存活对象都放入survivor2中，并且排列好，从而解决碎片化问题。</p>
+<h2 id="eden和survior的比例分配">Eden和Survior的比例分配？</h2>
+<p>8:1:1</p>
+<ol>
+<li>8:2的原因：</li>
+</ol>
+<ul>
+<li>大部分对象存活时间都不会很长，将其分配到Eden区，每次Eden满了触发MinorGC（STW时间较短），就很容易清除掉这些垃圾对象。Survior区小，是因为Survior只保存存活时间稍微长一些的对象，</li>
+</ul>
+<ol start="2">
+<li>
+<p>1:1的原因：</p>
+<p>采用复制算法，两个空间大小要一样。</p>
+</li>
+</ol>
+<h2 id="jm内存分区为什么要有新生代和老年代">jm内存分区，为什么要有新生代和老年代</h2>
+<p>GC需要STW，有的对象存活时间长，有的短，GC不应该每次都去检查存活时间长的对象，这样就是浪费时间。</p>
+<h2 id="什么时候对象会进入老年代">什么时候对象会进入老年代？</h2>
+<ul>
+<li>对象太大，新生代所剩空间存储不下</li>
+<li>在survivor存活时间超过阈值，就进入了老年代。</li>
+</ul>
+<h2 id="对象头信息里有哪些东西">对象头信息里有哪些东西</h2>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/16/104729389.png" alt=""></p>
+<h2 id="对象在jvm中是怎么存储的">对象在JVM中是怎么存储的</h2>
+<p>类元信息放进方法区中，new出的实例在对空闲当中。</p>
+<h2 id="你知道哪几种垃圾回收器各自的优缺点重点讲一下cms和g1">你知道哪几种垃圾回收器，各自的优缺点，重点讲一下cms和g1</h2>
+<p>====&gt;<a href="#CMS">跳转CMS</a></p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/16/171600286.png" alt=""></p>
+<ol>
+<li>
+<p>CMS ：</p>
+<p><img src="https://blogimg.ytte.top//img-jixiang/2022/04/16/180934727.png" alt=""></p>
+<ul>
+<li>
+<p>阶段：</p>
+<ul>
+<li>初始标记（STW）</li>
+<li>并发标记</li>
+<li>重新标记（STW）</li>
+<li>并发清理</li>
+<li>重置线程</li>
+</ul>
+</li>
+<li>
+<p>优点</p>
+<ul>
+<li>主打的低延迟（采用并发标记，只有初始标记和重新标记会STW）。</li>
+</ul>
+</li>
+<li>
+<p>缺点</p>
+<ul>
+<li>采用的标记清除算法，会产生碎片。</li>
+<li>只能和Serial和ParaNew一起使用。</li>
+<li>cms挂掉了，就会使用Serial Old来做为替代，性能大幅度下降。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="jvm-gc算法有哪些目前的jdk版本采用什么回收算法">JVM GC算法有哪些，目前的JDK版本采用什么回收算法</h2>
+<h2 id="g1回收器讲下回收过程-gc是什么为什么要有gc">G1回收器讲下回收过程 GC是什么？为什么要有GC?</h2>
+<h2 id="gc的两种判定方法cms-收集器与g1收集器的特点">GC的两种判定方法？CMS 收集器与G1收集器的特点。</h2>
+<h2 id="说一下gc算法分代回收说下-垃圾收集策略和算法">说一下GC算法，分代回收说下 垃圾收集策略和算法</h2>
+<h2 id="heading"></h2>
+<h2 id="heading-1"></h2>
+<h2 id="heading-2"></h2>
+<h2 id="heading-3"></h2>
+<h2 id="heading-4"></h2>
+<h2 id="heading-5"></h2>
+<h2 id="heading-6"></h2>
+<h2 id="heading-7"></h2>
+<blockquote>
+<p>搞定！</p>
+<p>人生无常，大肠包小肠！</p>
+<p>继续学习吧！</p>
+</blockquote>
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://gb.ytte.top/2022/04/15/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题" target="_blank" rel="external">https://gb.ytte.top/2022/04/15/%E9%9D%A2%E8%AF%95%E9%A2%98/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/YTTE-jx" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://gb.ytte.top/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/YTTE-jx" target="_blank"><span class="text-dark">YTTE</span><small class="ml-1x">努力奋斗，不负韶华。</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://gb.ytte.top/2022/04/13/springcloud-alibaba/" title="SpringCloud alibaba"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/YTTE-jx" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://gb.ytte.top/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2022  -
+    2022
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+    
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://gb.ytte.top/js/application.min.e720b935330b2a176cfb4b8bd9a6cc632caf6b752f94e87c62152a9557ff6d15.js"></script>
+<script src="https://gb.ytte.top/js/plugin.min.334875d4d4a72afb866e446df61b5f4bf1f0a516d1303166f52f7804d17ef3ab.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/gb.ytte.top\/',
+            CONTENT_URL: 'https:\/\/gb.ytte.top\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://gb.ytte.top/js/insight.min.759e5002714e12761afcd512f103d39c86573165db51972dd3b24df6eddf238ed3e3e85c1988e96cba09419d1deccdeb68c15284f2c3d03049fad53c11774524.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
