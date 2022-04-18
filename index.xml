@@ -6,10 +6,19 @@
     <description>Recent content on YTTE Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>CC BY 4.0 CN</copyright>
-    <lastBuildDate>Fri, 15 Apr 2022 16:30:37 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Apr 2022 17:27:43 +0800</lastBuildDate>
     
         <atom:link href="https://gb.ytte.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>设计模式</title>
+      <link>https://gb.ytte.top/2022/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 18 Apr 2022 17:27:43 +0800</pubDate>
+      
+      <guid>https://gb.ytte.top/2022/04/18/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;p&gt;视频教程  ———— &lt;a href=&#34;https://www.bilibili.com/video/BV1G4411c7N4?spm_id_from=333.337.search-card.all.click&#34;&gt;尚硅谷&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>面试题</title>
@@ -54,7 +63,7 @@
       
       <guid>https://gb.ytte.top/2022/04/05/jvm%E4%B8%8A%E7%AF%87/</guid>
       <description>&lt;p&gt;本篇为面试复习总结篇&lt;/p&gt;
-&lt;p&gt;详情笔记跳转：https://www.processon.com/view/link/61cbc28e5653bb21ce5bb9c8&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.processon.com/view/link/61cbc28e5653bb21ce5bb9c8&#34;&gt;详情笔记跳转&lt;/a&gt;：https://www.processon.com/view/link/61cbc28e5653bb21ce5bb9c8&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -181,16 +190,6 @@
       
       <guid>https://gb.ytte.top/2022/03/14/zookeeper/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://gb.ytte.top/about/</link>
-      <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://gb.ytte.top/about/</guid>
-      <description>QQ：877306413
-github： https://github.com/YTTE-jx</description>
     </item>
     
   </channel>

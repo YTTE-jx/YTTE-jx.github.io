@@ -6,10 +6,20 @@
     <description>Recent content in Posts on YTTE Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>CC BY 4.0 CN</copyright>
-    <lastBuildDate>Fri, 15 Apr 2022 16:30:37 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Apr 2022 17:27:43 +0800</lastBuildDate>
     
         <atom:link href="https://gb.ytte.top/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://gb.ytte.top/about/</link>
+      <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://gb.ytte.top/about/</guid>
+      <description>QQ：877306413
+github： https://github.com/YTTE-jx</description>
+    </item>
     
     <item>
       <title>Filter/ Lstener/ Servlet/四大域对象</title>
